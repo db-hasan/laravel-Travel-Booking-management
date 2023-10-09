@@ -7,5 +7,5 @@ Route::get('/home', function () {
 });
 
 Route::get('/', function () {
-    return view('backend/dashboard');
+return view('backend/dashboard');
 });
