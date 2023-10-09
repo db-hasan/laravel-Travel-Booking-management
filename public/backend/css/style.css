@@ -1,3 +1,153 @@
-.test {
-    background-color: aquamarine;
+/* Start Header*/
+
+#header .logo {
+    color: #fff !important;
+    font-weight: 900 !important;
+    font-size: 30px !important;
+}
+
+#header .user {
+    text-align: end;
+}
+
+#header .user ul {
+    background-color: #000 !important;
+}
+
+#header .user-btn {
+    border: none !important;
+}
+
+#header .user-btn img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+#header i {
+    color: #fff !important;
+}
+
+/* End Header*/
+
+/* Start Sidebar*/
+.rows {
+    --bs-gutter-x: 0rem !important;
+}
+
+li,
+ul {
+    list-style: none;
+}
+
+a {
+
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    text-decoration: none !important;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#sidebar .custom .accordion-button::after {
+    height: 0;
+    width: 0;
+    color: #fff;
+}
+
+#sidebar .accordion {
+    /* sub sidebar text color*/
+    --bs-accordion-btn-color: #fff;
+    /*sub category Sidebar bg color*/
+    --bs-accordion-bg: #000000d4;
+    /*Sidebar bg color*/
+    --bs-accordion-btn-bg: #e4a928be;
+    /*Sidebar active bg color*/
+    --bs-accordion-active-bg: #e7f1ff;
+}
+
+#sidebar .accordion-body {
+    border-bottom: 1px #fff dashed;
+}
+
+#sidebar a {
+    color: #fff !important;
+}
+
+#sidebar a:hover {
+    color: #32f80a !important;
+    padding: 5px;
+}
+
+#sidebar i {
+    color: #fff !important;
+}
+
+/* End Sidebar*/
+
+/*scrollbar */
+.custom-scrollbar {
+    height: 90vh;
+    overflow: auto;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/*scrollbar site icone*/
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+
+
+
+th i {
+    color: #cdd4e0;
+    padding: 5px;
+}
+
+.icons a {
+    padding: 5px;
+}
+
+.icons .print {
+    color: #e6190b !important;
+}
+
+.icons .view i {
+    color: #000 !important;
+}
+
+.icons .edit i {
+    color: #d5e219 !important;
+}
+
+.icons .delete i {
+    color: #e40a0a !important;
+}
+
+td:last-child {
+    text-align: end;
+}
+
+th:last-child {
+    text-align: end;
+}
+
+hr {
+    margin: 5px !important;
+    opacity: 100 !important;
+}
+
+/* Purchaes Stock */
+
+.login {
+    background-image: url('src/assets/images/login.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    align-items: center;
 }
