@@ -9,3 +9,6 @@ Route::get('/home', function () {
 Route::get('/', function () {
 return view('backend/dashboard');
 });
+Route::get('/user', function () {
+return view('backend/user/viewuser');
+});

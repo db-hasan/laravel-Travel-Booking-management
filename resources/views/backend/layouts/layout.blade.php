@@ -15,7 +15,7 @@
     <nav id='header' class="navbar navbar-expand-md navbar-light bg-success ">
         <div class="container-fluid">
             <div class="">
-                <a class="navbar-brand logo " href="#">Soft ERP</a>
+                <a class="navbar-brand logo " href="/">Soft ERP</a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -73,7 +73,7 @@
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
                                     <i class="fa-solid fa-house">
-                                        <a href="#"> Dashboard</a></i>
+                                        <a href="/"> Dashboard</a></i>
                                 </button>
                             </div>
 
@@ -244,10 +244,10 @@
         <div class="col-sm-8 col-md-9 col-lg-10 dash">
             <div class="custom-scrollbar">
                 <div class="scroll-content">
-            
-{{-- ------------content part-------------- --}}
+
+                    {{-- ------------content part-------------- --}}
                     @yield('content')
-{{-- ------------content part-------------- --}}
+                    {{-- ------------content part-------------- --}}
 
                 </div>
             </div>

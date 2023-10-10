@@ -84,7 +84,7 @@ a {
 
 /* End Sidebar*/
 
-/*scrollbar */
+/*scrollbar  start*/
 .custom-scrollbar {
     height: 90vh;
     overflow: auto;
@@ -101,8 +101,9 @@ a {
     border-radius: 5px;
 }
 
+/*scrollbar  End*/
 
-
+/* table start */
 
 th i {
     color: #cdd4e0;
@@ -142,7 +143,9 @@ hr {
     opacity: 100 !important;
 }
 
-/* Purchaes Stock */
+/* table end */
+
+/* Login start */
 
 .login {
     background-image: url('src/assets/images/login.jpg');
@@ -151,3 +154,5 @@ hr {
     background-size: cover;
     align-items: center;
 }
+
+/* Login end */
