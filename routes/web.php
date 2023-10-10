@@ -4,7 +4,7 @@ use App\Http\Controllers\UserController;
 
 
 // Frontend Route Start
-Route::view('/home', 'frontend/home');
+Route::view('/home', 'frontend/home')-> name('home');
 
 // Frontend Route End
 
@@ -12,7 +12,7 @@ Route::view('/home', 'frontend/home');
 
 // Backend Route Start
 
-Route::view('/', 'backend/dashboard');
+Route::view('/', 'backend/dashboard') -> name('dashboard');
 Route::get('/users',[UserController::class,'users'])-> name('newuser');
 
 // Backend Route End
