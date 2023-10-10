@@ -1,14 +1,20 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 
-Route::get('/home', function () {
-    return view('frontend/home');
-});
+// Frontend Route Start
+Route::view('/home', 'frontend/home');
 
-Route::get('/', function () {
-return view('backend/dashboard');
-});
-Route::get('/user', function () {
-return view('backend/user/viewuser');
-});
+// Frontend Route End
+
+// --------------------------------------------------------------
+
+// Backend Route Start
+
+Route::view('/', 'backend/dashboard');
+Route::get('/users',[UserController::class,'users'])-> name('newuser');
+
+// Backend Route End
+
+
