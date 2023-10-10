@@ -73,8 +73,7 @@
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
                                     <i class="fa-solid fa-house">
-                                        <a href="/"> Dashboard</a></i>
-                                        <!-- <a href="{{ route('dashboard') }}"> Dashboard</a></i> -->
+                                        <a href="{{ route('dashboard') }}"> Dashboard</a></i>
                                 </button>
                             </div>
 

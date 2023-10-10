@@ -3,18 +3,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
 
-// Frontend Route Start
-Route::view('/home', 'frontend/home')-> name('home');
+// Backend Route
 
-// Frontend Route End
+Route::view('/', 'backend/dashboard') -> name('dashboard');
+Route::get('/users',[UserController::class,'users'])-> name('users');
+
 
 // --------------------------------------------------------------
 
-// Backend Route Start
+// Frontend Route
+Route::view('/home', 'frontend/home')-> name('home');
 
-Route::view('/', 'backend/dashboard') -> name('dashboard');
-Route::get('/users',[UserController::class,'users'])-> name('newuser');
-
-// Backend Route End
 
 
