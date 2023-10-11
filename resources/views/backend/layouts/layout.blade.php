@@ -148,7 +148,7 @@
                                         <a href="{{ route('dashboard') }}"> Logout</a></i>
                                 </button>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
