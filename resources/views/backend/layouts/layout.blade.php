@@ -76,101 +76,36 @@
                                         <a href="{{ route('dashboard') }}"> Dashboard</a></i>
                                 </button>
                             </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapse1" aria-expanded="false"
-                                    aria-controls="flush-collapse1">
-                                    <i class="fa-solid fa-tags">
-                                        <a href="#"> Category</a></i>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="fa-solid fa-location-crosshairs">
+                                        <a href="{{ route('dashboard') }}"> Location</a></i>
                                 </button>
-                                <div id="flush-collapse1" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body"> <i class="fa-solid fa-tag">
-                                            <a href="#"> Brands</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-layer-group">
-                                            <a href="#"> Category</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-box">
-                                            <a href="#"> SubCategory</a></i></div>
-                                </div>
+                            </div>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="fa-solid fa-gifts">
+                                        <a href="{{ route('dashboard') }}"> Package</a></i>
+                                </button>
                             </div>
 
-                            <div class="accordion-item">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapse9" aria-expanded="false"
-                                    aria-controls="flush-collapse9">
-                                    <i class="fa-solid fa-layer-group">
-                                        <a href="#"> Product</a></i>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="fa-solid fa-cart-arrow-down">
+                                        <a href="{{ route('dashboard') }}"> Booking</a></i>
                                 </button>
-                                <div id="flush-collapse9" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body"> <i class="fa-solid fa-plus">
-                                            <a href="#"> Add Product</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-truck-fast">
-                                            <a href="#"> Add Supplier</a></i></div>
-                                </div>
                             </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapse2" aria-expanded="false"
-                                    aria-controls="flush-collapse2">
-                                    <i class="fa-solid fa-warehouse ">
-                                        <a href="#"> Stock</a></i>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="fa-regular fa-credit-card">
+                                        <a href="{{ route('dashboard') }}"> Payment</a></i>
                                 </button>
-                                <div id="flush-collapse2" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body"> <i class="fa-solid fa-baby-carriage">
-                                            <a href="#"> Purchaes Stock</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-right-left">
-                                            <a href="#"> Retrun Stock</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-trash-can">
-                                            <a href="#"> Damage Stock</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-file-invoice-dollar">
-                                            <a href="#"> Stock Invioce</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-retweet">
-                                            <a href="#"> Retrun Invioce</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-file-invoice">
-                                            <a href="#"> Damage Invioce</a></i></div>
-                                </div>
                             </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapse3" aria-expanded="false"
-                                    aria-controls="flush-collapse3">
-                                    <i class="fa-solid fa-cart-shopping">
-                                        <a href="#"> Sales</a></i>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="fa-solid fa-users">
+                                        <a href="{{ route('dashboard') }}"> Add User</a></i>
                                 </button>
-                                <div id="flush-collapse3" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body"> <i class="fa-solid fa-cart-shopping">
-                                            <a href="#"> Sales Product</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-right-left">
-                                            <a href="#"> Retrun Product</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-file-invoice-dollar">
-                                            <a href="#"> Sales Invioce</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-file-invoice">
-                                            <a href="#"> Retrun Invioce</a></i></div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapse4" aria-expanded="false"
-                                    aria-controls="flush-collapse4">
-                                    <i class="fa-solid fa-chart-simple">
-                                        <a href="#"> Report</a></i>
-                                </button>
-                                <div id="flush-collapse4" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body"> <i class="fa-solid fa-cart-shopping">
-                                            <a href="#"> Sales Report</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-layer-group">
-                                            <a href="#"> Stock Report</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-truck-fast">
-                                            <a href="#"> Supplier</a></i></div>
-                                </div>
                             </div>
 
                             <div class="accordion-item">
@@ -178,46 +113,14 @@
                                     data-bs-target="#flush-collapse5" aria-expanded="false"
                                     aria-controls="flush-collapse5">
                                     <i class="fa-solid fa-chart-column">
-                                        <a href="#"> Collection</a></i>
+                                        <a href="#"> Reoprt</a></i>
                                 </button>
                                 <div id="flush-collapse5" class="accordion-collapse collapse"
                                     data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body"> <i class="fa-solid fa-plus">
-                                            <a href="#"> Add Collection</a></i></div>
+                                            <a href="#"> Add Expenses</a></i></div>
                                     <div class="accordion-body"> <i class="fa-solid fa-list">
                                             <a href="#"> Collection list</a></i></div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapse6" aria-expanded="false"
-                                    aria-controls="flush-collapse6">
-                                    <i class="fa-solid fa-street-view">
-                                        <a href="#"> Accounts</a></i>
-                                </button>
-                                <div id="flush-collapse6" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body"> <i class="fa-solid fa-plus">
-                                            <a href="#"> Add Collection</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-list">
-                                            <a href="#"> Collection list</a></i></div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapse8" aria-expanded="false"
-                                    aria-controls="flush-collapse8">
-                                    <i class="fa-solid fa-users">
-                                        <a href="#"> Users</a></i>
-                                </button>
-                                <div id="flush-collapse8" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body"> <i class="fa-solid fa-users">
-                                            <a href="#"> Add User</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-address-card">
-                                            <a href="#"> Contact</a></i></div>
                                 </div>
                             </div>
 
@@ -227,15 +130,34 @@
                                         <a href="#"> Developer Info</a></i>
                                 </button>
                             </div>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="fa-solid fa-right-to-bracket">
+                                        <a href="{{ route('dashboard') }}"> Logout</a></i>
+                                </button>
+                            </div>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="">
+                                        <a href="{{ route('dashboard') }}"> </a></i>
+                                </button>
+                            </div>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="t">
+                                        <a href="{{ route('dashboard') }}"> </a></i>
+                                </button>
+                            </div>
 
                             <div class="accordion accordion-flush" id="accordionFlushExample">
                                 <div class="accordion-item custom">
                                     <button class="accordion-button collapsed" type="button">
-                                        <i class="fa-solid fa-right-to-bracket">
-                                            <a to="#accordionFlushExample"> Logout</a></i>
+                                        <i class="">
+                                            <a to="#accordionFlushExample"> </a></i>
                                     </button>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
