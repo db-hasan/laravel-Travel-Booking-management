@@ -78,6 +78,12 @@
                             </div>
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
+                                    <i class="fa-solid fa-image">
+                                        <a href="{{ route('dashboard') }}"> Banner</a></i>
+                                </button>
+                            </div>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
                                     <i class="fa-solid fa-location-crosshairs">
                                         <a href="{{ route('dashboard') }}"> Location</a></i>
                                 </button>
@@ -118,16 +124,22 @@
                                 <div id="flush-collapse5" class="accordion-collapse collapse"
                                     data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body"> <i class="fa-solid fa-plus">
-                                            <a href="#"> Add Expenses</a></i></div>
+                                            <a href="{{ route('dashboard') }}"> Add Expenses</a></i></div>
                                     <div class="accordion-body"> <i class="fa-solid fa-list">
-                                            <a href="#"> Collection list</a></i></div>
+                                            <a href="{{ route('dashboard') }}"> Collection list</a></i></div>
                                 </div>
+                            </div>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="fa-solid fa-building-columns">
+                                        <a href="{{ route('dashboard') }}"> About Info</a></i>
+                                </button>
                             </div>
 
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-house">
-                                        <a href="#"> Developer Info</a></i>
+                                    <i class="fa-solid fa-address-card">
+                                        <a href="{{ route('dashboard') }}"> Contact Info</a></i>
                                 </button>
                             </div>
                             <div class="accordion-item custom">
@@ -135,27 +147,6 @@
                                     <i class="fa-solid fa-right-to-bracket">
                                         <a href="{{ route('dashboard') }}"> Logout</a></i>
                                 </button>
-                            </div>
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="">
-                                        <a href="{{ route('dashboard') }}"> </a></i>
-                                </button>
-                            </div>
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="t">
-                                        <a href="{{ route('dashboard') }}"> </a></i>
-                                </button>
-                            </div>
-
-                            <div class="accordion accordion-flush" id="accordionFlushExample">
-                                <div class="accordion-item custom">
-                                    <button class="accordion-button collapsed" type="button">
-                                        <i class="">
-                                            <a to="#accordionFlushExample"> </a></i>
-                                    </button>
-                                </div>
                             </div>
                             
                         </div>
