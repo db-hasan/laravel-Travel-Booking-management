@@ -35,66 +35,76 @@
             </div>
         </div>
     </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> ID</th>
-                <th><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Package Name
-                </th>
-                <th><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Description
-                </th>
-                <th><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Resort Name
-                </th>
-                <th><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Booking Price
-                </th>
-                <th><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Status
-                </th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1111</td>
-                <td>Canada</td>
-                <td>Canada City</td>
-                <td>Canada Resort</td>
-                <td>$500</td>
-                <td>Active</td>
-                <td class="icons">
-                    @include('backend/payment/edit_payment')
-                    <button type="button" class="btn delete" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
-                            class="fa-solid fa-trash"></i></button>
-                    <div class="modal fade mt-5" id="deleteModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Payment
-                                    </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="">
-                                        <div class="mb-3 text-start">
-                                            <label for="exampleInputEmail1" class="form-label">Are
-                                                you Sure
-                                                !</label>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Delete</button>
+    <div class="custom-scrollbar">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> ID</span></th>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Location</span>
+                    </th>
+                    <th><span class="d-flex pe-5"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Description</span>
+                    </th>
+                    <th><span class="d-flex pe-5"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Resort</span>
+                    </th>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Package</span>
+                    </th>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Price</span>
+                    </th>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> From_Date</span>
+                    </th>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> To_Date</span>
+                    </th>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Arrival_Time</span>
+                    </th>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Status</span>
+                    </th>
+                    <th><strong class="ps-5">Action</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1111</td>
+                    <td>Canada</td>
+                    <td>Canada City</td>
+                    <td>Canada Resort</td>
+                    <td>$500</td>
+                    <td>Active</td>
+                    <td class="icons">
+                        @include('backend/payment/edit_payment')
+                        <button type="button" class="btn delete" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                                class="fa-solid fa-trash"></i></button>
+                        <div class="modal fade mt-5" id="deleteModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Payment
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="">
+                                            <div class="mb-3 text-start">
+                                                <label for="exampleInputEmail1" class="form-label">Are
+                                                    you Sure
+                                                    !</label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Delete</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 @endsection

@@ -84,9 +84,28 @@ a {
 
 /* End Sidebar*/
 
-/*scrollbar  start*/
-.custom-scrollbar {
+/*Sidebar scrollbar  start*/
+.custom-scrollbar-sidebar {
     height: 90vh;
+    overflow: auto;
+}
+
+.custom-scrollbar-sidebar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/*scrollbar site icone*/
+.custom-scrollbar-sidebar::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+/*Sidebar scrollbar  End*/
+
+/*Content scrollbar  start*/
+.custom-scrollbar {
+    height: 61vh;
     overflow: auto;
 }
 
@@ -101,7 +120,9 @@ a {
     border-radius: 5px;
 }
 
-/*scrollbar  End*/
+/*Content scrollbar  End*/
+
+
 
 /* table start */
 

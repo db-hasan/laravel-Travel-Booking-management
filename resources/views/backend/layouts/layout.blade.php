@@ -15,7 +15,7 @@
     <nav id='header' class="navbar navbar-expand-md navbar-light bg-success ">
         <div class="container-fluid">
             <div class="">
-                <a class="navbar-brand logo " href="/">Soft ERP</a>
+                <a class="navbar-brand logo " href="/">TourisT</a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -66,9 +66,8 @@
     </nav>
     <div class="row rows">
         <div class="col-sm-4 col-md-3 col-lg-2">
-            <div class="custom-scrollbar">
-                <div class="scroll-content">
-                    <div id='sidebar'>
+            <div class="custom-scrollbar-sidebar">
+                <div id='sidebar'>
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
@@ -151,19 +150,13 @@
 
                         </div>
                     </div>
-                </div>
             </div>
         </div>
         <div class="col-sm-8 col-md-9 col-lg-10 dash">
-            <div class="custom-scrollbar">
-                <div class="scroll-content">
-
-                    {{-- ------------content part-------------- --}}
-                    @yield('content')
-                    {{-- ------------content part-------------- --}}
-
-                </div>
-            </div>
+            
+                {{-- ------------content part-------------- --}}
+                @yield('content')
+                {{-- ------------content part-------------- --}}
         </div>
     </div>
     <div class="text-center bg-warning ">This is footer page</div>

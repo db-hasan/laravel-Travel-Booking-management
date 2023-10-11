@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="col p-4">
+<div class="col p-3">
    @include('backend/users/add_user')
                         <hr>
                         <div class='row'>
@@ -35,30 +35,40 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="custom-scrollbar">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> ID</th>
-                                    <th><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Package Name
+                                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> ID</span></th>
+                                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Name</span>
                                     </th>
-                                    <th><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Description
+                                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Email</span>
                                     </th>
-                                    <th><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Resort Name
+                                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Phone</span>
                                     </th>
-                                    <th><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Booking Price
+                                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Gender</span>
                                     </th>
-                                    <th><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Status
+                                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Username</span>
                                     </th>
-                                    <th>Action</th>
+                                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Password</span>
+                                    </th>
+                                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Role</span>
+                                    </th>
+                                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Status</span>
+                                    </th>
+                                    <th><strong class="ps-5">Action</strong></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1111</td>
-                                    <td>Canada</td>
-                                    <td>Canada City</td>
-                                    <td>Canada Resort</td>
-                                    <td>$500</td>
+                                    <td>Ali Hasan</td>
+                                    <td>infoalihasanbd@gmail.com</td>
+                                    <td>01723629080</td>
+                                    <td>Male</td>
+                                    <td>dbhasan</td>
+                                    <td>123</td>
+                                    <td>Admin</td>
                                     <td>Active</td>
                                     <td class="icons">
                                         @include('backend/users/edit_user')
@@ -95,6 +105,7 @@
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
                     </div>
 
 @endsection
