@@ -85,32 +85,32 @@
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
                                     <i class="fa-solid fa-location-crosshairs">
-                                        <a href="{{ route('dashboard') }}"> Location</a></i>
+                                        <a href="{{ route('location') }}"> location</a></i>
                                 </button>
                             </div>
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
                                     <i class="fa-solid fa-gifts">
-                                        <a href="{{ route('dashboard') }}"> Package</a></i>
+                                        <a href="{{ route('package') }}"> Package</a></i>
                                 </button>
                             </div>
 
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
                                     <i class="fa-solid fa-cart-arrow-down">
-                                        <a href="{{ route('dashboard') }}"> Booking</a></i>
+                                        <a href="{{ route('booking') }}"> Booking</a></i>
                                 </button>
                             </div>
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
                                     <i class="fa-regular fa-credit-card">
-                                        <a href="{{ route('dashboard') }}"> Payment</a></i>
+                                        <a href="{{ route('payment') }}"> Payment</a></i>
                                 </button>
                             </div>
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
                                     <i class="fa-solid fa-users">
-                                        <a href="{{ route('dashboard') }}"> Add User</a></i>
+                                        <a href="{{ route('users') }}"> Add User</a></i>
                                 </button>
                             </div>
 
