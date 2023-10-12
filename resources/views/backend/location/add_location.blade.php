@@ -10,7 +10,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form method="post" action="{{ route('location') }}" >
                     <div class="mb-3">
                         <label for="exampleInput1" class="form-label">Location Name</label>
                         <input type="text" class="form-control" id="exampleInput1" />
@@ -27,11 +27,11 @@
                         <label for="exampleInput4" class="form-label">Booking Price</label>
                         <input type="text" class="form-control" id="exampleInput4" />
                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
