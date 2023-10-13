@@ -13,9 +13,16 @@ use App\Http\Controllers\PaymentController;
 
 Route::view('/', 'backend/dashboard') -> name('dashboard');
 
-Route::get('crud', [CrudController::class, 'index']);
+Route::get('crud', [CrudController::class, 'all']);
+
 Route::get('crud/add', [CrudController::class, 'add']);
-Route::get('crud/edit', [CrudController::class, 'edit']);
+Route::post('crud/insert', [CrudController::class, 'insert']);
+
+Route::get('crud/edit/{id}', [CrudController::class, 'edit']);
+Route::post('crud/update/{id}', [CrudController::class, 'update']);
+
+Route::get('crud/show/{id}', [CrudController::class, 'show']);
+Route::get('crud/delete/{id}', [CrudController::class, 'delete']);
 
 
 Route::get('/users',[UserController::class,'users'])->name('users');

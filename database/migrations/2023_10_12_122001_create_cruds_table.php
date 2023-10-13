@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('locations', function (Blueprint $table) {
-            $table->bigIncrements('loc_id');
-            $table->string('loc_name',20)->nullable();
-            $table->string('loc_des',255)->nullable();
+        Schema::create('cruds', function (Blueprint $table) {
+            $table->bigIncrements('crud_id');
+            $table->string('crud_name',20)->nullable();
+            $table->string('crud_des',255)->nullable();
             $table->string('resort',255)->nullable();
-            $table->string('booking_price',10)->nullable();
-            $table->integer('loc_status')->default(1);
+            $table->string('crud_price',10)->nullable();
+            $table->integer('crud_status')->default(1);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('locations');
+        Schema::dropIfExists('cruds');
     }
 };

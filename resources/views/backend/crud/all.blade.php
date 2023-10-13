@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="col p-3">
+    @if(Session::has('msg'))
+      <p class="alert alert-success">{{Session::get('msg')}}</p>
+    @endif
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <a href="{{url('crud/add')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> Add Data</a>
     </div>
@@ -55,18 +58,22 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($indexData as $item)
                 <tr>
-                    <td>1</td>
-                    <td>Canada</td>
-                    <td>Canada City</td>
-                    <td>Canada Resort</td>
-                    <td>$500</td>
-                    <td>Active</td>
+                    <td>{{$item->crud_id}}</td>
+                    <td>{{$item->crud_name}}</td>
+                    <td>{{$item->crud_des}}</td>
+                    <td>{{$item->resort}}</td>
+                    <td>{{$item->crud_price}}</td>
+                    <td>{{$item->curd_status}}</td>
                     <td class="icons">
-                       <span><a href="{{url('crud/edit')}}">Edit</a></span>
-                       <span><a href="">Delete</a></span>
+                       {{-- <span><a href="{{url('crud/show')}}" class="btn btn-info px-3">View</a></span> --}}
+                       <span><a href="{{url('crud/show/'.$item->crud_id)}}" class="btn btn-info px-3">View</a></span>
+                       <span><a href="{{url('crud/edit/'.$item->crud_id)}}" class="btn btn-success px-3">Edit</a></span>
+                       <span><a href="{{url('crud/delete/'.$item->crud_id)}}" onclick="return confirm('Are you sure dalete')" class="btn btn-danger">Delete</a></span>
                     </td>
-                </tr>              
+                </tr>
+                @endforeach          
             </tbody>
         </table>
     </div>
