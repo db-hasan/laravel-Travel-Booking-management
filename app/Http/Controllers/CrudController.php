@@ -3,19 +3,24 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Crud;
+use App\Models\status;
 use Session;
 
 class CrudController extends Controller
 {
 
-// ------------view data start----------
-   public function all(){
-        $indexData= Crud::all();
-        return view('backend/crud/all', compact('indexData'));
-    }
+// ------------view with join data start----------
+   public function all() {
+    $indexData = Crud::join('statuses', 'cruds.crud_status', '=', 'statuses.id')->orderBy('crud_id','desc')->get();
+    return view('backend/crud/all', compact('indexData'));
+}
+
+// public function all(){
+    //         $indexData= Crud::all();    
+    //         return view('backend/crud/all', compact('indexData'));
+    //     }
 // ------------view data end----------
-
-
+    
 // ------------add data start----------
     public function add(){
         return view('backend/crud/add');
@@ -57,8 +62,9 @@ class CrudController extends Controller
 // ------------edit data end----------
 
     public function edit($id=null){
+        $status = status::all();
         $editData = Crud::find($id);
-        return view('backend/crud/edit', compact('editData'));
+        return view('backend/crud/edit', compact('editData'),compact('status'));
     }
     public function update(Request $request, $id){
         $rules = [
@@ -80,6 +86,7 @@ class CrudController extends Controller
         $data->crud_des= $request->description;
         $data->resort= $request->resort;
         $data->crud_price= $request->price;
+        $data->crud_status= $request->status;
         $data->save();
         Session::flash('msg','Data update successfully');
         return redirect('crud');

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('crud_status')->default(1);
             $table->timestamps();
         });
+        
     }
 
     /**

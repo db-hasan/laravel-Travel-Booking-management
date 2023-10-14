@@ -65,7 +65,7 @@
                     <td>{{$item->crud_des}}</td>
                     <td>{{$item->resort}}</td>
                     <td>{{$item->crud_price}}</td>
-                    <td>{{$item->curd_status}}</td>
+                    <td>{{$item->status_name}}</td>
                     <td class="icons">
                        {{-- <span><a href="{{url('crud/show')}}" class="btn btn-info px-3">View</a></span> --}}
                        <span><a href="{{url('crud/show/'.$item->crud_id)}}" class="btn btn-info px-3">View</a></span>

@@ -26,7 +26,7 @@
                 </div>
                 <div class="card-footer">
                     <h4>All Data
-                        <a href="{{url('crud')}}" class="btn btn-info float-end">All Data</a>
+                        <a href="{{url('crud')}}" class="btn btn-info float-end">Close</a>
                     </h4>
                 </div>
             </div>
