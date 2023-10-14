@@ -23,7 +23,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Resort</label>
         <input type="text" class="form-control" id="inputPassword4" name="resort" value="{{$editData->resort}}">
         @error('resort')
@@ -37,7 +37,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-md-4">
+      <div class="col-md-2">
         <label for="inputPassword4" class="form-label">Status</label>
         <select class="form-select" aria-label="Default select example" name="status" value="{{$editData->crud_status}}">
           @foreach ($status as $item)
