@@ -5,7 +5,9 @@
     @if(Session::has('msg'))
       <p class="alert alert-success">{{Session::get('msg')}}</p>
     @endif
-    @include('backend/crud/add')
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{{url('crud/add')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> Add Data</a>
+    </div>
     <hr>
     <div class='row'>
         <div class='col'>
@@ -65,6 +67,7 @@
                     <td>{{$item->crud_price}}</td>
                     <td>{{$item->status_name}}</td>
                     <td class="icons">
+                       {{-- <span><a href="{{url('crud/show')}}" class="btn btn-info px-3">View</a></span> --}}
                        <span><a href="{{url('crud/show/'.$item->crud_id)}}" class="btn btn-info px-3">View</a></span>
                        <span><a href="{{url('crud/edit/'.$item->crud_id)}}" class="btn btn-success px-3">Edit</a></span>
                        <span><a href="{{url('crud/delete/'.$item->crud_id)}}" onclick="return confirm('Are you sure dalete')" class="btn btn-danger">Delete</a></span>

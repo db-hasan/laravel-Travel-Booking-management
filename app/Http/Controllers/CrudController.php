@@ -55,10 +55,6 @@ class CrudController extends Controller
         $showData = Crud::find($id);
         return view('backend/crud/show', compact('showData'));
     }
-    // public function show(){
-    //     return view('backend/crud/show');
-    // }
-
 // ------------edit data end----------
 
     public function edit($id=null){

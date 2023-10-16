@@ -15,7 +15,6 @@ Route::view('/', 'backend/dashboard') -> name('dashboard');
 
 Route::get('crud', [CrudController::class, 'all']);
 
-Route::get('crud/add', [CrudController::class, 'add']);
 Route::post('crud/insert', [CrudController::class, 'insert']);
 
 Route::get('crud/edit/{id}', [CrudController::class, 'edit']);
