@@ -81,12 +81,7 @@
                                         <a href="{{url('crud')}}"> Crud</a></i>
                                 </button>
                             </div>
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-location-crosshairs">
-                                        <a href="{{ route('location') }}"> location</a></i>
-                                </button>
-                            </div>
+                            
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
                                     <i class="fa-solid fa-gifts">
@@ -106,12 +101,6 @@
                                         <a href="{{ route('payment') }}"> Payment</a></i>
                                 </button>
                             </div>
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-users">
-                                        <a href="{{ route('users') }}"> Add User</a></i>
-                                </button>
-                            </div>
 
                             <div class="accordion-item">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -127,6 +116,30 @@
                                     <div class="accordion-body"> <i class="fa-solid fa-list">
                                             <a href="{{ route('dashboard') }}"> Collection list</a></i></div>
                                 </div>
+                            </div>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="fa-solid fa-users">
+                                        <a href="{{ route('users') }}"> Add User</a></i>
+                                </button>
+                            </div>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="fa-solid fa-house-laptop">
+                                        <a href=""> Home Page</a></i>
+                                </button>
+                            </div>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="fa-solid fa-house-flood-water-circle-arrow-right">
+                                        <a href=""> Service</a></i>
+                                </button>
+                            </div>
+                            <div class="accordion-item custom">
+                                <button class="accordion-button collapsed" type="button">
+                                    <i class="fa-solid fa-hand-holding-medical">
+                                        <a href=""> Facilities</a></i>
+                                </button>
                             </div>
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">

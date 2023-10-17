@@ -1,3 +1,502 @@
-.test {
-    background-color: aquamarine;
+:root {
+    --primary: #86B817;
+    --secondary: #FE8800;
+    --light: #F5F5F5;
+    --dark: #14141F;
+}
+
+* {
+    font-family: 'Nunito',
+        sans-serif;
+}
+
+
+/*** Hearder start ***/
+#header nav {
+    background-color: rgba(22, 33, 70, 0.644) !important;
+    padding: 15px 30px;
+    border-bottom: 1px solid #c4c4c4;
+    position: fixed;
+    width: 100%;
+}
+
+#header .brand {
+    padding: 0;
+    margin: 0;
+}
+
+#header .brand h1 {
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+#header li a {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFF;
+}
+
+#header li a:hover {
+    color: rgb(17, 236, 39);
+    border-radius: 5px;
+}
+
+#header ul li a i:last-child {
+    color: rgb(17, 236, 39) !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*** Hearder End ***/
+
+/*** Banner start ***/
+#banner {
+    background: url(../images/banner.jpg) no-repeat fixed;
+    background-size: cover;
+}
+
+#banner h1 {
+    font-size: calc(1.525rem + 3.3vw);
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 1.8;
+}
+
+#banner p {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#banner .overlay {
+    background-color: rgba(0, 0, 0, .5);
+    padding: 230px 0;
+}
+
+/*** Banner End ***/
+
+/*** Title  Start***/
+.section-title {
+    position: relative;
+    display: inline-block;
+    font-weight: 800;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.title {
+    font-weight: 400 !important;
+    color: var(--primary);
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 2px;
+    top: 4px;
+    left: -40px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 2px;
+    bottom: 5px;
+    left: -60px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title.text-start::before {
+    width: calc(100% + 40px);
+    left: 0;
+}
+
+.section-title.text-start::after {
+    width: calc(100% + 60px);
+    left: 0;
+}
+
+/***Title  End***/
+
+#service-banner {
+    background: url(../images/service.jpg) no-repeat fixed;
+    background-size: cover;
+    height: 80vh;
+}
+
+#package-banner {
+    background: url(../images/service.jpg) no-repeat fixed;
+    background-size: cover;
+    height: 80vh;
+}
+
+#facilities-banner {
+    background: url(../images/service.jpg) no-repeat fixed;
+    background-size: cover;
+    height: 80vh;
+}
+
+#about-banner {
+    background: url(../images/service.jpg) no-repeat fixed;
+    background-size: cover;
+    height: 80vh;
+}
+
+#contact-banner {
+    background: url(../images/service.jpg) no-repeat fixed;
+    background-size: cover;
+    height: 80vh;
+}
+
+#booking-banner {
+    background: url(../images/service.jpg) no-repeat fixed;
+    background-size: cover;
+    height: 80vh;
+}
+
+.banner-title {
+    height: 80vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+}
+
+.banner-title h1 {
+    font-size: calc(1.525rem + 3.3vw);
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 1.8;
+}
+
+.banner-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    height: 80vh;
+}
+
+/***Service  Start***/
+.sub-title {
+    font-family: 'Playfair Display', serif;
+    color: #cf9437;
+    margin-top: 0px;
+    font-size: 30px;
+}
+
+.amenities {
+    padding: 0px !important;
+}
+
+.amenities li {
+    display: inline-block;
+    /* width: 49%; */
+    background: rgba(239, 232, 221, 0.3);
+    padding: 3px 20px;
+    margin-bottom: 7px;
+}
+
+.service-content {
+    text-align: justify;
+}
+
+/***Service  End***/
+
+/*** Package End ***/
+.card-title {
+    color: #343a3f;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.package-item {
+    display: flex;
+    justify-content: center;
+    border-right: 2px solid gray;
+    font-size: 12px;
+    color: #636b71;
+    text-transform: capitalize;
+    font-weight: 400;
+    margin: 15px 0 20px;
+}
+
+.card {
+    position: unset !important;
+}
+
+.list-group-item {
+    position: unset !important;
+}
+
+.input-group {
+    position: unset !important;
+}
+
+.input-group>.form-control,
+.input-group>.form-floating,
+.input-group>.form-select {
+    position: unset !important;
+}
+
+.input-group .btn {
+    position: unset !important;
+    z-index: -1 !important;
+}
+
+.package-item a {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.rating {
+    color: #f7ef08;
+}
+
+.last {
+    border-right: none !important;
+}
+
+.text {
+    text-align: center;
+    font-size: 12px;
+    color: #636b71;
+    font-weight: 400;
+}
+
+hr {
+    margin: 0.5rem 0 !important;
+}
+
+.package-status {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.booking-date {
+    padding: 0px 10px;
+    color: #f63138;
+    border-radius: 10px;
+}
+
+.open {
+    color: #00c437;
+}
+
+.close {
+    color: #f63138;
+}
+
+.Chose-package {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 10px;
+    color: #FFF;
+    background-color: #86B817;
+    border-radius: 20px;
+}
+
+.package:hover {
+    background-color: #edf0f2df !important;
+}
+
+/*** Package End ***/
+
+/*** Facilities Start ***/
+.facilities-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.228);
+}
+
+.facilities-item:hover {
+    background: var(--primary);
+}
+
+.facilities-item:hover * {
+    color: var(--light) !important;
+}
+
+#facilities .card {
+    flex-direction: row !important;
+}
+
+/*** Facilities End ***/
+
+/*** Booking Start ***/
+
+#booking .form-control {
+    width: 50% !important;
+}
+
+.booking-sub-title {
+    font-family: 'Playfair Display', serif;
+    color: #cf9437;
+    margin: 0px;
+    font-size: 30px;
+}
+
+.package-price {
+    font-family: 'Playfair Display',
+        serif;
+    color: #415608;
+    margin: 0px;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.add-package .btn {
+    --bs-btn-padding-x: 5px !important;
+    --bs-btn-padding-y: 2px !important;
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+
+}
+
+#booking .row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+
+/* booking scrollbar */
+.custom-scrollbar {
+    height: 60vh;
+    overflow: auto;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/*scrollbar site icone*/
+/* .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+} */
+
+/*** Booking End ***/
+
+/*** Footer start ***/
+.footer a {
+    text-decoration: none;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    font-weight: normal;
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+#signin {
+    background: url(../images/loginbackground.jpg) no-repeat fixed;
+    background-size: cover;
+}
+
+
+.sign-overlay {
+    background-color: rgba(0, 0, 0, .5);
+
+}
+
+
+.singin {
+    width: 40% !important;
+}
+
+.card-img {
+    height: 40vh !important;
+}
+
+.singbutton {
+    background: #01d28e !important;
+    border: 1px solid #01d28e !important;
+    color: #fff !important;
+}
+
+.singbutton a {
+    text-decoration: none;
+    color: #fff !important;
+}
+
+.rememberbutton {
+    color: #01d28e !important;
+    padding: 5px;
+}
+
+#checkout .checkout .form-control {
+    width: 50% !important;
 }

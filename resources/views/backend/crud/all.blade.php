@@ -70,7 +70,7 @@
                        <span><a href="{{url('crud/delete/'.$item->crud_id)}}" onclick="return confirm('Are you sure dalete')" class="btn btn-danger">Delete</a></span>
                     </td>
                 </tr>
-                @endforeach          
+                @endforeach     
             </tbody>
         </table>
     </div>
