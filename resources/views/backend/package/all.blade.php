@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col p-3">
-    @include('backend/package/add_package')
+    @include('backend/package/add')
     <hr>
     <div class='row'>
         <div class='col'>
@@ -71,10 +71,10 @@
                     <td>$500</td>
                     <td>1/12/2023</td>
                     <td>9/12/2023</td>
-                    <td>5:00 AM</td>
+                    <td>5:00 AM</td>    
                     <td>Active</td>
                     <td class="icons">
-                        @include('backend/package/edit_package')
+                        @include('backend/package/edit')
                         <button type="button" class="btn delete" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
                                 class="fa-solid fa-trash"></i></button>
                         <div class="modal fade mt-5" id="deleteModal" tabIndex="-1" aria-labelledby="exampleModalLabel"

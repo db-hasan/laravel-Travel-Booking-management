@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Crud;
-use App\Models\status;
+use App\Models\Status;
 use Session;
 
 class CrudController extends Controller

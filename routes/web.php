@@ -15,6 +15,7 @@ Route::view('/admin', 'backend/dashboard') -> name('dashboard');
 
 Route::get('crud', [CrudController::class, 'all']);
 
+Route::get('crud/add', [CrudController::class, 'add']);
 Route::post('crud/insert', [CrudController::class, 'insert']);
 
 Route::get('crud/edit/{id}', [CrudController::class, 'edit']);
@@ -25,6 +26,7 @@ Route::get('crud/delete/{id}', [CrudController::class, 'delete']);
 
 
 Route::get('/users',[UserController::class,'users'])->name('users');
+Route::get('/location',[LocationController::class,'location'])->name('location');
 Route::get('/package',[PackageController::class,'package'])-> name('package');
 Route::get('/booking',[BookingController::class,'booking'])-> name('booking');
 Route::get('/payment',[PaymentController::class,'payment'])-> name('payment');
