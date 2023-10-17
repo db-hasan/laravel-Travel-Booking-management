@@ -1,9 +1,12 @@
+
 @extends('backend/layouts/layout')
 
 @section('content')
 
 <div class="col p-3">
-    @include('backend/package/add')
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{{url('package/add')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> Add Data</a>
+    </div>
     <hr>
     <div class='row'>
         <div class='col'>
@@ -46,8 +49,6 @@
                     </th>
                     <th><span class="d-flex pe-5"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Resort</span>
                     </th>
-                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Package</span>
-                    </th>
                     <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Price</span>
                     </th>
                     <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> From_Date</span>
@@ -62,50 +63,24 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($indexData as $item)
                 <tr>
-                    <td>1111</td>
-                    <td>Canada</td>
-                    <td>300 Mountain Ave</td>
-                    <td>The Rimrock</td>
-                    <td>Regular</td>
-                    <td>$500</td>
-                    <td>1/12/2023</td>
-                    <td>9/12/2023</td>
-                    <td>5:00 AM</td>    
-                    <td>Active</td>
+                    <td>{{$item->pack_id}}</td>
+                    <td>{{$item->location}}</td>
+                    <td>{{$item->pack_des}}</td>
+                    <td>{{$item->resort}}</td>
+                    <td>{{$item->pack_price}}</td>
+                    <td>{{$item->from_date}}</td>
+                    <td>{{$item->to_date}}</td>
+                    <td>{{$item->arrival_time}}</td>   
+                    <td>{{$item->pack_status}}</td>   
                     <td class="icons">
-                        @include('backend/package/edit')
-                        <button type="button" class="btn delete" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
-                                class="fa-solid fa-trash"></i></button>
-                        <div class="modal fade mt-5" id="deleteModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Package
-                                        </h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="">
-                                            <div class="mb-3 text-start">
-                                                <label for="exampleInputEmail1" class="form-label">Are
-                                                    you Sure
-                                                    !</label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
+                        <a href="{{url('package/edit/'.$item->pack_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="{{url('package/delete/'.$item->pack_id)}}" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
+                 @endforeach     
             </tbody>
         </table>
     </div>

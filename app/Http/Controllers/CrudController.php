@@ -10,7 +10,7 @@ class CrudController extends Controller
 {
 
 // ------------view with join data start----------
-   public function all() {
+   public function index() {
     $indexData = Crud::join('statuses', 'cruds.crud_status', '=', 'statuses.id')->orderBy('crud_id','desc')->get();
     return view('backend/crud/all', compact('indexData'));
 }
@@ -58,7 +58,7 @@ class CrudController extends Controller
 // ------------edit data end----------
 
     public function edit($id=null){
-        $status = status::all();
+        $status = Status::all();
         $editData = Crud::find($id);
         return view('backend/crud/edit', compact('editData'),compact('status'));
     }

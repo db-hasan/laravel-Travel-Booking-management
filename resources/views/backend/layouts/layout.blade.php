@@ -85,7 +85,7 @@
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
                                     <i class="fa-solid fa-gifts">
-                                        <a href="{{ route('package') }}"> Package</a></i>
+                                        <a href="{{url('package')}}"> Package</a></i>
                                 </button>
                             </div>
 

@@ -45,7 +45,7 @@
                                 <a class="nav-link" href="/">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/"><i class="fa-solid fa-right-to-bracket fa-rotate-90"></i></a>
+                                <a class="nav-link" href="{{ route('dashboard') }}"><i class="fa-solid fa-user-pen"></i></a>
                             </li>
                         </ul>
                     </div>

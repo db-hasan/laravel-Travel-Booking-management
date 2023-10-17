@@ -1,10 +1,9 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudController;
+use App\Http\Controllers\PackageController;
 
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\LocationController;
-use App\Http\Controllers\PackageController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PaymentController;
 
@@ -13,8 +12,7 @@ use App\Http\Controllers\PaymentController;
 
 Route::view('/admin', 'backend/dashboard') -> name('dashboard');
 
-Route::get('crud', [CrudController::class, 'all']);
-
+Route::get('crud', [CrudController::class, 'index'])-> name('crud');
 Route::get('crud/add', [CrudController::class, 'add']);
 Route::post('crud/insert', [CrudController::class, 'insert']);
 
@@ -25,9 +23,27 @@ Route::get('crud/show/{id}', [CrudController::class, 'show']);
 Route::get('crud/delete/{id}', [CrudController::class, 'delete']);
 
 
+
+Route::get('/package',[PackageController::class,'index']);
+Route::get('package/add',[PackageController::class,'add']);
+Route::post('package/insert',[PackageController::class,'insert']);
+Route::get('package/edit/{id}',[PackageController::class,'edit']);
+Route::post('package/update/{id}',[PackageController::class,'update']);
+
+// Route::get('package/show/{id}',[PackageController::class,'show']);
+Route::get('package/delete/{id}',[PackageController::class,'delete']);
+
+
+Route::get('',[PackageController::class,'index']);
+Route::get('',[PackageController::class,'add']);
+Route::post('',[PackageController::class,'insert']);
+Route::get('',[PackageController::class,'edit']);
+Route::post('',[PackageController::class,'update']);
+Route::get('',[PackageController::class,'show']);
+Route::get('',[PackageController::class,'delete']);
+
+
 Route::get('/users',[UserController::class,'users'])->name('users');
-Route::get('/location',[LocationController::class,'location'])->name('location');
-Route::get('/package',[PackageController::class,'package'])-> name('package');
 Route::get('/booking',[BookingController::class,'booking'])-> name('booking');
 Route::get('/payment',[PaymentController::class,'payment'])-> name('payment');
 

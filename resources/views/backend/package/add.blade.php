@@ -1,38 +1,67 @@
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">Add
-        Package</button>
-</div>
-<div class="modal fade mt-5" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Add Package</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="mb-3">
-                        <label for="exampleInput1" class="form-label">Location Name</label>
-                        <input type="text" class="form-control" id="exampleInput1" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInput2" class="form-label">Location Description</label>
-                        <input type="text" class="form-control" id="exampleInput2" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInput3" class="form-label">Resort Name</label>
-                        <input type="text" class="form-control" id="exampleInput3" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInput4" class="form-label">Booking Price</label>
-                        <input type="text" class="form-control" id="exampleInput4" />
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
+@extends('backend/layouts/layout')
+
+@section('content')
+<div class="p-3">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{{url('package')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> View Data</a>
     </div>
+    <hr>
+    
+    <form method="post" action="{{url('package/insert')}}" class="row g-3 p-3">
+      @csrf
+      <div class="col-md-4">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" id="location" name="location">
+        @error('location')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      <div class="col-md-8">
+        <label for="inputPassword4" class="form-label">Description</label>
+        <input type="text" class="form-control" id="inputPassword4" name="description">
+        @error('description')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      <div class="col-8">
+        <label for="inputAddress" class="form-label">Resort</label>
+        <input type="text" class="form-control" id="inputAddress" name="resort">
+        @error('resort')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      <div class="col-4">
+        <label for="inputAddress2" class="form-label">Booking_Price</label>
+        <input type="text" class="form-control" id="inputAddress2" name="price">
+        @error('price')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      <div class="col-4">
+        <label for="inputAddress2" class="form-label">From Date</label>
+        <input type="date" class="form-control" id="inputAddress2" name="fromdate">
+        @error('fromdate')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      <div class="col-4">
+        <label for="inputAddress2" class="form-label">To Date</label>
+        <input type="date" class="form-control" id="inputAddress2" name="todate">
+        @error('todate')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      <div class="col-4">
+        <label for="inputAddress2" class="form-label">Arrival Time</label>
+        <input type="time" class="form-control" id="inputAddress2" name="arrival">
+        @error('arrival')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
 </div>
+
+@endsection

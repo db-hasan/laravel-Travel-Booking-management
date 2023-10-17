@@ -67,9 +67,9 @@
                     <td>{{$item->crud_price}}</td>
                     <td>{{$item->status_name}}</td>
                     <td class="icons">
-                       <span><a href="{{url('crud/show/'.$item->crud_id)}}" class="btn btn-info px-3">View</a></span>
-                       <span><a href="{{url('crud/edit/'.$item->crud_id)}}" class="btn btn-success px-3">Edit</a></span>
-                       <span><a href="{{url('crud/delete/'.$item->crud_id)}}" onclick="return confirm('Are you sure dalete')" class="btn btn-danger">Delete</a></span>
+                        <a href="{{url('crud/show/'.$item->crud_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
+                        <a href="{{url('crud/edit/'.$item->crud_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="{{url('crud/delete/'.$item->crud_id)}}" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
                 @endforeach          
