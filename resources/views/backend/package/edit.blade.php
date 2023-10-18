@@ -60,27 +60,15 @@
       </div>
       <div class="col-md-2">
         <label for="inputPassword4" class="form-label">Status</label>
-        <select class="form-select" aria-label="Default select example" name="status">
-
-          <option value="">has</option>
-          
-        </select>
-        {{-- @error('resort')
-            <span class="text-danger">{{ $message }}</span>
-        @enderror --}}
-      </div>
-      {{-- <div class="col-md-2">
-        <label for="inputPassword4" class="form-label">Status</label>
-        <select class="form-select" aria-label="Default select example" name="status" value="{{$editData->crud_status}}">
-          @foreach ($status as $item)
-          <option value="{{$item->id}}"{{ $editData->crud_status == $item->id ? 'selected' : '' }}>{{$item->status_name}}</option>
+        <select class="form-select" aria-label="Default select example" name="status" value="{{$editData->pack_status}}">
+          @foreach ($statusData as $itemStatus)
+          <option value="{{$itemStatus->id}}" {{ $editData->pack_status == $itemStatus->id ? 'selected' : '' }} >{{$itemStatus->status_name}}</option>
           @endforeach
-          
         </select>
         @error('resort')
             <span class="text-danger">{{ $message }}</span>
         @enderror
-      </div> --}}
+      </div>
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>

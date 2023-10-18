@@ -15,10 +15,8 @@ Route::view('/admin', 'backend/dashboard') -> name('dashboard');
 Route::get('crud', [CrudController::class, 'index'])-> name('crud');
 Route::get('crud/add', [CrudController::class, 'add']);
 Route::post('crud/insert', [CrudController::class, 'insert']);
-
 Route::get('crud/edit/{id}', [CrudController::class, 'edit']);
 Route::post('crud/update/{id}', [CrudController::class, 'update']);
-
 Route::get('crud/show/{id}', [CrudController::class, 'show']);
 Route::get('crud/delete/{id}', [CrudController::class, 'delete']);
 
@@ -29,8 +27,7 @@ Route::get('package/add',[PackageController::class,'add']);
 Route::post('package/insert',[PackageController::class,'insert']);
 Route::get('package/edit/{id}',[PackageController::class,'edit']);
 Route::post('package/update/{id}',[PackageController::class,'update']);
-
-// Route::get('package/show/{id}',[PackageController::class,'show']);
+Route::get('package/show/{id}',[PackageController::class,'show']);
 Route::get('package/delete/{id}',[PackageController::class,'delete']);
 
 

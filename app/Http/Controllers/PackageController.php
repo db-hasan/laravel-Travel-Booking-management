@@ -3,15 +3,21 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Package;
+use App\Models\Status;
 use Session;
 
 class PackageController extends Controller
 {
-    public function index(){
-        $indexData= Package::all();    
+    // public function index(){
+    //     $indexData= Package::all();    
+    //     return view('backend/package/all', compact('indexData'));
+    // }
+
+    public function index() {
+        $indexData = Package::join('statuses', 'packages.pack_status', '=', 'statuses.id')->orderBy('pack_id','desc')->get();
         return view('backend/package/all', compact('indexData'));
     }
-
+    
     // -----------insert data start----------
     public function add(){
         return view('backend/package/add');
@@ -47,20 +53,16 @@ class PackageController extends Controller
         $data->arrival_time= $request->arrival;
         $data->save();
         Session::flash('msg','Data submit successfully');
-        // return view('backend/package/add');
         return redirect('package');
     }
     // -----------insert data end----------
 
-    // public function edit($id=null){
-    //     $status = Status::all();
-    //     $editData = Package::find($id);
-    //     return view('backend/crud/edit', compact('editData'),compact('status'));
-    // }
 
-     public function edit($id=null){
+    // -----------eidt data start----------
+    public function edit($id=null){
+        $statusData = Status::all();
         $editData = Package::find($id);
-        return view('backend/package/edit', compact('editData'));
+        return view('backend/package/edit', compact('editData'), compact('statusData'));
     }
     public function update(Request $request, $id){
         $rules = [
@@ -91,9 +93,16 @@ class PackageController extends Controller
         $data->from_date= $request->fromdate;
         $data->to_date= $request->todate;
         $data->arrival_time= $request->arrival;
+        $data->pack_status= $request->status;
         $data->save();
         Session::flash('msg','Data Update successfully');
         return redirect('package');
+    }
+    // -----------edit data end----------
+
+    public function show($id=null){
+        $showData = Package::find($id);
+        return view('backend/package/show', compact('showData'));
     }
 
     public function delete($id=null){

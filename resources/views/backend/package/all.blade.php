@@ -73,9 +73,9 @@
                     <td>{{$item->from_date}}</td>
                     <td>{{$item->to_date}}</td>
                     <td>{{$item->arrival_time}}</td>   
-                    <td>{{$item->pack_status}}</td>   
+                    <td>{{$item->status_name}}</td>   
                     <td class="icons">
-                        <a href="" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
+                        <a href="{{url('package/show/'.$item->pack_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
                         <a href="{{url('package/edit/'.$item->pack_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
                         <a href="{{url('package/delete/'.$item->pack_id)}}" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
                     </td>
