@@ -98,37 +98,29 @@
             <h1 class="mb-4 title">Our Packages</h1>
         </div>
         <div class="row  g-4">
+            @foreach ($indexData as $item)
             <div class="col-md-6 col-lg-4 ">
                 <div class="card  h-100 package">
+                
                     <img src="{{asset('frontend/images/img3.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Europe Tour</h5>
+                        <h5 class="card-title">{{$item->location}}
+                            <strong class="float-end">${{$item->pack_price}}</strong>
+                        </h5>
                         <div class="row">
-                            <p class="col-md-4 package-item">
-                                <i class="fa-solid fa-star rating"></i>
-                                <i class="fa-solid fa-star rating"></i>
-                                <i class="fa-solid fa-star rating"></i>
-                                <i class="fa-solid fa-star-half-stroke rating"></i>
-                                <i class="fa-regular fa-star rating"></i>
-                            </p>
-                            <p class="col package-item">
-                                <span class="explore-price">$500-$3000</span>
-                            </p>
-                            <p class="col package-item last">
-                                <span class="explore-price">Package</span>
-                            </p>
+                            <p>{{$item->pack_des}}</p>
                         </div>
                         <div class="row">
                             <p class="col package-item">
                                 <span class="explore-price-box">
                                     From
-                                    <span class="explore-date">10/08/1996</span>
+                                    <strong class="explore-date">{{$item->from_date}}</strong>
                                 </span>
                             </p>
                             <p class="col package-item last">
                                 <span class="explore-price-box">
                                     To Date
-                                    <span class="explore-date">15/08/1996</span>
+                                    <strong class="explore-date">{{$item->to_date}}</strong>
                                 </span>
                             </p>
                         </div>
@@ -141,102 +133,11 @@
                             <a class="col package-status open">Open Now</a>
                             <a class="col Chose-package " href="/booking">Choose Package</a>
                         </div>
+                    
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card  h-100 package">
-                    <img src="{{asset('frontend/images/img1.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">France Tour</h5>
-                        <div class="row">
-                            <p class="col-md-4 package-item">
-                                <i class="fa-solid fa-star rating"></i>
-                                <i class="fa-solid fa-star rating"></i>
-                                <i class="fa-solid fa-star rating"></i>
-                                <i class="fa-solid fa-star-half-stroke rating"></i>
-                                <i class="fa-regular fa-star rating"></i>
-                            </p>
-                            <p class="col package-item">
-                                <span class="explore-price">5$-300$</span>
-                            </p>
-                            <p class="col package-item last">
-                                <span class="explore-price">Package</span>
-                            </p>
-                        </div>
-                        <div class="row">
-                            <p class="col package-item">
-                                <span class="explore-price-box">
-                                    From
-                                    <span class="explore-date">10/08/1996</span>
-                                </span>
-                            </p>
-                            <p class="col package-item last">
-                                <span class="explore-price-box">
-                                    To Date
-                                    <span class="explore-date">15/08/1996</span>
-                                </span>
-                            </p>
-                        </div>
-                        <p class="text">Travel Price Depended to Package. Please Choose a Package Before
-                            <strong class="booking-date">09/08/2023</strong>
-                            and Enjoy Your Vacation <strong class="bg-light text-info px-3 rounded">See More</strong>
-                        </p>
-                        <hr>
-                        <div class="row">
-                            <a class="col package-status open">Open Now</a>
-                            <a class="col Chose-package " href="/booking">Choose Package</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card  h-100 package">
-                    <img src="{{asset('frontend/images/img2.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Canada Tour</h5>
-                        <div class="row">
-                            <p class="col package-item">
-                                <i class="fa-solid fa-star rating"></i>
-                                <i class="fa-solid fa-star rating"></i>
-                                <i class="fa-solid fa-star rating"></i>
-                                <i class="fa-solid fa-star-half-stroke rating"></i>
-                                <i class="fa-regular fa-star rating"></i>
-                            </p>
-                            <p class="col package-item">
-                                <span class="explore-price">5$-300$</span>
-                            </p>
-                            <p class="col package-item last">
-                                <span class="explore-price">Package</span>
-                            </p>
-                        </div>
-                        <div class="row">
-                            <p class="col package-item">
-                                <span class="explore-price-box">
-                                    From
-                                    <span class="explore-date">10/08/1996</span>
-                                </span>
-                            </p>
-                            <p class="col package-item last">
-                                <span class="explore-price-box">
-                                    To Date
-                                    <span class="explore-date">15/08/1996</span>
-                                </span>
-                            </p>
-
-                        </div>
-                        <p class="text">Travel Price Depended to Package. Please Choose a Package Before
-                            <strong class="booking-date">09/08/2023</strong>
-                            and Enjoy Your Vacation <strong class="bg-light text-info px-3 rounded">See More</strong>
-                        </p>
-                        <hr>
-                        <div class="row">
-                            <a class="col package-status close">Close Now</a>
-                            <a class="col Chose-package " href="/booking">Choose Package</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach  
         </div>
     </div>
 </div> 

@@ -338,7 +338,7 @@ hr {
 
 /*** Booking Start ***/
 
-#booking .form-control {
+#booking .form-select {
     width: 50% !important;
 }
 
@@ -487,10 +487,6 @@ hr {
     color: #fff !important;
 }
 
-.singbutton a {
-    text-decoration: none;
-    color: #fff !important;
-}
 
 .rememberbutton {
     color: #01d28e !important;
@@ -498,5 +494,9 @@ hr {
 }
 
 #checkout .checkout .form-control {
+    width: 50% !important;
+}
+
+#checkout .checkout .form-select {
     width: 50% !important;
 }

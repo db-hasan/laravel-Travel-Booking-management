@@ -75,13 +75,7 @@
                                         <a href="{{ route('dashboard') }}"> Dashboard</a></i>
                                 </button>
                             </div>
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-image">
-                                        <a href="{{url('crud')}}"> Crud</a></i>
-                                </button>
-                            </div>
-                            
+
                             <div class="accordion-item custom">
                                 <button class="accordion-button collapsed" type="button">
                                     <i class="fa-solid fa-gifts">

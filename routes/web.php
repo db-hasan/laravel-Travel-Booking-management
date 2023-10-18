@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CrudController;
+use App\Http\Controllers\HomeController;
+
 use App\Http\Controllers\PackageController;
 
 use App\Http\Controllers\UserController;
@@ -11,16 +12,6 @@ use App\Http\Controllers\PaymentController;
 // Backend Route
 
 Route::view('/admin', 'backend/dashboard') -> name('dashboard');
-
-Route::get('crud', [CrudController::class, 'index'])-> name('crud');
-Route::get('crud/add', [CrudController::class, 'add']);
-Route::post('crud/insert', [CrudController::class, 'insert']);
-Route::get('crud/edit/{id}', [CrudController::class, 'edit']);
-Route::post('crud/update/{id}', [CrudController::class, 'update']);
-Route::get('crud/show/{id}', [CrudController::class, 'show']);
-Route::get('crud/delete/{id}', [CrudController::class, 'delete']);
-
-
 
 Route::get('/package',[PackageController::class,'index']);
 Route::get('package/add',[PackageController::class,'add']);
@@ -48,7 +39,8 @@ Route::get('/payment',[PaymentController::class,'payment'])-> name('payment');
 // --------------------------------------------------------------
 
 // Frontend Route
-Route::view('/', 'frontend/home')-> name('home');
+Route::get('/',[HomeController::class,'index']);
+Route::get('/checkout',[HomeController::class,'checkout']);
 
 
 
