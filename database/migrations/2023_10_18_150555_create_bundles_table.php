@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bundles', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('status_name');
+            $table->bigIncrements('bundle_id');
+            $table->string('bundle_name')->nullable();;
+            $table->string('room_type')->nullable();;
+            $table->string('person')->nullable();;
+            $table->integer('bundle_status')->default(1);
             $table->timestamps();
         });
     }

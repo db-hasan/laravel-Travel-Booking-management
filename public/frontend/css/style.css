@@ -373,7 +373,7 @@ hr {
 
 /* booking scrollbar */
 .custom-scrollbar {
-    height: 60vh;
+    height: 80vh;
     overflow: auto;
 }
 
@@ -383,10 +383,10 @@ hr {
 }
 
 /*scrollbar site icone*/
-/* .custom-scrollbar::-webkit-scrollbar-thumb {
+.custom-scrollbar::-webkit-scrollbar-thumb {
     background-color: #888;
     border-radius: 5px;
-} */
+}
 
 /*** Booking End ***/
 
@@ -499,4 +499,10 @@ hr {
 
 #checkout .checkout .form-select {
     width: 50% !important;
+}
+
+.user-btn img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }

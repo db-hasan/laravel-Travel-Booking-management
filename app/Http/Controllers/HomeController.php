@@ -11,6 +11,9 @@ class HomeController extends Controller
         $indexData= Package::all();    
         return view('frontend/home', compact('indexData'));
     }
+    public function package(){    
+        return view('frontend/package');
+    }
     public function checkout(){    
         return view('frontend/checkout');
     }

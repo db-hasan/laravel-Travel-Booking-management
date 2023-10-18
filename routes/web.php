@@ -40,6 +40,7 @@ Route::get('/payment',[PaymentController::class,'payment'])-> name('payment');
 
 // Frontend Route
 Route::get('/',[HomeController::class,'index']);
+Route::get('/packages',[HomeController::class,'package']);
 Route::get('/checkout',[HomeController::class,'checkout']);
 
 
