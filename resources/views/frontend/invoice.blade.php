@@ -56,12 +56,12 @@
     			Visa ending **** 4242<br>
     			jsmith@email.com
     		</address>
-            <address class="text-end">
+            {{-- <address class="text-end">
     			<strong>Schedule Info:</strong><br>
     			From Date: 10/11/2023<br>
     			To Date: 10/11/2023<br>
     			Arrival Time: 12:00 PM
-    		</address>
+    		</address> --}}
         </div>
         <div class="d-flex">
             <div class="ps-3 flex-grow-1"><h3 class=""><strong>Order summary</strong></h3></div>

@@ -23,6 +23,9 @@ class HomeController extends Controller
         return view('frontend/package/add_pack', compact('indexData'));
     }
 
+
+    
+
     public function booking(){    
         return view('frontend/booking/booking'); 
     }
