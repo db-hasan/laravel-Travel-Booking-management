@@ -41,8 +41,8 @@
     		</address>
             <address class="text-end">
     			<strong>Client info:</strong><br>
-    			John Smith<br>
-                Female<br>
+    			Ali Hasan<br>
+                Male<br>
     			10/10/1996<br>
                 2425 256 215<br>
                 +8801718513591<br>
@@ -77,7 +77,7 @@
                 <tr>
                     <th scope="col">Package</th>
                     <th scope="col">Room Type</th>
-                    <th scope="col">Person</th>
+                    <th scope="col">Person QTY</th>
                     <th scope="col">Price</th>
                     <th scope="col">Totals</th>
                 </tr>
