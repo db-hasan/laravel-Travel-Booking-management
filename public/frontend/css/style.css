@@ -506,3 +506,11 @@ hr {
     height: 40px;
     border-radius: 50%;
 }
+
+#invoice td:last-child {
+    text-align: end;
+}
+
+#invoice th:last-child {
+    text-align: end;
+}

@@ -22,9 +22,12 @@ class HomeController extends Controller
         $indexData= Bundle::all();  
         return view('frontend/package/add_pack', compact('indexData'));
     }
-    
+
     public function booking(){    
         return view('frontend/booking/booking'); 
+    }
+    public function invoice(){    
+        return view('frontend/invoice'); 
     }
     // public function checkout(){    
     //     return view('frontend/checkout');

@@ -135,7 +135,7 @@
         </div>
         <div class="p-3 me-3">
             <button type="button" class="btn btn-outline-success">
-                <a href="/" class="text-decoration-none">Booking</a>
+                <a href="/invoice" class="text-decoration-none">Booking</a>
             </button>
         </div>
     </div>
