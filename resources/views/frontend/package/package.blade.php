@@ -111,6 +111,7 @@
                         <div class="row">
                             <a class="col package-status open">Open Now</a>
                             <a href="{{url('add_pack')}}" class="col Chose-package ">Choose Package</a>
+                            {{-- <a href="{{url('package/add-pack/'.$item->pack_id)}}" class="col Chose-package ">Choose Package</a> --}}
                         </div>
                     
                     </div>
