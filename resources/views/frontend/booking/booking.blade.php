@@ -12,8 +12,8 @@
 <form action="" method="post">
     <div class="container-fluid pt-5">
         <div class="text-center">
-            <h6 class="section-title bg-white text-center px-3">Checkout</h6>
-            <h1 class="mb-4 title">Checkout Now</h1>
+            <h6 class="section-title bg-white text-center px-3">Booking</h6>
+            <h1 class="mb-4 title">Booking Now</h1>
         </div>
         <div>
             <div class="row">
@@ -134,8 +134,9 @@
             <button type="button" class="btn btn-outline-danger">Close</button>
         </div>
         <div class="p-3 me-3">
-            <button type="button" class="btn btn-outline-success"><a class="text-decoration-none"
-                    href="/signins">Checkout</a></button>
+            <button type="button" class="btn btn-outline-success">
+                <a href="/" class="text-decoration-none">Booking</a>
+            </button>
         </div>
     </div>
 </form>

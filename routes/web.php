@@ -13,9 +13,9 @@ use App\Http\Controllers\PaymentController;
 
 Route::view('/admin', 'backend/dashboard') -> name('dashboard');
 
-Route::get('/admin/package',[PackageController::class,'index']);
-Route::get('/admin/package/add',[PackageController::class,'add']);
-Route::post('/admin/package/insert',[PackageController::class,'insert']);
+Route::get('admin/package',[PackageController::class,'index']);
+Route::get('admin/package/add',[PackageController::class,'add']);
+Route::post('admin/package/insert',[PackageController::class,'insert']);
 Route::get('package/edit/{id}',[PackageController::class,'edit']);
 Route::post('package/update/{id}',[PackageController::class,'update']);
 Route::get('package/show/{id}',[PackageController::class,'show']);
@@ -32,7 +32,7 @@ Route::get('',[PackageController::class,'delete']);
 
 
 Route::get('/users',[UserController::class,'users'])->name('users');
-Route::get('/booking',[BookingController::class,'booking'])-> name('booking');
+Route::get('admin/booking',[BookingController::class,'booking'])-> name('booking');
 Route::get('/payment',[PaymentController::class,'payment'])-> name('payment');
 
 
@@ -40,7 +40,10 @@ Route::get('/payment',[PaymentController::class,'payment'])-> name('payment');
 
 // Frontend Route
 Route::get('/',[HomeController::class,'index']);
-Route::get('/packages',[HomeController::class,'package']);
+Route::get('/package',[HomeController::class,'package']);
+Route::get('add_pack',[HomeController::class,'add_pack']);
+
+Route::get('/booking',[HomeController::class,'booking']);
 Route::get('/checkout',[HomeController::class,'checkout']);
 
 

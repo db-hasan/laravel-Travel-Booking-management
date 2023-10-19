@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Package;
+use App\Models\Bundle;
 use Session;
 
 class HomeController extends Controller
@@ -11,10 +12,21 @@ class HomeController extends Controller
         $indexData= Package::all();    
         return view('frontend/home', compact('indexData'));
     }
-    public function package(){    
-        return view('frontend/package');
+
+    public function package(){
+        $indexData= Package::all();    
+        return view('frontend/package/package', compact('indexData'));
     }
-    public function checkout(){    
-        return view('frontend/checkout');
+
+    public function add_pack(){   
+        $indexData= Bundle::all();  
+        return view('frontend/package/add_pack', compact('indexData'));
     }
+    
+    public function booking(){    
+        return view('frontend/booking/booking'); 
+    }
+    // public function checkout(){    
+    //     return view('frontend/checkout');
+    // }
 }

@@ -8,10 +8,6 @@ use Session;
 
 class PackageController extends Controller
 {
-    // public function index(){
-    //     $indexData= Package::all();    
-    //     return view('backend/package/all', compact('indexData'));
-    // }
 
     public function index() {
         $indexData = Package::join('statuses', 'packages.pack_status', '=', 'statuses.id')->orderBy('pack_id','desc')->get();
