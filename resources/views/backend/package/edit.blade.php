@@ -3,7 +3,7 @@
 @section('content')
 <div class="p-3">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{{url('package')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> View Data</a>
+        <a href="{{url('/admin/package')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> View Data</a>
     </div>
     <hr>
     

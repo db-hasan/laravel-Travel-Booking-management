@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4>All Data
-                        <a href="{{url('package')}}" class="btn btn-info float-end">All Data</a>
+                        <a href="{{url('/admin/package')}}" class="btn btn-info float-end">All Data</a>
                     </h4>
                     
                 </div>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="card-footer">
                     <h4>
-                        <a href="{{url('package')}}" class="btn btn-info float-end">Close</a>
+                        <a href="{{url('/admin/package')}}" class="btn btn-info float-end">Close</a>
                     </h4>
                 </div>
             </div>

@@ -13,9 +13,9 @@ use App\Http\Controllers\PaymentController;
 
 Route::view('/admin', 'backend/dashboard') -> name('dashboard');
 
-Route::get('/package',[PackageController::class,'index']);
-Route::get('package/add',[PackageController::class,'add']);
-Route::post('package/insert',[PackageController::class,'insert']);
+Route::get('/admin/package',[PackageController::class,'index']);
+Route::get('/admin/package/add',[PackageController::class,'add']);
+Route::post('/admin/package/insert',[PackageController::class,'insert']);
 Route::get('package/edit/{id}',[PackageController::class,'edit']);
 Route::post('package/update/{id}',[PackageController::class,'update']);
 Route::get('package/show/{id}',[PackageController::class,'show']);

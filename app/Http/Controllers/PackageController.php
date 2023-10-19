@@ -53,7 +53,7 @@ class PackageController extends Controller
         $data->arrival_time= $request->arrival;
         $data->save();
         Session::flash('msg','Data submit successfully');
-        return redirect('package');
+        return redirect('admin/package');
     }
     // -----------insert data end----------
 
@@ -96,7 +96,7 @@ class PackageController extends Controller
         $data->pack_status= $request->status;
         $data->save();
         Session::flash('msg','Data Update successfully');
-        return redirect('package');
+        return redirect('/admin/package');
     }
     // -----------edit data end----------
 
@@ -109,6 +109,6 @@ class PackageController extends Controller
         $data = Package::find($id);
         $data->delete();
         Session::flash('msg','Data delete successfully');
-        return redirect('package');
+        return redirect('/admin/package');
     }
 }

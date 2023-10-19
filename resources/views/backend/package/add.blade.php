@@ -3,11 +3,11 @@
 @section('content')
 <div class="p-3">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{{url('package')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> View Data</a>
+        <a href="{{url('/admin/package')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> View Data</a>
     </div>
     <hr>
     
-    <form method="post" action="{{url('package/insert')}}" class="row g-3 p-3">
+    <form method="post" action="{{url('/admin/package/insert')}}" class="row g-3 p-3">
       @csrf
       <div class="col-md-4">
         <label for="location" class="form-label">Location</label>

@@ -5,7 +5,7 @@
 
 <div class="col p-3">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{{url('package/add')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> Add Data</a>
+        <a href="{{url('/admin/package/add')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> Add Data</a>
     </div>
     <hr>
     <div class='row'>
