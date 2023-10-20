@@ -32,6 +32,15 @@ class HomeController extends Controller
     public function invoice(){    
         return view('frontend/invoice'); 
     }
+    public function service(){    
+        return view('frontend/service'); 
+    }
+    public function about(){    
+        return view('frontend/about'); 
+    }
+    public function contact(){    
+        return view('frontend/contact'); 
+    }
     // public function checkout(){    
     //     return view('frontend/checkout');
     // }

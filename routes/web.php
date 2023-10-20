@@ -45,6 +45,9 @@ Route::get('add_pack',[HomeController::class,'add_pack']);
 
 Route::get('/booking',[HomeController::class,'booking']);
 Route::get('/checkout',[HomeController::class,'checkout']);
+Route::get('/service',[HomeController::class,'service']);
+Route::get('/about',[HomeController::class,'about']);
+Route::get('/contact',[HomeController::class,'contact']);
 Route::get('/invoice',[HomeController::class,'invoice']);
 
 

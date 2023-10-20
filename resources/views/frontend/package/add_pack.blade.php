@@ -1,23 +1,37 @@
 @extends('frontend/layouts/layout')
 
 @section('content')
-<section id="booking-banner">
-    <div class="banner-overlay">
-        <div class="text-light banner-title">
-            <h1 class="">Please Make Sure Payment</h1>
+<!-- Banner Start -->
+    <div class="container-fluid position-relative p-0">
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Chose Package</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">Package</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+<!-- Banner End -->
+
 <div id="checkout">
 <form action="" method="post">
-    <div class="container-fluid pt-5">
-        <div class="text-center">
-            <h6 class="section-title bg-white text-center px-3">Package</h6>
-            <h1 class="mb-4 title">Chose Package</h1>
-        </div>
+    <div class="container-fluid pt-1">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Package</h6>
+                <h1 class="mb-5">Chose Package</h1>
+            </div>
         <div>
             <div class="row">
-                <div class="col-lg-4 ps-3 checkout">
+                <div class="col-lg-4 ps-3">
                         <ul class="list-group mb-3">
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
@@ -53,15 +67,15 @@
                             </li>
                         </ul>
                 </div>
-                <div class="col-lg-8 px-4 p"> 
-                    <div class="bg-secondary-subtle rounded">
-                        <h4 class="bg-primary-subtle rounded p-2 pe-5 text-end">Package Details</h4>
+                <div class="col-lg-8 px-4 pb-4"> 
+                    <div class="bg-light rounded">
+                        <h4 class="bg-primary text-light rounded p-2 pe-5 text-end">Package Details</h4>
                         <div class="custom-scrollbar">
                             @foreach ($indexData as $item)
                             <div class="card mb-3 mx-4" >
                                 <div class="row g-0">
                                     <div class="col-md-4 rounded">
-                                        <img src="{{asset('frontend/images/single.jpg') }}" class="img-fluid" alt="...">
+                                        <img src="{{asset('frontend/img/single.jpg') }}" class="img-fluid" alt="...">
                                     </div>
                                     <div class="col-md-8">
                                     <div class="card-body">
@@ -81,15 +95,15 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-end bg-success-subtle Checkout">
-        <div class="p-3">
-            <button type="button" class="btn btn-outline-danger">
-                <a href="{{url('/package')}}" class="text-decoration-none">Close</a>
+    <div class="d-flex justify-content-end bg-light">
+        <div class="p-3 ">
+            <button type="button" class="btn btn-danger">
+                <a href="{{url('/package')}}" class="text-decoration-none text-light">Close</a>
             </button>
         </div>
         <div class="p-3 me-3">
-            <button type="button" class="btn btn-outline-success">
-                <a class="text-decoration-none"href="{{url('/booking')}}">Add Package</a>
+            <button type="button" class="btn btn-primary ">
+                <a href="{{url('/booking')}}" class="text-decoration-none text-light">Book Package</a>
             </button>
         </div>
     </div>
