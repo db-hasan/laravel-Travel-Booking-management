@@ -475,3 +475,30 @@ input,
 select {
     border-radius: 5px !important;
 }
+
+hr {
+    margin: 0.5rem 0 !important;
+}
+
+.rating {
+    padding: 0 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.datelist {
+    margin-top: 8px !important;
+}
+
+.date {
+    margin-bottom: 0px !important;
+}
+
+.package_title {
+    color: rgb(220, 180, 21);
+    margin-bottom: -8px !important;
+}
+
+.price {
+    padding-top: -10px;
+}

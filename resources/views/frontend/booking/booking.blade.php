@@ -21,7 +21,7 @@
         </div>
     </div>
 <!-- Banner End -->
-<div id="checkout">
+<div id="booking">
 <form action="" method="post">
     <div class="container-fluid pt-5">
         <div class="text-center">

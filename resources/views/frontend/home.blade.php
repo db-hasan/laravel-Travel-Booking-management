@@ -5,7 +5,7 @@
 
  <!-- Banner Start -->
     <div class="container-fluid position-relative p-0">
-        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+        <div class="container-fluid bg-primary py-5 hero-header">
             <div class="container py-5">
                 <div class="row justify-content-center py-5">
                     <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
@@ -24,7 +24,7 @@
 
 
 <!-- Service Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-4">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
@@ -109,7 +109,7 @@
 <!-- Service End -->
 
 <!-- Destination Start -->
-    <div class="container-xxl py-5 destination">
+    <div class="container-xxl py-4 destination">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
@@ -153,155 +153,61 @@
     </div>
 <!-- Destination Start -->
 
-<!-- Packages Start -->
-<div class="container-xxl p-5" id="packages">
-    <div class="container">
-        <div class="text-center">
-            <h6 class="section-title bg-white text-center px-3">Packages</h6>
-            <h1 class="mb-4 title">Our Packages</h1>
-        </div>
-        <div class="row  g-4">
-            @foreach ($indexData as $item)
-            <div class="col-md-6 col-lg-4 ">
-                <div class="card  h-100 package">
-                
-                    <img src="{{asset('frontend/img/package-1.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$item->location}}
-                            <strong class="float-end">${{$item->pack_price}}</strong>
-                        </h5>
-                        <div class="row">
-                            <p>{{$item->pack_des}}</p>
-                        </div>
-                        <div class="row">
-                            <p class="col package-item">
-                                <span class="explore-price-box">
-                                    From
-                                    <strong class="explore-date">{{$item->from_date}}</strong>
-                                </span>
-                            </p>
-                            <p class="col package-item last">
-                                <span class="explore-price-box">
-                                    To Date
-                                    <strong class="explore-date">{{$item->to_date}}</strong>
-                                </span>
-                            </p>
-                        </div>
-                        <p class="text">Travel Price Depended to Package. Please Choose a Package Before
-                            <strong class="booking-date">09/08/2023</strong>
-                            and Enjoy Your Vacation <strong class="bg-light text-info px-3 rounded">See More</strong>
-                        </p>
-                        <hr>
-                        <div class="row">
-                            <a class="col package-status open">Open Now</a>
-                            <a class="col Chose-package " href="/booking">Choose Package</a>
-                        </div>
-                    
-                    </div>
-                </div>
-            </div>
-            @endforeach  
-        </div>
-    </div>
-</div> 
-<!-- Packages End -->
-
 <!-- Package Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-4">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Packages</h6>
                 <h1 class="mb-5">Awesome Packages</h1>
             </div>
             <div class="row g-4 justify-content-center">
+                @foreach ($indexData as $item)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="package-item">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="{{asset('frontend/img/package-1.jpg') }}" alt="">
                         </div>
                         <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{$item->location}}</small>
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
+                            <small class="flex-fill text-center py-2">
+                                <span class="rating bg-warning text-light">5.0</span><span> 15 Ratings</span>
+                            </small>
                         </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$149.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
+                        <div class="px-4 py-2">
+                            <h5>{{$item->pack_des}}</h5>
+                            <div class="text-center">
+                                <h3 class="mb-0">$139.00</h3>
+                                <div class="">
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                </div>
                             </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
+                            <p class="text-center">Travel Price Depended to Package. Choose a Package and Enjoy your Vacation </p>
+                            <div class="d-flex justify-content-between">
+                                <p class="date">From {{$item->from_date}}</p>
+                                <p class="date">To Date 2023-10-21</p>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between">
+                                <a href="#" class="btn btn-sm text-info">See More</a>
+                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 30px;">Choose Package</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="package-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{asset('frontend/img/package-2.jpg') }}" alt="">
-                        </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Indonesia</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
-                        </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$139.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="package-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{asset('frontend/img/package-3.jpg') }}" alt="">
-                        </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Malaysia</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
-                        </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$189.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach  
             </div>
+            
         </div>
     </div>
 <!-- Package End -->
 
 <!-- Booking Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-xxl py-4 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="booking p-5">
                 <div class="row g-5 align-items-center">
@@ -363,7 +269,7 @@
 <!-- Booking Start -->
 
 <!-- Process Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-4">
         <div class="container">
             <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Process</h6>
@@ -410,7 +316,7 @@
 
 
 <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-4">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Travel Guide</h6>
@@ -488,7 +394,7 @@
 
 
 <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-xxl py-4 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
                 <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
@@ -525,7 +431,7 @@
 <!-- Testimonial End -->
 
 <!-- Contact Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-3 pb-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Contact Us</h6>
