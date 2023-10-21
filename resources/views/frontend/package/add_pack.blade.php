@@ -45,7 +45,12 @@
                                     <h6 class="my-0">Couple</h6>
                                     <small class="text-body-secondary">Single/Share Room</small>
                                 </div>
-                                <span class="text-body-secondary">Deluxe Single Room</span>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>select one</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
                             </li>
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
