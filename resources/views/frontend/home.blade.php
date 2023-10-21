@@ -2,7 +2,6 @@
 
 @section('content')
 
-
  <!-- Banner Start -->
     <div class="container-fluid position-relative p-0">
         <div class="container-fluid bg-primary py-5 hero-header">
@@ -21,7 +20,6 @@
         </div>
     </div>
 <!-- BannerEnd -->
-
 
 <!-- Service Start -->
     <div class="container-xxl py-4">
