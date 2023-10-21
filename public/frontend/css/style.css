@@ -502,3 +502,10 @@ hr {
 .price {
     padding-top: -10px;
 }
+
+#checkout .btn {
+    --bs-btn-padding-x: 5px !important;
+    --bs-btn-padding-y: 2px !important;
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+
+}

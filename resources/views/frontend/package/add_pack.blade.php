@@ -35,35 +35,39 @@
                         <ul class="list-group mb-3">
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
-                                    <h6 class="my-0">location</h6>
+                                    <h6 class="my-0">Canada</h6>
                                     <small class="text-body-secondary">Resort Name</small>
                                 </div>
-                                <span class="text-body-secondary">Canada</span>
+                                <span class="text-body-secondary"><Strong>$20</Strong></span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
-                                    <h6 class="my-0">Package</h6>
-                                    <small class="text-body-secondary">Room: Single / Sharing</small>
+                                    <h6 class="my-0">Couple</h6>
+                                    <small class="text-body-secondary">Single/Share Room</small>
                                 </div>
-                                <select class="form-select">
-                                    <option value="">Regular</option>
-                                    <option value="">Cupale</option>
-                                    <option value="">Business</option>
-                                </select>
+                                <span class="text-body-secondary">Deluxe Single Room</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
                                     <h6 class="my-0">List of Person</h6>
                                     <small class="text-body-secondary">Person depends Package</small>
                                 </div>
-                                <input type="text" class="form-control" placeholder="">
+                                <input type="text" class="form-control text-end" placeholder="2">
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Total (USD)</span>
+                                <strong>$35</strong>
                             </li>
                             <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
                                 <div class="text-success">
                                     <h6 class="my-0">Promo code</h6>
                                     <small>Brief description</small>
                                 </div>
-                                <input type="text" class="form-control" placeholder="-$5">
+                                <input type="text" class="form-control text-end" placeholder="-$5">
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <h6 class="my-0">Total (USD)</h6>
+                                <strong>$30</strong>
                             </li>
                         </ul>
                 </div>
@@ -79,14 +83,14 @@
                                     </div>
                                     <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">{{$item->bundle_name}}
-                                            <span class="text-info float-end">{{$item->room_type}}</span>
-                                        </h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. </p>
-                                        <p class="card-text"><small class="text-body-secondary">{{$item->person}}</small></p>
-                                    </div>
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">{{$item->bundle_name}}</h5>
+                                            <h6 class="date text-info">{{$item->room_type}}</h6>
+                                        </div>
+                                        <p class="card-text">{{$item->person}}</p>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                             @endforeach  
                         </div>

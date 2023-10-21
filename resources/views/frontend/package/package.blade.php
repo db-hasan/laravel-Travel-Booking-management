@@ -105,7 +105,7 @@
                             <p class="text-center">Travel Price Depended to Package. Choose a Package and Enjoy your Vacation </p>
                             <div class="d-flex justify-content-between">
                                 <p class="date">From {{$item->from_date}}</p>
-                                <p class="date">To Date 2023-10-21</p>
+                                <p class="date">To Date {{$item->to_date}}</p>
                             </div>
                             <hr>
                             <div class="d-flex justify-content-between">
