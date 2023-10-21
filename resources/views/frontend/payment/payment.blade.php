@@ -23,13 +23,13 @@
 <!-- Banner End -->
 <div id="booking">
 <form action="" method="post">
-    <div class="container-fluid pt-5">
+    <div class="container-fluid pt-3">
         <div class="text-center">
             <h6 class="section-title bg-white text-center px-3">Payment</h6>
             <h1 class="mb-4 title">Payment Now</h1>
         </div>
             <div class="row pb-3 px-5">
-                <div class="col-lg-7"> 
+                <div class="col-md-7"> 
                     <div class="">
                         <h4 class="bg-primary text-light p-2 pe-5 text-end">User Details</h4>
                         <div class="row g-3 px-3 py-3">
@@ -53,16 +53,12 @@
                                     <label for="" class="form-label">Gender</label>
                                     <div class="d-flex">
                                         <div class="form-check">
-                                        <input id="Male" name="paymentMethod" type="radio" class="form-check-input">
+                                        <input id="Male" name="Gender" type="radio" class="form-check-input">
                                         <label class="form-check-label pe-4" for="Male">Male</label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="Female" name="paymentMethod" type="radio" class="form-check-input">
-                                        <label class="form-check-label pe-4" for="Female">Female</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input id="Other" name="paymentMethod" type="radio" class="form-check-input">
-                                        <label class="form-check-label" for="Other">Other</label>
+                                        <input id="Female" name="Gender" type="radio" class="form-check-input">
+                                        <label class="form-check-label" for="Female">Female</label>
                                     </div>
                                     </div>
                                 </div>
@@ -93,43 +89,64 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <form action="" method="post">
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                <div>
-                                    <h6 class="my-0">location</h6>
-                                    <small class="text-body-secondary">Resort Name</small>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1 class="text-primary text-end" style="font-size: 25px;">Payment Methods</h1>
+                        </div>
+                        <img class="img-fluid" src="{{asset('frontend/img/card.png') }}" alt="">
+                        <div class="card-body">
+                            <div class="form-check">
+                                <input id="card" name="paymentMethod" type="radio" class="form-check-input">
+                                <label class="form-check-label pb-3 " for="card">Payment via Credit / Debit  card</label>
+                            </div>
+                            <div class="row g-3 px-3">
+                                <div class="col-md-6">
+                                    <label for="Firstname" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="Firstname" placeholder="" required>
                                 </div>
-                                <span class="text-body-secondary">Canada</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                <div>
-                                    <h6 class="my-0">Package</h6>
-                                    <small class="text-body-secondary">Single/Share Room</small>
+                                <div class="col-md-6">
+                                    <label for="LastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="LastName" placeholder="" required>
                                 </div>
-                                <span class="text-body-secondary">Regular</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                <div>
-                                    <h6 class="my-0">List of Person</h6>
-                                    <small class="text-body-secondary">Price depends on person Quantity</small>
+                                <div class="col-md-6">
+                                    <label for="cardnumber" class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" id="cardnumber" placeholder="123 245 257 1234">
                                 </div>
-                                <span class="text-body-secondary">5</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
-                                <div class="text-success">
-                                    <h6 class="my-0">Promo code</h6>
-                                    <small>Brief description</small>
+                                <div class="col-md-4">
+                                    <label for="Expiration" class="form-label">Expiration</label>
+                                    <input type="text" class="form-control" id="Expiration" placeholder="12/2029">
                                 </div>
-                                <span class="text-success">−$5</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Total (USD)</span>
-                                <strong>$20</strong>
-                            </li>
-                        </ul>
-                    </form>
+                                <div class="col-md-2">
+                                    <label for="CVV" class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="CVV" placeholder="587">
+                                </div>  
+                            </div>
+                            <img class="img-fluid" src="{{asset('frontend/img/mobile.png') }}" alt="">
+                            <div class="form-check">
+                                <input id="Banking" name="paymentMethod" type="radio" class="form-check-input">
+                                <label class="form-check-label" for="Banking">Payment via Mobile Banking</label>
+                            </div>
+                            <div class="card-body row">
+                                <div class="col"></div>
+                                <div class="col d-flex justity-content-end">
+                                    <div class="d-flex">
+                                        <div class="form-check">
+                                        <input id="Bkash" name="Mobile" type="radio" class="form-check-input">
+                                        <label class="form-check-label pe-4" for="Bkash">Bkash</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input id="Nogod" name="Mobile" type="radio" class="form-check-input">
+                                        <label class="form-check-label pe-4" for="Nogod">Nogod</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input id="Roket" name="Mobile" type="radio" class="form-check-input">
+                                        <label class="form-check-label" for="Roket">Roket</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
     </div>
@@ -145,102 +162,4 @@
     </div>
 </form>
 </div>
-
-{{-- <!-- Booking Start -->
-        <div class="py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="booking p-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-md-6">
-                        <h1 class="text-white mb-4 text-end">Book A Tour</h1>
-                        <form action="">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="text" placeholder="Your Email">
-                                        <label for="text">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="text" placeholder="Your Email">
-                                        <label for="text">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="text" placeholder="Your Email">
-                                        <label for="text">Your Phone</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="date" class="form-control bg-transparent" id="text" placeholder="Your Email">
-                                        <label for="text">Date of Birth</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Gender</label>
-                                    <div class="d-flex bg-transparent">
-                                        <div class="form-check">
-                                        <input id="Male" name="paymentMethod" type="radio" class="form-check-input bg-transparent">
-                                        <label class="form-check-label pe-4" for="Male">Male</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input id="Female" name="paymentMethod" type="radio" class="form-check-input bg-transparent">
-                                        <label class="form-check-label pe-4" for="Female">Female</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input id="Other" name="paymentMethod" type="radio" class="form-check-input bg-transparent  ">
-                                        <label class="form-check-label" for="Other">Other</label>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="text" placeholder="Your Email">
-                                        <label for="text">Occupation/Profession</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="text" placeholder="Your Email">
-                                        <label for="text">Nationality</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="text" placeholder="Your Email">
-                                        <label for="text">NID</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="text" placeholder="Your Email">
-                                        <label for="text">Address</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="text" placeholder="Your Email">
-                                        <label for="text">City</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="text" placeholder="Your Email">
-                                        <label for="text">Zip</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-outline-light w-100 py-3" type="submit">Book Now</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-6">
-                    </div>
-                </div>
-            </div>
-        </div>
-<!-- Booking End --> --}}
 @endsection
