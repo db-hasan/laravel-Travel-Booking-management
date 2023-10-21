@@ -2,10 +2,9 @@
 
 @section('content')
 
-
  <!-- Banner Start -->
     <div class="container-fluid position-relative p-0">
-        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+        <div class="container-fluid bg-primary py-5 hero-header">
             <div class="container py-5">
                 <div class="row justify-content-center py-5">
                     <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
@@ -25,7 +24,7 @@
 <!-- BannerEnd -->
 
 <!-- Contact Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-4">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Contact Us</h6>
@@ -107,9 +106,8 @@
     </div>
 <!-- Contact End -->
 
-
 <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-4">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Travel Guide</h6>

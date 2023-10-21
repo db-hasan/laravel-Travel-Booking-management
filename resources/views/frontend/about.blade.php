@@ -5,7 +5,7 @@
 
 <!-- Banner Start -->
     <div class="container-fluid position-relative p-0">
-        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+        <div class="container-fluid bg-primary py-5 hero-header">
             <div class="container py-5">
                 <div class="row justify-content-center py-5">
                     <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
@@ -25,7 +25,7 @@
 <!-- BannerEnd -->
 
 <!-- Destination Start -->
-    <div class="container-xxl py-5 destination">
+    <div class="container-xxl py-4 destination">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Agency</h6>
@@ -70,7 +70,7 @@
 <!-- Destination Start -->
 
 <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-xxl py-4 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
                 <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
