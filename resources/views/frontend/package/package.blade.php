@@ -110,7 +110,7 @@
                             <hr>
                             <div class="d-flex justify-content-between">
                                 <a href="#" class="btn btn-sm text-info">See More</a>
-                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 30px;">Choose Package</a>
+                                <button class="btn btn-sm btn-primary" type="submit" style="border-radius: 50px !important;">Choose Package</button>
                             </div>
                         </div>
                     </div>
@@ -136,34 +136,40 @@
                     </div>
                     <div class="col-md-6">
                         <h1 class="text-white mb-4">Book A Tour</h1>
-                        <form>
+                        <form action="">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control bg-transparent" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                        <label for="datetime">Date & Time</label>
+                                        <select class="form-select bg-transparent" id="select1">
+                                            <option value="1">Select One</option>
+                                            <option value="1">Canada</option>
+                                            <option value="2">France</option>
+                                            <option value="3">New York</option>
+                                        </select>
+                                        <label for="name">Destination</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select bg-transparent" id="select1">
-                                            <option value="1">Destination 1</option>
-                                            <option value="2">Destination 2</option>
-                                            <option value="3">Destination 3</option>
+                                            <option value="1">Select One</option>
+                                            <option value="1">Regular</option>
+                                            <option value="2">Family</option>
+                                            <option value="3">Group</option>
                                         </select>
-                                        <label for="select1">Destination</label>
+                                        <label for="select1">Package</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control bg-transparent" id="person" placeholder="Your Email">
+                                        <label for="person">List of Person</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control bg-transparent" id="promocode" placeholder="Your Email">
+                                        <label for="promocode">Promo code</label>
                                     </div>
                                 </div>
                                 <div class="col-12">

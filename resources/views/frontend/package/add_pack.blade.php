@@ -102,9 +102,7 @@
             </button>
         </div>
         <div class="p-3 me-3">
-            <button type="button" class="btn btn-primary ">
-                <a href="{{url('/booking')}}" class="text-decoration-none text-light">Book Package</a>
-            </button>
+            <button class="btn btn-primary" type="submit" >Book Now</button>
         </div>
     </div>
 </form>
