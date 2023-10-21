@@ -87,21 +87,11 @@
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{$item->location}}</small>
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
                             <small class="flex-fill text-center py-2">
-                                <span class="rating bg-warning text-light">5.0</span><span> 15 Ratings</span>
+                                <h6 class="mb-0 ">$ {{$item->pack_price}}</h6>
                             </small>
                         </div>
                         <div class="px-4 py-2">
-                            <h5 class="package_title">{{$item->pack_des}} With {{$item->resort}}</h5>
-                            <div class="text-end price">
-                                <h3 class="mb-0">$ {{$item->pack_price}}</h3>
-                                <div class="">
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                    <small class="fa fa-star text-primary"></small>
-                                </div>
-                            </div>
+                            <h5 class="package_title">{{$item->pack_des}} {{$item->resort}}</h5>
                             <p class="text-center">Travel Price Depended to Package. Choose a Package and Enjoy your Vacation </p>
                             <div class="d-flex justify-content-between">
                                 <p class="date">From {{$item->from_date}}</p>
