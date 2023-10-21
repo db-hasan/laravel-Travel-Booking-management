@@ -18,16 +18,13 @@ class HomeController extends Controller
         return view('frontend/package/package', compact('indexData'));
     }
 
-    public function add_pack(){   
+    public function booking(){   
         $indexData= Bundle::all();  
-        return view('frontend/package/add_pack', compact('indexData'));
+        return view('frontend/package/booking', compact('indexData'));
     }
 
-
-    
-
-    public function booking(){    
-        return view('frontend/booking/booking'); 
+    public function payment(){    
+        return view('frontend/payment/payment'); 
     }
     public function invoice(){    
         return view('frontend/invoice'); 

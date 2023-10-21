@@ -42,8 +42,8 @@
                             </li>
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
-                                    <h6 class="my-0">Couple</h6>
-                                    <small class="text-body-secondary">Single/Share Room</small>
+                                    <h6 class="my-0">Package</h6>
+                                    <small class="text-body-secondary">Deluxe Single Room</small>
                                 </div>
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>select one</option>
@@ -55,7 +55,7 @@
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
                                     <h6 class="my-0">List of Person</h6>
-                                    <small class="text-body-secondary">Person depends Package</small>
+                                    <small class="text-body-secondary">Depended Package</small>
                                 </div>
                                 <input type="text" class="form-control text-end" placeholder="2">
                             </li>
@@ -75,9 +75,19 @@
                                 <strong>$30</strong>
                             </li>
                         </ul>
+                        <div class="d-flex justify-content-end">
+                            <div class="p-2 ">
+                                <button type="button" class="btn btn-danger">
+                                    <a href="{{url('/package')}}" class="text-decoration-none text-light">Close</a>
+                                </button>
+                            </div>
+                            <div class="p-2 me-3">
+                                <button class="btn btn-primary" type="submit" >Book Now</button>
+                            </div>
+                        </div>
                 </div>
                 <div class="col-lg-8 px-4 pb-4"> 
-                    <div class="bg-light rounded">
+                    <div class="bg-light">
                         <h4 class="bg-primary text-light rounded p-2 pe-5 text-end">Package Details</h4>
                         <div class="custom-scrollbar">
                             @foreach ($indexData as $item)
