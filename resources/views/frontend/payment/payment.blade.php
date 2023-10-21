@@ -7,12 +7,12 @@
             <div class="container py-5">
                 <div class="row justify-content-center py-5">
                     <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                        <h1 class="display-3 text-white animated slideInDown">Booking Now</h1>
+                        <h1 class="display-3 text-white animated slideInDown">Payment Now</h1>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-center">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                                <li class="breadcrumb-item text-white active" aria-current="page">Booking</li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">Payment</li>
                             </ol>
                         </nav>
                     </div>
@@ -25,13 +25,13 @@
 <form action="" method="post">
     <div class="container-fluid pt-5">
         <div class="text-center">
-            <h6 class="section-title bg-white text-center px-3">Booking</h6>
-            <h1 class="mb-4 title">Booking Now</h1>
+            <h6 class="section-title bg-white text-center px-3">Payment</h6>
+            <h1 class="mb-4 title">Payment Now</h1>
         </div>
             <div class="row pb-3 px-5">
                 <div class="col-lg-7"> 
                     <div class="">
-                        <h4 class="bg-primary text-light p-2 pe-5 text-end">Package Details</h4>
+                        <h4 class="bg-primary text-light p-2 pe-5 text-end">User Details</h4>
                         <div class="row g-3 px-3 py-3">
                                 <div class="col-md-6">
                                     <label for="name" class="form-label">Name</label>
