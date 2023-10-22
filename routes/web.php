@@ -33,7 +33,7 @@ Route::get('',[PackageController::class,'delete']);
 
 Route::get('/users',[UserController::class,'users'])->name('users');
 Route::get('admin/booking',[BookingController::class,'booking'])-> name('booking');
-Route::get('/payment',[PaymentController::class,'payment'])-> name('payment');
+Route::get('admin/payment',[PaymentController::class,'payment'])-> name('payment');
 
 
 // --------------------------------------------------------------
