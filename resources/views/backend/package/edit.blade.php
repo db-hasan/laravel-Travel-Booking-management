@@ -1,8 +1,8 @@
 @extends('backend/layouts/layout')
 
 @section('content')
-<div class="p-3">
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+<div class="">
+    <div class="text-end">
         <a href="{{url('/admin/package')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> View Data</a>
     </div>
     <hr>
@@ -69,10 +69,11 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-12">
+      <div class="col-12 text-end">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
 </div>
+ <h1 class="py-5"></h1>
 
 @endsection

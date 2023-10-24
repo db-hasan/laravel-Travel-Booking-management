@@ -53,13 +53,13 @@
                                     <label for="" class="form-label">Gender</label>
                                     <div class="d-flex">
                                         <div class="form-check">
-                                        <input id="Male" name="Gender" type="radio" class="form-check-input">
-                                        <label class="form-check-label pe-4" for="Male">Male</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input id="Female" name="Gender" type="radio" class="form-check-input">
-                                        <label class="form-check-label" for="Female">Female</label>
-                                    </div>
+                                            <input id="Male" name="Gender" type="radio" class="form-check-input">
+                                            <label class="form-check-label pe-4" for="Male">Male</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input id="Female" name="Gender" type="radio" class="form-check-input">
+                                            <label class="form-check-label" for="Female">Female</label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

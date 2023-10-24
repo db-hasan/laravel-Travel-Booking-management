@@ -58,10 +58,11 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-12">
+      <div class="col-12 text-end">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
+    <h1 class="py-5"></h1>
 </div>
 
 @endsection

@@ -10,7 +10,7 @@
     <hr>
     <div class='row'>
         <div class='col'>
-            <h3>Manage Package</h3>
+            <h3>Manage Booking</h3>
         </div>
         <div class='col text-end icons  pb-2'>
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
@@ -45,17 +45,17 @@
                     <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> ID</span></th>
                     <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Location</span>
                     </th>
-                    <th><span class="d-flex pe-5"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Description</span>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Package</span>
                     </th>
-                    <th><span class="d-flex pe-5"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Resort</span>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Person</span>
+                    </th>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Promo</span>
                     </th>
                     <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Price</span>
                     </th>
-                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> From_Date</span>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Name</span>
                     </th>
-                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> To_Date</span>
-                    </th>
-                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Arrival_Time</span>
+                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Number</span>
                     </th>
                     <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Status</span>
                     </th>
@@ -66,12 +66,12 @@
                 <tr>
                     <td>ID</td>
                     <td>Name</td>
-                    <td>Des</td>
-                    <td>Resort</td>
+                    <td>Business</td>
+                    <td>7</td>
+                    <td>#Save50</td>
                     <td>1200</td>
-                    <td>12/12/12</td>
-                    <td>12/12/12</td>
-                    <td>12:00</td>   
+                    <td>Mim Hasan</td>
+                    <td>01723629080</td>   
                     <td>Active</td>   
                     <td class="icons">
                         <a href="" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>

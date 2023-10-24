@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="">
+                    <a href="{{url('/admin/booking')}}">
                         <span class="icon">
                             <i class="fa-solid fa-cart-arrow-down fa-lg"></i>
                         </span>
