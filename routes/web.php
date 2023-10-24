@@ -3,37 +3,41 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\backend\BookingController;
 
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\BookingController;
+
 use App\Http\Controllers\PaymentController;
 
 
 // Backend Route
 
-Route::view('/admin', 'backend/dashboard') -> name('dashboard');
+Route::view('/admin', 'backend/dashboard/dashboard') -> name('dashboard');
 
 Route::get('admin/package',[PackageController::class,'index']);
-Route::get('admin/package/add',[PackageController::class,'add']);
-Route::post('admin/package/insert',[PackageController::class,'insert']);
+Route::get('admin/package/create',[PackageController::class,'create']);
+Route::post('admin/package/store',[PackageController::class,'store']);
 Route::get('package/edit/{id}',[PackageController::class,'edit']);
 Route::post('package/update/{id}',[PackageController::class,'update']);
 Route::get('package/show/{id}',[PackageController::class,'show']);
-Route::get('package/delete/{id}',[PackageController::class,'delete']);
+Route::get('package/destroy/{id}',[PackageController::class,'destroy']);
 
+Route::get('admin/booking',[BookingController::class,'index']);
+Route::get('admin/booking/create',[BookingController::class,'create']);
+Route::post('',[BookingController::class,'store']);
+Route::get('',[BookingController::class,'edit']);
+Route::post('',[BookingController::class,'update']);
+Route::get('',[BookingController::class,'show']);
+Route::get('',[BookingController::class,'delete']);
 
-Route::get('',[PackageController::class,'index']);
-Route::get('',[PackageController::class,'add']);
-Route::post('',[PackageController::class,'insert']);
-Route::get('',[PackageController::class,'edit']);
-Route::post('',[PackageController::class,'update']);
-Route::get('',[PackageController::class,'show']);
-Route::get('',[PackageController::class,'delete']);
+Route::get('',[BookingController::class,'index']);
+Route::get('',[BookingController::class,'create']);
+Route::post('',[BookingController::class,'store']);
+Route::get('',[BookingController::class,'edit']);
+Route::post('',[BookingController::class,'update']);
+Route::get('',[BookingController::class,'show']);
+Route::get('',[BookingController::class,'delete']);
 
-
-Route::get('/users',[UserController::class,'users'])->name('users');
-Route::get('admin/booking',[BookingController::class,'booking'])-> name('booking');
-Route::get('admin/payment',[PaymentController::class,'payment'])-> name('payment');
 
 
 // --------------------------------------------------------------

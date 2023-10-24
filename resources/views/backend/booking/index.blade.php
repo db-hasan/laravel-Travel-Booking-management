@@ -1,13 +1,16 @@
+
 @extends('backend/layouts/layout')
 
 @section('content')
 
-<div class="col p-4">
-    @include('backend/payment/add_payment')
+<div class="">
+    <div class="text-end">
+        <a href="{{url('/admin/booking/create')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> Add Data</a>
+    </div>
     <hr>
     <div class='row'>
         <div class='col'>
-            <h3>Manage Payment</h3>
+            <h3>Manage Package</h3>
         </div>
         <div class='col text-end icons  pb-2'>
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
@@ -35,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="custom-scrollbar">
+    <div class="custom-scrollbar-table">
         <table class="table">
             <thead>
                 <tr>
@@ -45,8 +48,6 @@
                     <th><span class="d-flex pe-5"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Description</span>
                     </th>
                     <th><span class="d-flex pe-5"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Resort</span>
-                    </th>
-                    <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Package</span>
                     </th>
                     <th><span class="d-flex"><a href=""><i class="fa-solid fa-right-left fa-rotate-90 fa-sm"></i></a> Price</span>
                     </th>
@@ -63,45 +64,21 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>1111</td>
-                    <td>Canada</td>
-                    <td>Canada City</td>
-                    <td>Canada Resort</td>
-                    <td>$500</td>
-                    <td>Active</td>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Des</td>
+                    <td>Resort</td>
+                    <td>1200</td>
+                    <td>12/12/12</td>
+                    <td>12/12/12</td>
+                    <td>12:00</td>   
+                    <td>Active</td>   
                     <td class="icons">
-                        @include('backend/payment/edit_payment')
-                        <button type="button" class="btn delete" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
-                                class="fa-solid fa-trash"></i></button>
-                        <div class="modal fade mt-5" id="deleteModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Payment
-                                        </h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="">
-                                            <div class="mb-3 text-start">
-                                                <label for="exampleInputEmail1" class="form-label">Are
-                                                    you Sure
-                                                    !</label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
+                        <a href="" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
                     </td>
-                </tr>
+                </tr>    
             </tbody>
         </table>
     </div>

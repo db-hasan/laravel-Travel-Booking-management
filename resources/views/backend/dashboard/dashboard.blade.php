@@ -1,9 +1,7 @@
 @extends('backend/layouts/layout')
 
 @section('content')
-<div class="custom-scrollbar">
-    <div class='px-4'>
-        <div class='row pt-2'>
+<div class='row pt-2'>
             <div class='col-md-3 p-2'>
                 <div class='card p-3 text-light bg-info bg-gradient'>
                     <p><strong>Sales Order</strong></p>
@@ -33,11 +31,5 @@
                 </div>
             </div>
         </div>
-
-
-
-
-        
-    </div>
-</div>
+        <h1 class="text-center" style="padding: 150px 0px;">Dashboard</h1>
 @endsection

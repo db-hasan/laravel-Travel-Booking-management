@@ -3,9 +3,9 @@
 
 @section('content')
 
-<div class="col p-3">
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{{url('/admin/package/add')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> Add Data</a>
+<div class="">
+    <div class="text-end">
+        <a href="" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> Add Data</a>
     </div>
     <hr>
     <div class='row'>
@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="custom-scrollbar">
+    <div class="custom-scrollbar-table">
         <table class="table">
             <thead>
                 <tr>
@@ -63,24 +63,22 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($indexData as $item)
                 <tr>
-                    <td>{{$item->pack_id}}</td>
-                    <td>{{$item->location}}</td>
-                    <td>{{$item->pack_des}}</td>
-                    <td>{{$item->resort}}</td>
-                    <td>{{$item->pack_price}}</td>
-                    <td>{{$item->from_date}}</td>
-                    <td>{{$item->to_date}}</td>
-                    <td>{{$item->arrival_time}}</td>   
-                    <td>{{$item->status_name}}</td>   
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Des</td>
+                    <td>Resort</td>
+                    <td>1200</td>
+                    <td>12/12/12</td>
+                    <td>12/12/12</td>
+                    <td>12:00</td>   
+                    <td>Active</td>   
                     <td class="icons">
-                        <a href="{{url('package/show/'.$item->pack_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
-                        <a href="{{url('package/edit/'.$item->pack_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="{{url('package/delete/'.$item->pack_id)}}" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
+                        <a href="" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
+                        <a href="" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
                     </td>
-                </tr>
-                 @endforeach     
+                </tr>    
             </tbody>
         </table>
     </div>

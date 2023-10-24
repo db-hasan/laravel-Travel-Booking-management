@@ -12,163 +12,276 @@
 </head>
 
 <body>
-    <nav id='header' class="navbar navbar-expand-md navbar-light bg-success ">
-        <div class="container-fluid">
-            <div class="">
-                <a class="navbar-brand logo " href="/">TourisT</a>
+    <!--------------- Navigation ------------->
+    <div class="sidebar">
+        <ul>
+            <div class="custom-scrollbar-sidebar py-2">
+                <li class="mt-3">
+                    <a href="{{ route('dashboard') }}">
+                        <span class="icon">
+                            <i class="fa-solid fa-house fa-lg"></i>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="{{url('/admin/package')}}">
+                        <span class="icon">
+                            <i class="fa-regular fa-folder-open fa-lg"></i>
+                        </span>
+                        <span class="title">Package</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="">
+                        <span class="icon">
+                            <i class="fa-solid fa-cart-arrow-down fa-lg"></i>
+                        </span>
+                        <span class="title">Booking</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="">
+                        <span class="icon">
+                            <i class="fa-regular fa-credit-card fa-lg"></i>
+                        </span>
+                        <span class="title">Payment</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-chart-column fa-lg"></i>
+                        </span>
+                        <span class="title">Report</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-house-circle-check fa-lg"></i>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-layer-group fa-lg"></i>
+                        </span>
+                        <span class="title">Service</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-hand-holding-medical fa-lg"></i>
+                        </span>
+                        <span class="title">Facilities</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-building-columns fa-lg"></i>
+                        </span>
+                        <span class="title">About Us</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-address-card fa-lg"></i>
+                        </span>
+                        <span class="title">Contact Us</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-users fa-lg"></i>
+                        </span>
+                        <span class="title">Users</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa-solid fa-right-from-bracket fa-lg"></i>
+                        </span>
+                        <span class="title">Logout</span>
+                    </a>
+                </li>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="col-md-10 ">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#"> <i
-                                    class="fa-solid fa-handshake-angle"></i>
+        </ul>
+    </div>
+
+
+    <!-------------------- Main -------------------->
+    <div class="main">
+        <div class="header d-flex fixed-top">
+            <div class="logo text-center">
+                <h3><a href="#">HelpsxIT</a></h3>
+            </div>
+            <div class="toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <!-------------------- Design -------------------->
+            <div class="header_right" style="width: 70%;">
+            </div>
+            <!-------------------- Design -------------------->
+
+            <div class="text-end">
+                <div class="user">
+                    <button class="btn user_btn" type="button">
+                        <div class="user_icon">
+                            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-end">
+                <div class="user">
+                    <button class="btn user_btn" type="button">
+                        <div class="user_icon">
+                            <i class="fa-solid fa-circle-plus fa-xl"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-end">
+                <div class="user">
+                    <button class="btn user_btn" type="button">
+                        <div class="user_icon">
+                            <i class="fa-solid fa-cart-plus fa-xl"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-end">
+                <div class="dropdown user">
+                    <button class="btn user_btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="user_icon">
+                            <i class="fa-regular fa-comments fa-xl"></i>
+                        </div>
+                    </button>
+                    <ul class="dropdown-menu " style="width: 250px;">
+                        <li class="dropdown-item text-end">
+                            <a class="dropdown-link" href="#">15 Notifications</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <div class="d-flex justify-content-between">
+                                <a class="dropdown-link" href="#"><i class="fa-solid fa-chart-column"></i> Stock Report
+                                </a>
+                                <small>3 mins</small>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <div class="d-flex justify-content-between">
+                                <a class="dropdown-link" href="#"><i class="fa-solid fa-heart-circle-minus"></i> User
+                                    message
+                                </a>
+                                <small>3 mins</small>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <div class="d-flex justify-content-between">
+                                <a class="dropdown-link" href="#"><i class="fa-solid fa-cart-plus"></i> Sales Report
+                                </a>
+                                <small>3 mins</small>
+                            </div>
+                        </li>
+                        <li class="dropdown-item text-center">
+                            <a class="dropdown-link" href="#">See All Notifications</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-end">
+                <div class="dropdown user">
+                    <button class="btn user_btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="user_icon">
+                            <i class="fa-regular fa-bell fa-xl"></i>
+                        </div>
+                    </button>
+                    <ul class="dropdown-menu " style="width: 250px;">
+                        <li class="dropdown-item text-end">
+                            <a class="dropdown-link" href="#">15 Notifications</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <div class="d-flex justify-content-between">
+                                <a class="dropdown-link" href="#"><i class="fa-solid fa-chart-column"></i> Stock Report
+                                </a>
+                                <small>3 mins</small>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <div class="d-flex justify-content-between">
+                                <a class="dropdown-link" href="#"><i class="fa-solid fa-heart-circle-minus"></i> User
+                                    message
+                                </a>
+                                <small>3 mins</small>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <div class="d-flex justify-content-between">
+                                <a class="dropdown-link" href="#"><i class="fa-solid fa-cart-plus"></i> Sales Report
+                                </a>
+                                <small>3 mins</small>
+                            </div>
+                        </li>
+                        <li class="dropdown-item text-center">
+                            <a class="dropdown-link" href="#">See All Notifications</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-end pe-5">
+                <div class="dropdown user">
+                    <button class="btn dropdown-toggle user_btn" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="{{asset('images/user.jpg') }}" class="img-fluid" />
+                        <span> Ross C. Lopez</span>
+                    </button>
+                    <ul class="dropdown-menu ">
+                        <li class="dropdown-item">
+                            <a class="dropdown-link" href="#"><i class="fas fa-cog"></i> Manage Account
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#"> <i class="fa-solid fa-clock"></i>
+                        <li class="dropdown-item">
+                            <a class="dropdown-link" href="#"><i class="fas fa-user-tie"></i> My Profile
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link icons" aria-current="page" href="#"><i class="fa-solid fa-bell"></i>
+                        <li class="dropdown-item">
+                            <a class="dropdown-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-2">
-                    <div class="dropdown user">
-                        <button class="btn user-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="{{asset('images/avatar.png') }}" class="img-fluid" />
-                        </button>
-                        <ul class="dropdown-menu ">
-                            <li class="dropdown-item">
-                                <a class="dropdown-link" href="#"><i class="fas fa-user-tie"></i> My Profile
-                                </a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a class="dropdown-link" href="#"><i class="fas fa-cog"></i> Manage Account
-                                </a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a class="dropdown-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
-    </nav>
-    <div class="row rows">
-        <div class="col-sm-4 col-md-3 col-lg-2">
-            <div class="custom-scrollbar-sidebar">
-                <div id='sidebar'>
-                        <div class="accordion accordion-flush" id="accordionFlushExample">
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-house">
-                                        <a href="{{ route('dashboard') }}"> Dashboard</a></i>
-                                </button>
-                            </div>
 
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-gifts">
-                                        <a href="{{url('/admin/package')}}"> Package</a></i>
-                                </button>
-                            </div>
+        <div class="px-4 pt-4" style="margin-top: 50px;">
 
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-cart-arrow-down">
-                                        <a href="{{ route('booking') }}"> Booking</a></i>
-                                </button>
-                            </div>
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-regular fa-credit-card">
-                                        <a href="{{ route('payment') }}"> Payment</a></i>
-                                </button>
-                            </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapse5" aria-expanded="false"
-                                    aria-controls="flush-collapse5">
-                                    <i class="fa-solid fa-chart-column">
-                                        <a href="#"> Reoprt</a></i>
-                                </button>
-                                <div id="flush-collapse5" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body"> <i class="fa-solid fa-plus">
-                                            <a href="{{ route('dashboard') }}"> Add Expenses</a></i></div>
-                                    <div class="accordion-body"> <i class="fa-solid fa-list">
-                                            <a href="{{ route('dashboard') }}"> Collection list</a></i></div>
-                                </div>
-                            </div>
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-users">
-                                        <a href="{{ route('users') }}"> Add User</a></i>
-                                </button>
-                            </div>
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-house-laptop">
-                                        <a href=""> Home Page</a></i>
-                                </button>
-                            </div>
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-house-flood-water-circle-arrow-right">
-                                        <a href=""> Service</a></i>
-                                </button>
-                            </div>
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-hand-holding-medical">
-                                        <a href=""> Facilities</a></i>
-                                </button>
-                            </div>
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-building-columns">
-                                        <a href="{{ route('dashboard') }}"> About Info</a></i>
-                                </button>
-                            </div>
-
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-address-card">
-                                        <a href="{{ route('dashboard') }}"> Contact Info</a></i>
-                                </button>
-                            </div>
-                            <div class="accordion-item custom">
-                                <button class="accordion-button collapsed" type="button">
-                                    <i class="fa-solid fa-right-to-bracket">
-                                        <a href="{{ route('dashboard') }}"> Logout</a></i>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-            </div>
-        </div>
-        <div class="col-sm-8 col-md-9 col-lg-10 dash">
-            
-                {{-- ------------content part-------------- --}}
+            {{-- ------------content part-------------- --}}
                 @yield('content')
-                {{-- ------------content part-------------- --}}
+            {{-- ------------content part-------------- --}}
+            
+        </div>
+
+        <!--------------- Foooter --------------->
+        <div class="bg-dark text-light text-center p-2">
+            <h4>This is Footer page</h4>
         </div>
     </div>
-    <div class="text-center bg-warning ">This is footer page</div>
 
     <script src="{{asset('bootstrap/bootstrap.bundle.min.js') }} "></script>
+    <script src="{{asset('backend/js/custom.js') }} "></script>
 </body>
 
 </html>

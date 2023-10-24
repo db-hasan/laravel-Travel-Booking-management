@@ -11,14 +11,14 @@ class PackageController extends Controller
 
     public function index() {
         $indexData = Package::join('statuses', 'packages.pack_status', '=', 'statuses.id')->orderBy('pack_id','desc')->get();
-        return view('backend/package/all', compact('indexData'));
+        return view('backend/package/index', compact('indexData'));
     }
     
     // -----------insert data start----------
-    public function add(){
-        return view('backend/package/add');
+    public function create(){
+        return view('backend/package/create');
     }
-    public function insert(Request $request){
+    public function store(Request $request){
         $rules = [
             'location' => 'required | max:20',
             'description' => 'required | max:50',
@@ -101,7 +101,7 @@ class PackageController extends Controller
         return view('backend/package/show', compact('showData'));
     }
 
-    public function delete($id=null){
+    public function destroy($id=null){
         $data = Package::find($id);
         $data->delete();
         Session::flash('msg','Data delete successfully');

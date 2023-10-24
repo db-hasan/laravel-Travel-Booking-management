@@ -1,59 +1,59 @@
 @extends('backend/layouts/layout')
 
 @section('content')
-<div class="p-3">
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{{url('/admin/package')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> View Data</a>
+<div class="">
+    <div class="text-end">
+        <a href="{{url('/admin/booking')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> View Data</a>
     </div>
     <hr>
     
-    <form method="post" action="{{url('/admin/package/insert')}}" class="row g-3 p-3">
+    <form method="post" action="" class="row g-3 p-3">
       @csrf
       <div class="col-md-4">
         <label for="location" class="form-label">Location</label>
-        <input type="text" class="form-control" id="location" name="location">
+        <input type="text" class="form-control" id="location" name="">
         @error('location')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
       <div class="col-md-8">
         <label for="inputPassword4" class="form-label">Description</label>
-        <input type="text" class="form-control" id="inputPassword4" name="description">
+        <input type="text" class="form-control" id="inputPassword4" name="">
         @error('description')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
       <div class="col-8">
         <label for="inputAddress" class="form-label">Resort</label>
-        <input type="text" class="form-control" id="inputAddress" name="resort">
+        <input type="text" class="form-control" id="inputAddress" name="">
         @error('resort')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
       <div class="col-4">
         <label for="inputAddress2" class="form-label">Booking_Price</label>
-        <input type="text" class="form-control" id="inputAddress2" name="price">
+        <input type="text" class="form-control" id="inputAddress2" name="">
         @error('price')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
       <div class="col-4">
         <label for="inputAddress2" class="form-label">From Date</label>
-        <input type="date" class="form-control" id="inputAddress2" name="fromdate">
+        <input type="date" class="form-control" id="inputAddress2" name="">
         @error('fromdate')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
       <div class="col-4">
         <label for="inputAddress2" class="form-label">To Date</label>
-        <input type="date" class="form-control" id="inputAddress2" name="todate">
+        <input type="date" class="form-control" id="inputAddress2" name="">
         @error('todate')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
       <div class="col-4">
         <label for="inputAddress2" class="form-label">Arrival Time</label>
-        <input type="time" class="form-control" id="inputAddress2" name="arrival">
+        <input type="time" class="form-control" id="inputAddress2" name="">
         @error('arrival')
             <span class="text-danger">{{ $message }}</span>
         @enderror
