@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{asset('backend/css/style.css') }} ">
     <link rel="stylesheet" href="{{asset('bootstrap/bootstrap.min.css') }} ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
     <title>Dashboard</title>
 </head>
 
@@ -274,14 +275,12 @@
             
         </div>
 
-        <!--------------- Foooter --------------->
-        <div class="bg-dark text-light text-center p-2">
-            <h4>This is Footer page</h4>
-        </div>
     </div>
 
     <script src="{{asset('bootstrap/bootstrap.bundle.min.js') }} "></script>
     <script src="{{asset('backend/js/custom.js') }} "></script>
+    
+    
 </body>
 
 </html>

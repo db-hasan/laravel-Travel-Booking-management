@@ -19,3 +19,8 @@ toggle.onclick = function () {
     navigation.classList.toggle("active");
     main.classList.toggle("active");
 };
+
+// table design by jquery
+$(document).ready(function () {
+    $('#myTable').DataTable();
+});

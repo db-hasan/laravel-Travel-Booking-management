@@ -13,6 +13,7 @@ use App\Http\Controllers\PaymentController;
 // Backend Route
 
 Route::view('/admin', 'backend/dashboard/dashboard') -> name('dashboard');
+Route::view('/dame', 'backend/dame/index');
 
 Route::get('admin/package',[PackageController::class,'index']);
 Route::get('admin/package/create',[PackageController::class,'create']);

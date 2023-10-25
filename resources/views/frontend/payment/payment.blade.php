@@ -127,23 +127,27 @@
                                 <input id="Banking" name="paymentMethod" type="radio" class="form-check-input">
                                 <label class="form-check-label" for="Banking">Payment via Mobile Banking</label>
                             </div>
-                            <div class="card-body row">
-                                <div class="col"></div>
-                                <div class="col d-flex justity-content-end">
-                                    <div class="d-flex">
+                                <div class="card-body row">
+                                    <div class="col"></div>
+                                    <div class="col d-flex justity-content-end">
+                                        <div class="d-flex">
+                                            <div class="form-check">
+                                            <input id="Bkash" name="Mobile" type="radio" class="form-check-input">
+                                            <label class="form-check-label pe-4" for="Bkash">Bkash</label>
+                                        </div>
                                         <div class="form-check">
-                                        <input id="Bkash" name="Mobile" type="radio" class="form-check-input">
-                                        <label class="form-check-label pe-4" for="Bkash">Bkash</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input id="Nogod" name="Mobile" type="radio" class="form-check-input">
-                                        <label class="form-check-label pe-4" for="Nogod">Nogod</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input id="Roket" name="Mobile" type="radio" class="form-check-input">
-                                        <label class="form-check-label" for="Roket">Roket</label>
+                                            <input id="Nogod" name="Mobile" type="radio" class="form-check-input">
+                                            <label class="form-check-label pe-4" for="Nogod">Nogod</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input id="Roket" name="Mobile" type="radio" class="form-check-input">
+                                            <label class="form-check-label" for="Roket">Roket</label>
+                                        </div>
                                     </div>
                                 </div>
+                            <div class="form-check">
+                                <input id="cash" name="paymentMethod" type="radio" class="form-check-input">
+                                <label class="form-check-label" for="cash">Cash in elivery</label>
                             </div>
                         </div>
                     </div>

@@ -11,10 +11,10 @@
       @csrf
       
       <div class="col-md-4">
-        <label for="location" class="form-label">location</label>
+        <label for="location" class="form-label">Location</label>
         <select class="form-select" aria-label="Default select example" id="location">
-          <option selected>select one</option>
-          <option>select one</option>
+          <option selected>Select One</option>
+          <option>Canada</option>
         </select>
         @error('location')
             <span class="text-danger">{{ $message }}</span>
@@ -24,8 +24,8 @@
       <div class="col-md-4">
         <label for="Package" class="form-label">Package</label>
         <select class="form-select" aria-label="Default select example" id="Package">
-          <option selected>select one</option>
-          <option>select one</option>
+          <option selected>Select One</option>
+          <option>Regular</option>
         </select>
         @error('Package')
             <span class="text-danger">{{ $message }}</span>
@@ -95,14 +95,14 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-md-6">
+      <div class="col-md-3">
         <label for="nationality" class="form-label">Nationality</label>
         <input type="text" class="form-control" id="nationality" name="">
         @error('nationality')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-md-6">
+      <div class="col-md-3">
         <label for="nid" class="form-label">NID</label>
         <input type="text" class="form-control" id="inputAddress2" name="">
         @error('nid')
@@ -130,7 +130,31 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-12">
+      <div class="col-md-3">
+        <label for="payment " class="form-label">Payment </label>
+        <select class="form-select" aria-label="Default select example" id="payment">
+          <option selected>Select One</option>
+          <option>Credit / Debit card</option>
+          <option>Mobile Banking</option>
+          <option>Cash in Delivery</option>
+        </select>
+        @error('payment')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      <div class="col-md-3">
+        <label for="status " class="form-label">Status </label>
+        <select class="form-select" aria-label="Default select example" id="status">
+          <option selected>Select One</option>
+          <option>Pending</option>
+          <option>Approve</option>
+          <option>Decline</option>
+        </select>
+        @error('payment')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      <div class="col-12 text-end">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>

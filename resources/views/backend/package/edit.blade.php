@@ -74,6 +74,5 @@
       </div>
     </form>
 </div>
- <h1 class="py-5"></h1>
 
 @endsection

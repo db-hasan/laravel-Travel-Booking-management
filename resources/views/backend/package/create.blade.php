@@ -62,7 +62,6 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
-    <h1 class="py-5"></h1>
 </div>
 
 @endsection
