@@ -1,13 +1,9 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
-use App\Http\Controllers\PackageController;
 use App\Http\Controllers\backend\BookingController;
+use App\Http\Controllers\backend\PackageController;
 
-use App\Http\Controllers\UserController;
-
-use App\Http\Controllers\PaymentController;
 
 
 // Backend Route
