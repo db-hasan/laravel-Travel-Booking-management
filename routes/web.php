@@ -14,10 +14,10 @@ Route::view('/dame', 'backend/dame/index');
 Route::get('admin/package',[PackageController::class,'index']);
 Route::get('admin/package/create',[PackageController::class,'create']);
 Route::post('admin/package/store',[PackageController::class,'store']);
-Route::get('package/edit/{id}',[PackageController::class,'edit']);
-Route::post('package/update/{id}',[PackageController::class,'update']);
-Route::get('package/show/{id}',[PackageController::class,'show']);
-Route::get('package/destroy/{id}',[PackageController::class,'destroy']);
+Route::get('package/edit/{pack_id}',[PackageController::class,'edit']);
+Route::post('package/update/{pack_id}',[PackageController::class,'update']);
+Route::get('package/show/{pack_id}',[PackageController::class,'show']);
+Route::get('package/destroy/{pack_id}',[PackageController::class,'destroy']);
 
 Route::get('admin/booking',[BookingController::class,'index']);
 Route::get('admin/booking/create',[BookingController::class,'create']);

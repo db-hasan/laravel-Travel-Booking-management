@@ -57,12 +57,12 @@ class PackageController extends Controller
 
 
     // -----------eidt data start----------
-    public function edit($id=null){
+    public function edit($pack_id=null){
         $statusData = Status::all();
-        $editData = Package::find($id);
+        $editData = Package::find($pack_id);
         return view('backend/package/edit', compact('editData'), compact('statusData'));
     }
-    public function update(Request $request, $id){
+    public function update(Request $request, $pack_id){
         $rules = [
             'location' => 'required | max:20',
             'description' => 'required | max:50',
@@ -83,7 +83,7 @@ class PackageController extends Controller
         ];
         $this -> validate($request, $rules, $v_msg);
 
-        $data= Package::find($id);
+        $data= Package::find($pack_id);
         $data->location= $request->location;
         $data->pack_des= $request->description;
         $data->resort= $request->resort;
@@ -98,13 +98,13 @@ class PackageController extends Controller
     }
     // -----------edit data end----------
 
-    public function show($id=null){
-        $showData = Package::find($id);
+    public function show($pack_id=null){
+        $showData = Package::find($pack_id);
         return view('backend/package/show', compact('showData'));
     }
 
-    public function destroy($id=null){
-        $data = Package::find($id);
+    public function destroy($pack_id=null){
+        $data = Package::find($pack_id);
         $data->delete();
         Session::flash('msg','Data delete successfully');
         return redirect('/admin/package');
