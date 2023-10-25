@@ -60,7 +60,7 @@
       </div>
       <div class="col-md-2">
         <label for="inputPassword4" class="form-label">Status</label>
-        <select class="form-select" aria-label="Default select example" name="status" value="{{$editData->pack_status}}">
+        <select class="form-select" aria-label="Default select example" name="status">
           @foreach ($statusData as $itemStatus)
           <option value="{{$itemStatus->id}}" {{ $editData->pack_status == $itemStatus->id ? 'selected' : '' }} >{{$itemStatus->status_name}}</option>
           @endforeach

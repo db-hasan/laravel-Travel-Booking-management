@@ -7,7 +7,7 @@
     </div>
     <hr>
     
-    <form method="post" action="{{url('/admin/package/insert')}}" class="row g-3 p-3">
+    <form method="post" action="{{url('/admin/package/store')}}" class="row g-3 p-3">
       @csrf
       <div class="col-md-4">
         <label for="location" class="form-label">Location</label>
