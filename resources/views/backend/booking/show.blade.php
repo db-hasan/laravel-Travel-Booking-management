@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col">
                             <label>Location:</label>
-                            <h6>{{$showData->book_location}}</h6>
+                            <h6>{{$showData->book_id}}</h6>
                         </div>
                         <div class="col">
                             <label>Description:</label>

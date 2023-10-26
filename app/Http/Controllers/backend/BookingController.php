@@ -22,27 +22,27 @@ class BookingController extends Controller
     }
 
     public function create(){ 
-        $data['indexPackage']= Package::all();      
-        $data['indexBundle']= Bundle::all();      
-        $data['indexPayment']= PaymentStatus::all();      
-        $data['indexBookingStatus']= BookingStatus::all();      
-        return view('backend/booking/create', $data);
+        $indexData['indexPackage']= Package::all();      
+        $indexData['indexBundle']= Bundle::all();      
+        $indexData['indexPayment']= PaymentStatus::all();      
+        $indexData['indexBookingStatus']= BookingStatus::all();      
+        return view('backend/booking/create', $indexData);
     }
     public function store(Request $request){
         $rules = [
             'location' => 'required | max:50',
             'bundle' => 'required | max:50',
-            // 'person' => 'required | max:50',
-            // 'name' => 'required | max:50',
-            // 'phone' => 'required | max:30',
+            'person' => 'required | max:50',
+            'name' => 'required | max:50',
+            'phone' => 'required | max:30',
             'gender' => 'required | max:30',
-            // 'birth' => 'required | max:30',
-            // 'nationality' => 'required | max:30',
-            // 'nid' => 'required | max:30',
-            // 'address' => 'required | max:30',
-            // 'city' => 'required | max:30',
-            // 'zip' => 'required | max:30',
-            // 'payment' => 'required | max:30',
+            'birth' => 'required | max:30',
+            'nationality' => 'required | max:30',
+            'nid' => 'required | max:30',
+            'address' => 'required | max:30',
+            'city' => 'required | max:30',
+            'zip' => 'required | max:30',
+            'payment' => 'required | max:30',
         ];
         $v_msg=[
             'location.required'=> 'Please select your Location',
@@ -83,23 +83,29 @@ class BookingController extends Controller
         return redirect('admin/booking');
     }
 
-    public function edit($book_id=null){ 
-        $data['indexPackage']= Package::all();      
-        $data['indexBundle']= Bundle::all();      
-        $data['indexPayment']= PaymentStatus::all();      
-        $data['indexBookingStatus']= BookingStatus::all(); 
-        $data = Booking::find($book_id);    
-        return view('backend/booking/edit',$data);
+    // public function edit($book_id=null){ 
+    //     $indexData['indexPackage']= Package::all();      
+    //     $indexData['indexBundle']= Bundle::all();      
+    //     $indexData['indexPayment']= PaymentStatus::all();      
+    //     $indexData['indexBookingStatus']= BookingStatus::all(); 
+    //     $indexData = Booking::find($book_id);    
+    //     return view('backend/booking/edit',$indexData);
+
+    public function edit($book_id=null){
+        $indexPackage = Package::all();
+        $indexData = Booking::find($book_id);
+        return view('backend/booking/edit', compact('indexData'), compact('indexPackage'));
     }
+    
 
     public function update(Request $request, $book_id){
         $rules = [
             'location' => 'required | max:50',
-            'bundle' => 'required | max:50',
+            // 'bundle' => 'required | max:50',
             // 'person' => 'required | max:50',
             // 'name' => 'required | max:50',
             // 'phone' => 'required | max:30',
-            'gender' => 'required | max:30',
+            // 'gender' => 'required | max:30',
             // 'nationality' => 'required | max:30',
             // 'birth' => 'required | max:30',
             // 'nid' => 'required | max:30',
@@ -147,7 +153,6 @@ class BookingController extends Controller
         Session::flash('msg','Data submit successfully');
         return redirect('admin/booking');
     }
-
 
     public function show($book_id=null){
         $showData = Booking::find($book_id);

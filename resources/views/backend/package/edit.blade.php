@@ -11,7 +11,7 @@
       @csrf
       <div class="col-md-4">
         <label for="location" class="form-label">Location</label>
-        <input type="text" class="form-control" id="location" name="location" value="{{$editData->location}}">
+        <input type="text" class="form-control" id="location" name="location" value="{{$editData->pack_location}}">
         @error('location')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -65,7 +65,7 @@
           <option value="{{$itemStatus->id}}" {{ $editData->pack_status == $itemStatus->id ? 'selected' : '' }} >{{$itemStatus->status_name}}</option>
           @endforeach
         </select>
-        @error('resort')
+        @error('status')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
