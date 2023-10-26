@@ -102,7 +102,7 @@
                                             <h5 class="card-title">{{$item->bundle_name}}</h5>
                                             <h6 class="date text-info">{{$item->room_type}}</h6>
                                         </div>
-                                        <p class="card-text">{{$item->person}}</p>
+                                        <p class="card-text">{{$item->bundle_des}}</p>
                                     </div>
                                 </div>
                             </div>

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->bigIncrements('pack_id');
-            $table->string('location',20)->nullable();
+            $table->string('pack_location',20)->nullable();
             $table->string('pack_des',255)->nullable();
             $table->string('resort',255)->nullable();
             $table->string('pack_price',10)->nullable();

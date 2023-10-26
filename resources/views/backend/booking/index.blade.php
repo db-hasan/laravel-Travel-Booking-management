@@ -15,12 +15,12 @@
                     <th><span class="">ID</span></th>
                     <th><span class="">Location</span></th>
                     <th><span class="ps-5">Package</span></th>
-                    <th><span class="ps-5">Person</span></th>
+                    <th><span class="">Person</span></th>
                     <th><span class="">Promo</span></th>
                     <th><span class="">Price</span></th>
-                    <th><span class="">Name</span></th>
-                    <th><span class="">Number</span></th>
-                    <th><span class="">Payment</span></th>
+                    <th><span class="ps-5">Name</span></th>
+                    <th><span class="ps-5">Number</span></th>
+                    <th><span class="ps-5">Payment</span></th>
                     <th><span class="">Status</span></th>
                     <th><strong class="ps-5">Action</strong></th>
                 </tr>
@@ -36,8 +36,8 @@
                     <td>1200</td>
                     <td>{{$itemBooking->name}}</td>
                     <td>{{$itemBooking->phone}}</td>   
-                    <td>Payment</td>   
-                    <td>Active</td>   
+                    <td>{{$itemBooking->ps_name}}</td>   
+                    <td>{{$itemBooking->bs_name}}</td>   
                     <td class="icons">
                         <a href="" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
                         <a href="" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>

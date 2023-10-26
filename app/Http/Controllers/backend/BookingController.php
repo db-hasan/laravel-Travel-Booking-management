@@ -25,7 +25,9 @@ class BookingController extends Controller
 
     public function index() {
         $indexBooking = Booking::join('packages', 'bookings.book_location', '=', 'pack_id')
-                                ->join('bundles', 'bookings.bundle_name', '=', 'bundle_id')->get();
+                                ->join('bundles', 'bookings.bundle_name', '=', 'bundle_id')
+                                ->join('payment_statuses', 'bookings.payment', '=', 'ps_id')
+                                ->join('booking_statuses', 'bookings.book_status', '=', 'bs_id')->get();
         return view('backend/booking/index', compact('indexBooking'));
     }
 
@@ -43,13 +45,13 @@ class BookingController extends Controller
             // 'person' => 'required | max:50',
             // 'name' => 'required | max:50',
             // 'phone' => 'required | max:30',
-            // 'gender' => 'required | max:30',
+            'gender' => 'required | max:30',
             // 'birth' => 'required | max:30',
             // 'nid' => 'required | max:30',
             // 'address' => 'required | max:30',
             // 'city' => 'required | max:30',
             // 'zip' => 'required | max:30',
-            'payment' => 'required | max:30',
+            // 'payment' => 'required | max:30',
         ];
         $v_msg=[
             'location.required'=> 'Please select your Location',
