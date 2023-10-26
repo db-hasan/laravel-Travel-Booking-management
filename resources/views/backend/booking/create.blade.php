@@ -15,9 +15,9 @@
         <select class="form-select" aria-label="Default select example" id="location" name="location">
         <option value="" selected>Select One</option>
         @foreach ($indexPackage as $itemPackage)
-        <option>{{$itemPackage->pack_location}}</option>
+        <option value="{{$itemPackage->pack_id}}">{{$itemPackage->pack_location}}</option>
         @endforeach
-        </select>
+        </select> 
         @error('location')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -28,7 +28,7 @@
         <select class="form-select" aria-label="Default select example" id="bundle" name="bundle">
           <option value="" selected>Select One</option>
           @foreach ($indexBundle as $itemBundle)
-          <option>{{$itemBundle->bundle_name}}</option>
+          <option value="{{$itemBundle->bundle_id}}">{{$itemBundle->bundle_name}}</option>
           @endforeach
         </select>
         @error('bundle')
@@ -76,11 +76,11 @@
         <div class="d-flex">
           <div class="form-check">
             <input id="male" name="gender" type="radio" class="form-check-input">
-            <label class="form-check-label pe-4" for="male">Male</label>
+            <label class="form-check-label pe-4" for="male"  value="Male" >Male</label>
           </div>
           <div class="form-check">
             <input id="female" name="gender" type="radio" class="form-check-input">
-            <label class="form-check-label" for="female">Female</label>
+            <label class="form-check-label" for="female"  value="Female" >Female</label>
           </div>
         </div>
         @error('gender')
@@ -142,7 +142,7 @@
         <select class="form-select" aria-label="Default select example" id="payment" name="payment">
           <option value="" selected>Select One</option>
           @foreach ($indexPayment as $itemPaymentStatus)
-          <option>{{$itemPaymentStatus->ps_name}}</option>
+          <option value="{{$itemPaymentStatus->ps_id}}">{{$itemPaymentStatus->ps_name}}</option>
           @endforeach
         </select>
         @error('payment')
@@ -154,7 +154,7 @@
         <select class="form-select" aria-label="Default select example" id="book_status" name="book_status">
           <option value="" selected>Select One</option>
           @foreach ($indexBookingStatus as $itemBookingStatus)
-          <option>{{$itemBookingStatus->bs_name}}</option>
+          <option value="{{$itemBookingStatus->bs_id}}">{{$itemBookingStatus->bs_name}}</option>
           @endforeach
         </select>
         @error('book_status')

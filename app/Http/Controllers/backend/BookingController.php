@@ -13,20 +13,21 @@ use Session;
 
 class BookingController extends Controller
 {
-    public function index(){
-        $indexBooking= Booking::all();    
-        return view('backend/booking/index', compact('indexBooking'));
-    }
+    // public function index(){
+    //     $indexBooking= Booking::all();    
+    //     return view('backend/booking/index', compact('indexBooking'));
+    // }
     // public function index() {
     //     $indexData = Package::join('statuses', 'packages.pack_status', '=', 'statuses.id')->orderBy('pack_id','desc')->get();
     //     return view('backend/package/index', compact('indexData'));
     // }
 
 
-    // public function index() {
-    //     $indexBooking = Booking::join('packages', 'bookings.book_location', '=', 'pack_id')->orderBy('book_id','desc')->get();
-    //     return view('backend/booking/index', compact('indexBooking'));
-    // }
+    public function index() {
+        $indexBooking = Booking::join('packages', 'bookings.book_location', '=', 'pack_id')
+                                ->join('bundles', 'bookings.bundle_name', '=', 'bundle_id')->get();
+        return view('backend/booking/index', compact('indexBooking'));
+    }
 
     public function create(){ 
         $data['indexPackage']= Package::all();      
@@ -39,15 +40,15 @@ class BookingController extends Controller
         $rules = [
             'location' => 'required | max:50',
             'bundle' => 'required | max:50',
-            'person' => 'required | max:50',
-            'name' => 'required | max:50',
-            'phone' => 'required | max:30',
-            'gender' => 'required | max:30',
-            'birth' => 'required | max:30',
-            'nid' => 'required | max:30',
-            'address' => 'required | max:30',
-            'city' => 'required | max:30',
-            'zip' => 'required | max:30',
+            // 'person' => 'required | max:50',
+            // 'name' => 'required | max:50',
+            // 'phone' => 'required | max:30',
+            // 'gender' => 'required | max:30',
+            // 'birth' => 'required | max:30',
+            // 'nid' => 'required | max:30',
+            // 'address' => 'required | max:30',
+            // 'city' => 'required | max:30',
+            // 'zip' => 'required | max:30',
             'payment' => 'required | max:30',
         ];
         $v_msg=[
@@ -66,17 +67,22 @@ class BookingController extends Controller
         ];
         $this -> validate($request, $rules, $v_msg);
         $data= new Booking();
+        $data->book_location= $request->location;
+        $data->bundle_name= $request->bundle;
         $data->person= $request->person;
         $data->promo= $request->promo;
         $data->name= $request->name;
         $data->email= $request->email;
         $data->phone= $request->phone;
+        $data->gender= $request->gender;
         $data->birth= $request->birth;
         $data->occupation= $request->occupation;
         $data->nid= $request->nid;
         $data->address= $request->address;
         $data->city= $request->city;
         $data->zip= $request->zip;
+        $data->payment= $request->payment;
+        $data->book_status= $request->book_status;
         $data->save();
         Session::flash('msg','Data submit successfully');
         return redirect('admin/booking');

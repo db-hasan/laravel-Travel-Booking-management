@@ -14,8 +14,8 @@
                 <tr>
                     <th><span class="">ID</span></th>
                     <th><span class="">Location</span></th>
-                    <th><span class="">Package</span></th>
-                    <th><span class="">Person</span></th>
+                    <th><span class="ps-5">Package</span></th>
+                    <th><span class="ps-5">Person</span></th>
                     <th><span class="">Promo</span></th>
                     <th><span class="">Price</span></th>
                     <th><span class="">Name</span></th>
@@ -29,8 +29,8 @@
                 @foreach ($indexBooking as $itemBooking)
                 <tr>
                     <td>{{$itemBooking->book_id}}</td>
-                    <td>Canada</td>
-                    <td>Business</td>
+                    <td>{{$itemBooking->pack_location}}</td>
+                    <td>{{$itemBooking->bundle_name}}</td>
                     <td>{{$itemBooking->person}}</td>
                     <td>{{$itemBooking->promo}}</td>
                     <td>1200</td>
