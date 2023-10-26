@@ -33,15 +33,15 @@
                     <td>{{$itemBooking->bundle_name}}</td>
                     <td>{{$itemBooking->person}}</td>
                     <td>{{$itemBooking->promo}}</td>
-                    <td>1200</td>
+                    <td>{{$itemBooking->promo}}</td>
                     <td>{{$itemBooking->name}}</td>
                     <td>{{$itemBooking->phone}}</td>   
                     <td>{{$itemBooking->ps_name}}</td>   
                     <td>{{$itemBooking->bs_name}}</td>   
                     <td class="icons">
-                        <a href="" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
-                        <a href="" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
+                        <a href="{{url('booking/show/'.$itemBooking->book_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
+                        <a href="{{url('booking/edit/'.$itemBooking->book_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="{{url('booking/destroy/'.$itemBooking->book_id)}}" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr> 
                 @endforeach   
@@ -50,6 +50,6 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script src="{{asset('backend/js/jquery-3.7.1.min.js') }} "></script>
+<script src="{{asset('backend/js/dataTables.js') }} "></script>
 @endsection

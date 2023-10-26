@@ -13,16 +13,6 @@ use Session;
 
 class BookingController extends Controller
 {
-    // public function index(){
-    //     $indexBooking= Booking::all();    
-    //     return view('backend/booking/index', compact('indexBooking'));
-    // }
-    // public function index() {
-    //     $indexData = Package::join('statuses', 'packages.pack_status', '=', 'statuses.id')->orderBy('pack_id','desc')->get();
-    //     return view('backend/package/index', compact('indexData'));
-    // }
-
-
     public function index() {
         $indexBooking = Booking::join('packages', 'bookings.book_location', '=', 'pack_id')
                                 ->join('bundles', 'bookings.bundle_name', '=', 'bundle_id')
@@ -36,7 +26,7 @@ class BookingController extends Controller
         $data['indexBundle']= Bundle::all();      
         $data['indexPayment']= PaymentStatus::all();      
         $data['indexBookingStatus']= BookingStatus::all();      
-        return view('backend/booking/create',$data);
+        return view('backend/booking/create', $data);
     }
     public function store(Request $request){
         $rules = [
@@ -47,6 +37,7 @@ class BookingController extends Controller
             // 'phone' => 'required | max:30',
             'gender' => 'required | max:30',
             // 'birth' => 'required | max:30',
+            // 'nationality' => 'required | max:30',
             // 'nid' => 'required | max:30',
             // 'address' => 'required | max:30',
             // 'city' => 'required | max:30',
@@ -61,6 +52,7 @@ class BookingController extends Controller
             'gender.required'=> 'Please select your Gender',
             'phone.required'=> 'Please enter your phone number',
             'birth.required'=> 'Please enter your date of birth',
+            'nationality.required'=> 'Please enter your nationality',
             'nid.required'=> 'Please enter your nid',
             'address.required'=> 'Please enter your address',
             'city.required'=> 'Please enter your city',
@@ -79,6 +71,7 @@ class BookingController extends Controller
         $data->gender= $request->gender;
         $data->birth= $request->birth;
         $data->occupation= $request->occupation;
+        $data->nationality= $request->nationality;
         $data->nid= $request->nid;
         $data->address= $request->address;
         $data->city= $request->city;
@@ -88,5 +81,83 @@ class BookingController extends Controller
         $data->save();
         Session::flash('msg','Data submit successfully');
         return redirect('admin/booking');
+    }
+
+    public function edit($book_id=null){ 
+        $data['indexPackage']= Package::all();      
+        $data['indexBundle']= Bundle::all();      
+        $data['indexPayment']= PaymentStatus::all();      
+        $data['indexBookingStatus']= BookingStatus::all(); 
+        $data = Booking::find($book_id);    
+        return view('backend/booking/edit',$data);
+    }
+
+    public function update(Request $request, $book_id){
+        $rules = [
+            'location' => 'required | max:50',
+            'bundle' => 'required | max:50',
+            // 'person' => 'required | max:50',
+            // 'name' => 'required | max:50',
+            // 'phone' => 'required | max:30',
+            'gender' => 'required | max:30',
+            // 'nationality' => 'required | max:30',
+            // 'birth' => 'required | max:30',
+            // 'nid' => 'required | max:30',
+            // 'address' => 'required | max:30',
+            // 'city' => 'required | max:30',
+            // 'zip' => 'required | max:30',
+            // 'payment' => 'required | max:30',
+        ];
+        $v_msg=[
+            'location.required'=> 'Please select your Location',
+            'bundle.required'=> 'Please select your Package',
+            'person.required'=> 'Please add Person',
+            'name.required'=> 'Please enter your name',
+            'gender.required'=> 'Please select your Gender',
+            'phone.required'=> 'Please enter your phone number',
+            'birth.required'=> 'Please enter your date of birth',
+            'nationality.required'=> 'Please enter your nationality',
+            'nid.required'=> 'Please enter your nid',
+            'address.required'=> 'Please enter your address',
+            'city.required'=> 'Please enter your city',
+            'zip.required'=> 'Please enter your zip',
+            'payment.required'=> 'Please select payment method',
+        ];
+        $this -> validate($request, $rules, $v_msg);
+
+        $data= Booking::find($book_id);
+        $data->book_location= $request->location;
+        $data->bundle_name= $request->bundle;
+        $data->person= $request->person;
+        $data->promo= $request->promo;
+        $data->name= $request->name;
+        $data->email= $request->email;
+        $data->phone= $request->phone;
+        $data->gender= $request->gender;
+        $data->birth= $request->birth;
+        $data->occupation= $request->occupation;
+        $data->nationality= $request->nationality;
+        $data->nid= $request->nid;
+        $data->address= $request->address;
+        $data->city= $request->city;
+        $data->zip= $request->zip;
+        $data->payment= $request->payment;
+        $data->book_status= $request->book_status;
+        $data->save();
+        Session::flash('msg','Data submit successfully');
+        return redirect('admin/booking');
+    }
+
+
+    public function show($book_id=null){
+        $showData = Booking::find($book_id);
+        return view('backend/booking/show', compact('showData'));
+    }
+
+    public function destroy($book_id=null){
+        $destroyData = Booking::find($book_id);
+        $destroyData->delete();
+        Session::flash('msg','Data delete successfully');
+        return redirect('/admin/booking');
     }
 }

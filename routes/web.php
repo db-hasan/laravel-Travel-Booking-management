@@ -22,10 +22,10 @@ Route::get('package/destroy/{pack_id}',[PackageController::class,'destroy']);
 Route::get('admin/booking',[BookingController::class,'index']);
 Route::get('admin/booking/create',[BookingController::class,'create']);
 Route::post('admin/booking/store',[BookingController::class,'store']);
-Route::get('package/edit/{id}',[BookingController::class,'edit']);
-Route::post('package/update/{id}',[BookingController::class,'update']);
-Route::get('package/show/{id}',[BookingController::class,'show']);
-Route::get('package/destroy/{id}',[BookingController::class,'destroy']);
+Route::get('booking/edit/{book_id}',[BookingController::class,'edit']);
+Route::post('booking/update/{book_id}',[BookingController::class,'update']);
+Route::get('booking/show/{book_id}',[BookingController::class,'show']);
+Route::get('booking/destroy/{book_id}',[BookingController::class,'destroy']);
 
 Route::get('',[BookingController::class,'index']);
 Route::get('',[BookingController::class,'create']);
