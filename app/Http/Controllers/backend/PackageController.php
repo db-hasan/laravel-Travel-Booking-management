@@ -42,7 +42,7 @@ class PackageController extends Controller
         $this -> validate($request, $rules, $v_msg);
 
         $data= new Package();
-        $data->location= $request->location;
+        $data->pack_location= $request->location;
         $data->pack_des= $request->description;
         $data->resort= $request->resort;
         $data->pack_price= $request->price;
@@ -84,7 +84,7 @@ class PackageController extends Controller
         $this -> validate($request, $rules, $v_msg);
 
         $data= Package::find($pack_id);
-        $data->location= $request->location;
+        $data->pack_location= $request->location;
         $data->pack_des= $request->description;
         $data->resort= $request->resort;
         $data->pack_price= $request->price;

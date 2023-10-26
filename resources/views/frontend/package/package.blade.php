@@ -84,7 +84,7 @@
                             <img class="img-fluid" src="{{asset('frontend/img/package-1.jpg') }}" alt="">
                         </div>
                         <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{$item->location}}</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{$item->pack_location}}</small>
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
                             <small class="flex-fill text-center py-2">
                                 <h6 class="mb-0 ">$ {{$item->pack_price}}</h6>

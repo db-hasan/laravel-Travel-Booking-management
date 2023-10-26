@@ -28,7 +28,7 @@
                 @foreach ($indexData as $item)
                 <tr>
                     <td>{{$item->pack_id}}</td>
-                    <td>{{$item->location}}</td>
+                    <td>{{$item->pack_location}}</td>
                     <td>{{$item->pack_des}}</td>
                     <td>{{$item->resort}}</td>
                     <td>{{$item->pack_price}}</td>

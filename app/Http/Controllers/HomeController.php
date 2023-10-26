@@ -8,9 +8,8 @@ use Session;
 
 class HomeController extends Controller
 {   
-    public function index(){
-        $indexData= Package::all();    
-        return view('frontend/home', compact('indexData'));
+    public function index(){   
+        return view('frontend/home');
     }
 
     public function package(){
