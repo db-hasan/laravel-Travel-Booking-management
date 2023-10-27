@@ -15,10 +15,10 @@
                     <th><span class="">ID</span></th>
                     <th><span class="">Location</span></th>
                     <th><span class="pe-5">Description</span></th>
-                    <th><span class="pe-5">Resort</span></th>
+                    <th><span class="">Resort_Name</span></th>
                     <th><span class="">Price</span></th>
                     <th><span class="">From_Date</span></th>
-                    <th><span class="">To_Date</span></th>
+                    <th><span class="pe-3">To_Date</span></th>
                     <th><span class="">Arrival_Time</span></th>
                     <th><span class="">Status</span></th>
                     <th><strong class="ps-5">Action</strong></th>

@@ -99,7 +99,25 @@
                             </div>
                             <hr>
                             <div class="d-flex justify-content-between">
-                                <a href="#" class="btn btn-sm text-info">See More</a>
+                                <a href="#" class="btn btn-sm text-info" data-bs-toggle="modal" data-bs-target="#editModal">See More</a>
+                                <div class="modal fade mt-5" id="editModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel"><strong>New York</strong></h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p class="fs-5"><strong>Tour location : </strong> Takakkaw Falls, Helmcken Falls, Montmorency Falls, Kakabeka Falls, Athabasca Falls, Virginia Falls</p>
+                                                <p class="text fs-6"><strong>Resort Name : </strong>Takakkaw Falls, Helmcken Falls, Montmorency Falls, Kakabeka Falls, Athabasca Falls, Virginia Falls</p>
+                                                <p class="text"><strong>Facitilies : </strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, nihil! Quisquam adipisci sapiente iure suscipit ea nobis! Vitae, corrupti! Totam quaerat dolorum quo corporis excepturi optio harum quos ipsam ipsa.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <button class="btn btn-sm btn-primary" type="submit" style="border-radius: 50px !important;">Choose Package</button>
                             </div>
                         </div>
