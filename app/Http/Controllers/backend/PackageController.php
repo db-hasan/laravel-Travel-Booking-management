@@ -49,6 +49,7 @@ class PackageController extends Controller
         $data->from_date= $request->fromdate;
         $data->to_date= $request->todate;
         $data->arrival_time= $request->arrival;
+        // $data->pack_img= $request->img;
         $data->save();
         Session::flash('msg','Data submit successfully');
         return redirect('admin/package');
@@ -91,6 +92,7 @@ class PackageController extends Controller
         $data->from_date= $request->fromdate;
         $data->to_date= $request->todate;
         $data->arrival_time= $request->arrival;
+        // $data->pack_img= $request->img;
         $data->pack_status= $request->status;
         $data->save();
         Session::flash('msg','Data Update successfully');

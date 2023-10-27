@@ -269,6 +269,18 @@
     text-align: justify;
 }
 
+.amenities {
+    padding: 0px !important;
+}
+
+.amenities li {
+    display: inline-block;
+    background: rgba(239, 232, 221, 0.3);
+    padding: 3px 20px;
+    margin-bottom: 7px;
+    list-style: none;
+}
+
 /*** Booking ***/
 .booking {
     background: linear-gradient(rgba(15, 23, 43, .7), rgba(15, 23, 43, .7)), url(../img/booking.jpg);

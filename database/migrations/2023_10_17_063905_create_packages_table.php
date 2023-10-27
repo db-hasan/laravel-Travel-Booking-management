@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('from_date',10)->nullable();
             $table->string('to_date',10)->nullable();
             $table->string('arrival_time',10)->nullable();
+            $table->string('pack_img',255)->nullable();
             $table->integer('pack_status')->default(1);
             $table->timestamps();
         });

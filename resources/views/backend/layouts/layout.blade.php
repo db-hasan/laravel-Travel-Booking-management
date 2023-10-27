@@ -50,6 +50,14 @@
                     </a>
                 </li>
                 <li class="">
+                    <a href="">
+                        <span class="icon">
+                            <i class="fa-solid fa-percent fa-lg"></i>
+                        </span>
+                        <span class="title">Promo</span>
+                    </a>
+                </li>
+                <li class="">
                     <a href="#">
                         <span class="icon">
                             <i class="fa-solid fa-chart-column fa-lg"></i>

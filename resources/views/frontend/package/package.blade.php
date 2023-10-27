@@ -100,17 +100,92 @@
                             <hr>
                             <div class="d-flex justify-content-between">
                                 <a href="#" class="btn btn-sm text-info" data-bs-toggle="modal" data-bs-target="#editModal">See More</a>
-                                <div class="modal fade mt-5" id="editModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="editModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel"><strong>New York</strong></h1>
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Tour Destination : <strong>New York</strong></h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 <p class="fs-5"><strong>Tour location : </strong> Takakkaw Falls, Helmcken Falls, Montmorency Falls, Kakabeka Falls, Athabasca Falls, Virginia Falls</p>
                                                 <p class="text fs-6"><strong>Resort Name : </strong>Takakkaw Falls, Helmcken Falls, Montmorency Falls, Kakabeka Falls, Athabasca Falls, Virginia Falls</p>
-                                                <p class="text"><strong>Facitilies : </strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, nihil! Quisquam adipisci sapiente iure suscipit ea nobis! Vitae, corrupti! Totam quaerat dolorum quo corporis excepturi optio harum quos ipsam ipsa.</p>
+                                                <p class="text"><strong>Facitilies : </strong>Lorem ipsum dolor sit amet consec.</p>
+                                                <ul class="amenities">
+                                                    <li><span>✓</span> Welcome Drink</li>
+                                                    <li><span>✓</span> AC Transport</li>
+                                                    <li><span>✓</span> Wi-Fi</li>
+                                                    <li><span>✓</span> Newspaper</li>
+                                                    <li><span>✓</span> Breakfast</li>
+                                                    <li><span>✓</span> Buffet Lunch</li>
+                                                    <li><span>✓</span> Buffet Dinner</li>
+                                                </ul>
+                                                <div class="d-flex justify-content-between pb-3">
+                                                    <p class="date"><strong>Tour Start Date : </strong> {{$item->from_date}}</p>
+                                                    <p class="date"><strong>Tour End Date : </strong> {{$item->to_date}}</p>
+                                                </div>
+                                                <div class="accordion" id="accordionExample">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Regular" aria-expanded="false" aria-controls="collapseTwo">
+                                                            Regular Package - Deluxe Single Room
+                                                        </button>
+                                                        </h2>
+                                                        <div id="Regular" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <p>Regular Package - Deluxe Single Room, One person can stay this Package.</p>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Couple" aria-expanded="false" aria-controls="collapseThree">
+                                                            Couple Package - Deluxe Single Room
+                                                        </button>
+                                                        </h2>
+                                                        <div id="Couple" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <p>Couple Package - Deluxe Single Room, Two person can stay this Package. 10% discount on this Package</p>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Family" aria-expanded="false" aria-controls="collapseThree">
+                                                            Family Package - Deluxe Twin Room
+                                                        </button>
+                                                        </h2>
+                                                        <div id="Family" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <p>Family Package - Deluxe Twin Room, Three/Four person stay a room. Price depends on person Quantity. 12% discount on this package</p>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Group" aria-expanded="false" aria-controls="collapseThree">
+                                                            Group Package - Deluxe Twin Room
+                                                        </button>
+                                                        </h2>
+                                                        <div id="Group" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <p>Group Package - Deluxe Twin Room, Minmum tow, maxmun four person stay a room. Price depends on person Quantity. 12% discount on this package</p>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Business" aria-expanded="false" aria-controls="collapseThree">
+                                                            Business Package - Super Deluxe Single Room
+                                                        </button>
+                                                        </h2>
+                                                        <div id="Business" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <p>Business Package - Super Deluxe Single Room, One person stay one room. Price depends on person Quantity. 10% discount applicable when minimum of 5 people or more.</p>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
