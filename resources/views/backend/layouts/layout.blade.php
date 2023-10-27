@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="">
+                    <a href="{{url('/admin/promo')}}">
                         <span class="icon">
                             <i class="fa-solid fa-percent fa-lg"></i>
                         </span>

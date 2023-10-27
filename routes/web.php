@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\backend\BookingController;
 use App\Http\Controllers\backend\PackageController;
+use App\Http\Controllers\backend\PromoController;
 
 
 
@@ -26,6 +27,14 @@ Route::get('booking/edit/{book_id}',[BookingController::class,'edit']);
 Route::post('booking/update/{book_id}',[BookingController::class,'update']);
 Route::get('booking/show/{book_id}',[BookingController::class,'show']);
 Route::get('booking/destroy/{book_id}',[BookingController::class,'destroy']);
+
+Route::get('admin/promo',[PromoController::class,'index']);
+Route::get('admin/promo/create',[PromoController::class,'create']);
+Route::post('admin/promo/store',[PromoController::class,'store']);
+Route::get('promo/edit/{promo_id}',[PromoController::class,'edit']);
+Route::post('promo/update/{promo_id}',[PromoController::class,'update']);
+Route::get('promo/show/{promo_id}',[PromoController::class,'show']);
+Route::get('promo/destroy/{promo_id}',[PromoController::class,'destroy']);
 
 Route::get('',[BookingController::class,'index']);
 Route::get('',[BookingController::class,'create']);
