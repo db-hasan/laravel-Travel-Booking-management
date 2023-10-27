@@ -15,11 +15,24 @@ class BookingController extends Controller
 {
     public function index() {
         $indexBooking = Booking::join('packages', 'bookings.book_location', '=', 'pack_id')
-                                ->join('bundles', 'bookings.bundle_name', '=', 'bundle_id')
+                                ->join('bundles', 'bookings.book_bundle', '=', 'bundle_id')
                                 ->join('payment_statuses', 'bookings.payment', '=', 'ps_id')
                                 ->join('booking_statuses', 'bookings.book_status', '=', 'bs_id')->get();
         return view('backend/booking/index', compact('indexBooking'));
     }
+
+
+     public function show($book_id=null){
+        $showData = Booking::join('packages', 'bookings.book_location', '=', 'pack_id')
+                                ->join('bundles', 'bookings.book_bundle', '=', 'bundle_id')
+                                ->join('payment_statuses', 'bookings.payment', '=', 'ps_id')
+                                ->join('booking_statuses', 'bookings.book_status', '=', 'bs_id')->find($book_id);
+        return view('backend/booking/show', compact('showData'));
+    }
+     // public function show($book_id=null){
+    //     $showData = Booking::find($book_id);
+    //     return view('backend/booking/show', compact('showData'));
+    // }
 
     public function create(){ 
         $indexData['indexPackage']= Package::all();      
@@ -62,7 +75,7 @@ class BookingController extends Controller
         $this -> validate($request, $rules, $v_msg);
         $data= new Booking();
         $data->book_location= $request->location;
-        $data->bundle_name= $request->bundle;
+        $data->book_bundle= $request->bundle;
         $data->person= $request->person;
         $data->promo= $request->promo;
         $data->name= $request->name;
@@ -83,24 +96,19 @@ class BookingController extends Controller
         return redirect('admin/booking');
     }
 
-    // public function edit($book_id=null){ 
-    //     $indexData['indexPackage']= Package::all();      
-    //     $indexData['indexBundle']= Bundle::all();      
-    //     $indexData['indexPayment']= PaymentStatus::all();      
-    //     $indexData['indexBookingStatus']= BookingStatus::all(); 
-    //     $indexData = Booking::find($book_id);    
-    //     return view('backend/booking/edit',$indexData);
-
     public function edit($book_id=null){
-        $indexPackage = Package::all();
-        $indexData = Booking::find($book_id);
-        return view('backend/booking/edit', compact('indexData'), compact('indexPackage'));
+        $indexData['indexData'] = Booking::find($book_id);
+        $indexData['indexPackage']= Package::all();      
+        $indexData['indexBundle']= Bundle::all();      
+        $indexData['indexPayment']= PaymentStatus::all();      
+        $indexData['indexBookingStatus']= BookingStatus::all(); 
+        return view('backend/booking/edit', $indexData);
     }
     
 
     public function update(Request $request, $book_id){
         $rules = [
-            'location' => 'required | max:50',
+            // 'location' => 'required | max:50',
             // 'bundle' => 'required | max:50',
             // 'person' => 'required | max:50',
             // 'name' => 'required | max:50',
@@ -133,7 +141,7 @@ class BookingController extends Controller
 
         $data= Booking::find($book_id);
         $data->book_location= $request->location;
-        $data->bundle_name= $request->bundle;
+        $data->book_bundle= $request->bundle;
         $data->person= $request->person;
         $data->promo= $request->promo;
         $data->name= $request->name;
@@ -152,11 +160,6 @@ class BookingController extends Controller
         $data->save();
         Session::flash('msg','Data submit successfully');
         return redirect('admin/booking');
-    }
-
-    public function show($book_id=null){
-        $showData = Booking::find($book_id);
-        return view('backend/booking/show', compact('showData'));
     }
 
     public function destroy($book_id=null){

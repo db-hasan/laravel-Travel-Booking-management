@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->bigIncrements('book_id');
             $table->string('book_location',50)->nullable();
-            $table->string('bundle_name',50)->nullable();
+            $table->string('book_bundle',50)->nullable();
             $table->string('person',50)->nullable();
             $table->string('promo',50)->nullable();
             $table->string('name',50)->nullable();

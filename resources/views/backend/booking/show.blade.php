@@ -17,11 +17,11 @@
                     <div class="row">
                         <div class="col">
                             <label>Location:</label>
-                            <h6>{{$showData->book_id}}</h6>
+                            <h6>{{$showData->pack_location}}</h6>
                         </div>
                         <div class="col">
                             <label>Description:</label>
-                            <h6>{{$showData->phone}}</h6>
+                            <h6>{{$showData->pack_des}}</h6>
                         </div>
                     </div>
                     <hr>
@@ -104,11 +104,11 @@
                     <div class="row">
                         <div class="col">
                             <label>Payment:</label>
-                            <h6>{{$showData->payment}}</h6>
+                            <h6>{{$showData->ps_name}}</h6>
                         </div>
                         <div class="col">
                             <label>Status:</label>
-                            <h6>{{$showData->book_status}}</h6>
+                            <h6>{{$showData->bs_name}}</h6>
                         </div>
                     </div>
                 </div>

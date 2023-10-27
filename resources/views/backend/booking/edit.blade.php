@@ -12,7 +12,7 @@
       
       <div class="col-md-4">
         <label for="location" class="form-label">Location</label>
-        <select class="form-select" aria-label="Default select example" id="location" value="{{$indexData->pack_location}}">
+        <select class="form-select" aria-label="Default select example" id="location" name="location">
           @foreach ($indexPackage as $itemPackage)
             <option value="{{$itemPackage->pack_id}}" {{ $indexData->book_location == $itemPackage->pack_id ? 'selected' : '' }} >{{$itemPackage->pack_location}}</option>
           @endforeach
@@ -23,12 +23,13 @@
       </div>
 
       <div class="col-md-4">
-        <label for="package" class="form-label">Package</label>
-        <select class="form-select" aria-label="Default select example" id="package" name="package">
-          <option selected>Select One</option>
-          <option>Regular</option>
+        <label for="bundle" class="form-label">Package</label>
+        <select class="form-select" aria-label="Default select example" id="package" name="bundle">
+          @foreach ($indexBundle as $itemBundle)
+            <option value="{{$itemBundle->bundle_id}}" {{ $indexData->book_bundle == $itemBundle->bundle_id ? 'selected' : '' }} >{{$itemBundle->bundle_name}}</option>
+          @endforeach
         </select>
-        @error('package')
+        @error('bundle')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
@@ -133,25 +134,23 @@
       </div>
       <div class="col-md-3">
         <label for="payment " class="form-label">Payment </label>
-        <select class="form-select" aria-label="Default select example" id="payment">
-          <option selected>Select One</option>
-          <option>Credit / Debit card</option>
-          <option>Mobile Banking</option>
-          <option>Cash in Delivery</option>
+        <select class="form-select" aria-label="Default select example" id="payment" name="payment">
+          @foreach ($indexPayment as $itemPayment)
+            <option value="{{$itemPayment->ps_id}}" {{ $indexData->payment == $itemPayment->ps_id ? 'selected' : '' }} >{{$itemPayment->ps_name}}</option>
+          @endforeach
         </select>
         @error('payment')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
       <div class="col-md-3">
-        <label for="status " class="form-label">Status </label>
-        <select class="form-select" aria-label="Default select example" id="status">
-          <option selected>Select One</option>
-          <option>Pending</option>
-          <option>Approve</option>
-          <option>Decline</option>
+        <label for="book_status " class="form-label">Status </label>
+        <select class="form-select" aria-label="Default select example" id="book_status" name="book_status"> 
+          @foreach ($indexBookingStatus as $itemBookingStatus)
+            <option value="{{$itemBookingStatus->bs_id}}" {{ $indexData->book_status == $itemBookingStatus->bs_id ? 'selected' : '' }} >{{$itemBookingStatus->bs_name}}</option>
+          @endforeach
         </select>
-        @error('payment')
+        @error('book_status')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
