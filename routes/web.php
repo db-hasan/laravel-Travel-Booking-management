@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\backend\BookingController;
 use App\Http\Controllers\backend\PackageController;
 use App\Http\Controllers\backend\PromoController;
+use App\Http\Controllers\backend\BundleController;
 
 
 
@@ -35,6 +36,14 @@ Route::get('promo/edit/{promo_id}',[PromoController::class,'edit']);
 Route::post('promo/update/{promo_id}',[PromoController::class,'update']);
 Route::get('promo/show/{promo_id}',[PromoController::class,'show']);
 Route::get('promo/destroy/{promo_id}',[PromoController::class,'destroy']);
+
+Route::get('admin/bundle',[BundleController::class,'index']);
+Route::get('admin/bundle/create',[BundleController::class,'create']);
+Route::post('admin/bundle/store',[BundleController::class,'store']);
+Route::get('bundle/edit/{bundle_id}',[BundleController::class,'edit']);
+Route::post('bundle/update/{bundle_id}',[BundleController::class,'update']);
+Route::get('bundle/show/{bundle_id}',[BundleController::class,'show']);
+Route::get('bundle/destroy/{bundle_id}',[BundleController::class,'destroy']);
 
 Route::get('',[BookingController::class,'index']);
 Route::get('',[BookingController::class,'create']);

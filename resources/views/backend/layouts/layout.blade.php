@@ -58,6 +58,14 @@
                     </a>
                 </li>
                 <li class="">
+                    <a href="{{url('/admin/bundle')}}">
+                        <span class="icon">
+                            <i class="fa-solid fa-layer-group fa-lg"></i>
+                        </span>
+                        <span class="title">Bundle</span>
+                    </a>
+                </li>
+                <li class="">
                     <a href="#">
                         <span class="icon">
                             <i class="fa-solid fa-chart-column fa-lg"></i>

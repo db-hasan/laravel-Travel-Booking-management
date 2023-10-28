@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Bundle extends Model
 {
     use HasFactory;
+    protected $primaryKey='bundle_id';
 }
