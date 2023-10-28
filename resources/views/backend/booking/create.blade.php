@@ -178,7 +178,7 @@ $(document).ready(function() {
             $('#person').val("1");
             $('#person').on('keyup', function () {
               if ($('#person').val() !== '1') {
-                  $('#errorak').text('Please enter 1 person');
+                  $('#errorak').text('Enter 1 person');
                 }else{
                   $('#errorak').text('');
               }
@@ -188,7 +188,7 @@ $(document).ready(function() {
             $('#person').val("2");
             $('#person').on('keyup', function () {
               if ($('#person').val() !== '2') {
-                  $('#errorak').text('Please enter 2 person');
+                  $('#errorak').text('Enter 2 person');
                 }else{
                   $('#errorak').text('');
               }
@@ -198,7 +198,7 @@ $(document).ready(function() {
             $('#person').val("3");
             $('#person').on('keyup', function () {
               if ($('#person').val() !== '3' && $('#person').val() !== '4') {
-                $('#errorak').text('Please enter 3 or 4 person');
+                $('#errorak').text('Enter 3 or 4 person');
               }else{
                 $('#errorak').text('');
               }
@@ -208,11 +208,21 @@ $(document).ready(function() {
           $('#person').val("3");
           $('#person').on('keyup', function () {
             if ($('#person').val() !== '3' && $('#person').val() !== '4') {
-              $('#errorak').text('Please enter 3 or 4 person');
+              $('#errorak').text('Enter 3 or 4 person');
             }else{
               $('#errorak').text('');
             }
           });
+
+        }else if($("#bundle").val() === "5") {
+          $('#person').val("");
+            $('#person').on('keyup', function () {
+              if ($('#person').val() !== '') {
+                  $('#errorak').text('');
+                }else{
+                  $('#errorak').text('Enter person');
+              }
+            });
 
         }else {
             $('#person').val("");

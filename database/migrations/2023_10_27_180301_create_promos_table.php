@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('promo_id');
             $table->string('promo_code',50)->nullable();;
             $table->string('promo_des',255)->nullable();;
-            $table->string('promo_percentage',10)->nullable();;
+            $table->integer('promo_percentage',10)->nullable();;
             $table->integer('promo_status')->default(1);
             $table->timestamps();
         });

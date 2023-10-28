@@ -14,13 +14,13 @@
                 <tr>
                     <th><span class="">ID</span></th>
                     <th><span class="">Location</span></th>
-                    <th><span class="ps-5">Package</span></th>
+                    <th><span class="pe-5">Package</span></th>
                     <th><span class="">Person</span></th>
                     <th><span class="">Promo</span></th>
                     <th><span class="">Price</span></th>
-                    <th><span class="ps-5">Name</span></th>
-                    <th><span class="ps-5">Number</span></th>
-                    <th><span class="ps-5">Payment</span></th>
+                    <th><span class="pe-5">Name</span></th>
+                    <th><span class="pe-5">Number</span></th>
+                    <th><span class="pe-5">Payment</span></th>
                     <th><span class="">Status</span></th>
                     <th><strong class="ps-5">Action</strong></th>
                 </tr>
@@ -28,19 +28,20 @@
             <tbody>
                 @foreach ($indexBooking as $itemBooking)
                 <?php
-                    $packpercentage=$itemBooking->bundel_percentage;
+                    $bp=$itemBooking->bundel_percentage;
+                    $ps=$itemBooking->promo_percentage;
 
                     $amount=($itemBooking->pack_price*$itemBooking->person);
-                    $promo=$itemBooking->promo_percentage;
-                    $result=$amount-($amount*$promo/100);
+                    $bundelPercentage=$amount-($amount*$bp/100);
+                    $promoPercentage=$bundelPercentage-($amount*$ps/100);
                 ?>
                 <tr>
                     <td>{{$itemBooking->book_id}}</td>
                     <td>{{$itemBooking->pack_location}}</td>
                     <td>{{$itemBooking->bundle_name}}</td>
                     <td>{{$itemBooking->person}}</td>
-                    <td>{{$itemBooking->promo_percentage}}</td>
-                    <td>{{$result}}</td>
+                    <td>{{$itemBooking->promo_code}}</td>
+                    <td>{{$promoPercentage}}</td>
                     <td>{{$itemBooking->name}}</td>
                     <td>{{$itemBooking->phone}}</td>   
                     <td>{{$itemBooking->ps_name}}</td>   
