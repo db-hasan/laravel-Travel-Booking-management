@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('bundles', function (Blueprint $table) {
             $table->bigIncrements('bundle_id');
-            $table->string('bundle_name')->nullable();;
-            $table->string('room_type')->nullable();;
-            $table->string('bundle_des')->nullable();;
+            $table->string('bundle_name')->nullable();
+            $table->integer('bundel_percentage')->nullable();
+            $table->string('room_type')->nullable();
+            $table->string('bundle_des')->nullable();
             $table->integer('bundle_status')->default(1);
             $table->timestamps();
         });

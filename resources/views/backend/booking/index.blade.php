@@ -27,7 +27,9 @@
             </thead>
             <tbody>
                 @foreach ($indexBooking as $itemBooking)
-                <?php  
+                <?php
+                    $packpercentage=$itemBooking->bundel_percentage;
+
                     $amount=($itemBooking->pack_price*$itemBooking->person);
                     $promo=$itemBooking->promo_percentage;
                     $result=$amount-($amount*$promo/100);
