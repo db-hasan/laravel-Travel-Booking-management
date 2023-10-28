@@ -16,6 +16,7 @@ class BookingController extends Controller
     public function index() {
         $indexBooking = Booking::join('packages', 'bookings.book_location', '=', 'pack_id')
                                 ->join('bundles', 'bookings.book_bundle', '=', 'bundle_id')
+                                ->join('promos', 'bookings.promo', '=', 'promo_code')
                                 ->join('payment_statuses', 'bookings.payment', '=', 'ps_id')
                                 ->join('booking_statuses', 'bookings.book_status', '=', 'bs_id')->get();
         return view('backend/booking/index', compact('indexBooking'));
@@ -24,9 +25,10 @@ class BookingController extends Controller
 
      public function show($book_id=null){
         $showData = Booking::join('packages', 'bookings.book_location', '=', 'pack_id')
-                                ->join('bundles', 'bookings.book_bundle', '=', 'bundle_id')
-                                ->join('payment_statuses', 'bookings.payment', '=', 'ps_id')
-                                ->join('booking_statuses', 'bookings.book_status', '=', 'bs_id')->find($book_id);
+                            ->join('bundles', 'bookings.book_bundle', '=', 'bundle_id')
+                            ->join('promos', 'bookings.promo', '=', 'promo_code')
+                            ->join('payment_statuses', 'bookings.payment', '=', 'ps_id')
+                            ->join('booking_statuses', 'bookings.book_status', '=', 'bs_id')->find($book_id);
         return view('backend/booking/show', compact('showData'));
     }
      // public function show($book_id=null){

@@ -38,10 +38,12 @@
       <div class="col-md-2">
         <label for="person" class="form-label">Person<span class="text-danger">*</span></label>
         <input type="text" class="form-control" id="person" name="person">
+        <span id="errorak" class="text-danger"></span>
         @error('person')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-md-2">
         <label for="promo" class="form-label">Promo</label>
         <input type="text" class="form-control" id="promo" name="promo">
@@ -166,5 +168,59 @@
       </div>
     </form>
 </div>
+
+<script src="{{asset('backend/js/jquery-3.7.1.min.js') }} "></script>
+<script>
+$(document).ready(function() {
+    $("#bundle").on("change", function() {
+      $('#errorak').text('');
+        if ($("#bundle").val() === "1") {
+            $('#person').val("1");
+            $('#person').on('keyup', function () {
+              if ($('#person').val() !== '1') {
+                  $('#errorak').text('Please enter 1 person');
+                }else{
+                  $('#errorak').text('');
+              }
+            });
+
+        } else if ($("#bundle").val() === "2") {
+            $('#person').val("2");
+            $('#person').on('keyup', function () {
+              if ($('#person').val() !== '2') {
+                  $('#errorak').text('Please enter 2 person');
+                }else{
+                  $('#errorak').text('');
+              }
+            });
+
+        } else if ($("#bundle").val() === "3") {
+            $('#person').val("3");
+            $('#person').on('keyup', function () {
+              if ($('#person').val() !== '3' && $('#person').val() !== '4') {
+                $('#errorak').text('Please enter 3 or 4 person');
+              }else{
+                $('#errorak').text('');
+              }
+            });
+
+        }else if ($("#bundle").val() === "4") {
+          $('#person').val("3");
+          $('#person').on('keyup', function () {
+            if ($('#person').val() !== '3' && $('#person').val() !== '4') {
+              $('#errorak').text('Please enter 3 or 4 person');
+            }else{
+              $('#errorak').text('');
+            }
+          });
+
+        }else {
+            $('#person').val("");
+        }
+    });
+});
+
+</script>
+
 
 @endsection
