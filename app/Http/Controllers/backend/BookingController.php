@@ -110,19 +110,19 @@ class BookingController extends Controller
 
     public function update(Request $request, $book_id){
         $rules = [
-            // 'location' => 'required | max:50',
-            // 'bundle' => 'required | max:50',
-            // 'person' => 'required | max:50',
-            // 'name' => 'required | max:50',
-            // 'phone' => 'required | max:30',
-            // 'gender' => 'required | max:30',
-            // 'nationality' => 'required | max:30',
-            // 'birth' => 'required | max:30',
-            // 'nid' => 'required | max:30',
-            // 'address' => 'required | max:30',
-            // 'city' => 'required | max:30',
-            // 'zip' => 'required | max:30',
-            // 'payment' => 'required | max:30',
+            'location' => 'required | max:50',
+            'bundle' => 'required | max:50',
+            'person' => 'required | max:50',
+            'name' => 'required | max:50',
+            'phone' => 'required | max:30',
+            'gender' => 'required | max:30',
+            'nationality' => 'required | max:30',
+            'birth' => 'required | max:30',
+            'nid' => 'required | max:30',
+            'address' => 'required | max:30',
+            'city' => 'required | max:30',
+            'zip' => 'required | max:30',
+            'payment' => 'required | max:30',
         ];
         $v_msg=[
             'location.required'=> 'Please select your Location',

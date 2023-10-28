@@ -44,4 +44,32 @@ class PromoController extends Controller
         return redirect('admin/promo');
     }
 
+    public function edit($promo_id=null){
+        $indexData['indexData'] = Promo::find($promo_id);
+        $indexData['indexStatus']= Status::all();      
+        return view('backend/promo/edit', $indexData);
+    }
+    
+    public function update(Request $request, $promo_id){
+        $rules = [
+            'promo_code' => 'required | max:50',
+            'promo_des' => 'required | max:255',
+            'promo_percentage' => 'required | max:50',
+        ];
+        $v_msg=[
+            'promo_code.required'=> 'Please enter promo code',
+            'promo_des.required'=> 'Please enter promo description',
+            'promo_percentage.required'=> 'Please enter your promo percentage',
+        ];
+        $this -> validate($request, $rules, $v_msg);
+        $data= Promo::find($promo_id);
+        $data->promo_code= $request->promo_code;
+        $data->promo_des= $request->promo_des;
+        $data->promo_percentage= $request->promo_percentage;
+        $data->promo_status= $request->status;
+        $data->save();
+        Session::flash('msg','Data submit successfully');
+        return redirect('admin/promo');
+    }
+
 }
