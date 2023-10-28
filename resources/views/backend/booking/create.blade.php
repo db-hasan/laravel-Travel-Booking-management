@@ -171,30 +171,40 @@
 
 <script src="{{asset('backend/js/jquery-3.7.1.min.js') }} "></script>
 <script>
-$(document).ready(function() {
-    $("#bundle").on("change", function() {
-      $('#errorak').text('');
-        if ($("#bundle").val() === "1") {
-            $('#person').val("1");
-            $('#person').on('keyup', function () {
-              if ($('#person').val() !== '1') {
-                  $('#errorak').text('Enter 1 person');
+  $(document).ready(function() {
+      $("#bundle").on("change", function() {
+        $('#errorak').text('');
+          if ($("#bundle").val() === "1") {
+              $('#person').val("1");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '1') {
+                    $('#errorak').text('Enter 1 person');
+                  }else{
+                    $('#errorak').text('');
+                }
+              });
+
+          } else if ($("#bundle").val() === "2") {
+              $('#person').val("2");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '2') {
+                    $('#errorak').text('Enter 2 person');
+                  }else{
+                    $('#errorak').text('');
+                }
+              });
+
+          } else if ($("#bundle").val() === "3") {
+              $('#person').val("3");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '3' && $('#person').val() !== '4') {
+                  $('#errorak').text('Enter 3 or 4 person');
                 }else{
                   $('#errorak').text('');
-              }
-            });
+                }
+              });
 
-        } else if ($("#bundle").val() === "2") {
-            $('#person').val("2");
-            $('#person').on('keyup', function () {
-              if ($('#person').val() !== '2') {
-                  $('#errorak').text('Enter 2 person');
-                }else{
-                  $('#errorak').text('');
-              }
-            });
-
-        } else if ($("#bundle").val() === "3") {
+          }else if ($("#bundle").val() === "4") {
             $('#person').val("3");
             $('#person').on('keyup', function () {
               if ($('#person').val() !== '3' && $('#person').val() !== '4') {
@@ -204,31 +214,21 @@ $(document).ready(function() {
               }
             });
 
-        }else if ($("#bundle").val() === "4") {
-          $('#person').val("3");
-          $('#person').on('keyup', function () {
-            if ($('#person').val() !== '3' && $('#person').val() !== '4') {
-              $('#errorak').text('Enter 3 or 4 person');
-            }else{
-              $('#errorak').text('');
-            }
-          });
-
-        }else if($("#bundle").val() === "5") {
-          $('#person').val("");
-            $('#person').on('keyup', function () {
-              if ($('#person').val() !== '') {
-                  $('#errorak').text('');
-                }else{
-                  $('#errorak').text('Enter person');
-              }
-            });
-
-        }else {
+          }else if($("#bundle").val() === "5") {
             $('#person').val("");
-        }
-    });
-});
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '') {
+                    $('#errorak').text('');
+                  }else{
+                    $('#errorak').text('Enter person');
+                }
+              });
+
+          }else {
+              $('#person').val("");
+          }
+      });
+  });
 
 </script>
 

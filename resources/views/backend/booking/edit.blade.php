@@ -24,7 +24,7 @@
 
       <div class="col-md-4">
         <label for="bundle" class="form-label">Package</label>
-        <select class="form-select" aria-label="Default select example" id="package" name="bundle">
+        <select class="form-select" aria-label="Default select example" id="bundle" name="bundle">
           @foreach ($indexBundle as $itemBundle)
             <option value="{{$itemBundle->bundle_id}}" {{ $indexData->book_bundle == $itemBundle->bundle_id ? 'selected' : '' }} >{{$itemBundle->bundle_name}}</option>
           @endforeach
@@ -36,6 +36,7 @@
       <div class="col-md-2">
         <label for="person" class="form-label">Person</label>
         <input type="text" class="form-control" id="person" name="person" value="{{$indexData->person}}">
+        <span id="errorak" class="text-danger"></span>
         @error('person')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -159,5 +160,68 @@
       </div>
     </form>
 </div>
+
+<script src="{{asset('backend/js/jquery-3.7.1.min.js') }} "></script>
+<script>
+  $(document).ready(function() {
+      $("#bundle").on("change", function() {
+        $('#errorak').text('');
+          if ($("#bundle").val() === "1") {
+              $('#person').val("1");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '1') {
+                    $('#errorak').text('Enter 1 person');
+                  }else{
+                    $('#errorak').text('');
+                }
+              });
+
+          } else if ($("#bundle").val() === "2") {
+              $('#person').val("2");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '2') {
+                    $('#errorak').text('Enter 2 person');
+                  }else{
+                    $('#errorak').text('');
+                }
+              });
+
+          } else if ($("#bundle").val() === "3") {
+              $('#person').val("3");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '3' && $('#person').val() !== '4') {
+                  $('#errorak').text('Enter 3 or 4 person');
+                }else{
+                  $('#errorak').text('');
+                }
+              });
+
+          }else if ($("#bundle").val() === "4") {
+            $('#person').val("3");
+            $('#person').on('keyup', function () {
+              if ($('#person').val() !== '3' && $('#person').val() !== '4') {
+                $('#errorak').text('Enter 3 or 4 person');
+              }else{
+                $('#errorak').text('');
+              }
+            });
+
+          }else if($("#bundle").val() === "5") {
+            $('#person').val("");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '') {
+                    $('#errorak').text('');
+                  }else{
+                    $('#errorak').text('Enter person');
+                }
+              });
+
+          }else {
+              $('#person').val("");
+          }
+      });
+  });
+
+</script>
 
 @endsection
