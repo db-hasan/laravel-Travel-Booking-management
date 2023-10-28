@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Promo;
+use App\Models\Status;
 use Session;
 
 class PromoController extends Controller
