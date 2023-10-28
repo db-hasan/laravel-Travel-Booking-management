@@ -72,4 +72,16 @@ class PromoController extends Controller
         return redirect('admin/promo');
     }
 
+    public function show($promo_id=null){
+        $showData = Promo::join('statuses', 'Promos.promo_status', '=', 'statuses.id')->find($promo_id);
+        return view('backend/promo/show', compact('showData'));
+    }
+
+    public function destroy($promo_id=null){
+        $destroyData = Promo::find($promo_id);
+        $destroyData->delete();
+        Session::flash('msg','Data delete successfully');
+        return redirect('/admin/promo');
+    }
+
 }
