@@ -46,4 +46,33 @@ class ExpenseController extends Controller
         Session::flash('msg','Data submit successfully');
         return redirect('admin/expense');
     }
+
+    public function edit($expense_id=null){ 
+        $indexData['indexData'] = Expense::find($expense_id);
+        $indexData['indexPackage']= Package::all();      
+        $indexData['indexCosttype']= Costtype::all();            
+        $indexData['indexStatus']= Status::all();      
+        return view('backend/expense/edit', $indexData);
+    }
+    public function update(Request $request, $expense_id){
+        $rules = [
+            'expense_location' => 'required | max:20',
+            'expense_type' => 'required | max:50',
+            'expense_price' => 'required | max:30',
+        ];
+        $v_msg=[
+            'expense_location.required'=> 'Please select your location',
+            'expense_type.required'=> 'Please select your type',
+            'expense_price.required'=> 'Please enter your price',
+        ];
+        $this -> validate($request, $rules, $v_msg);
+
+        $data= Expense::find($expense_id);
+        $data->expense_location= $request->expense_location;
+        $data->expense_type= $request->expense_type;
+        $data->expense_price= $request->expense_price;
+        $data->save();
+        Session::flash('msg','Data submit successfully');
+        return redirect('admin/expense');
+    }
 }
