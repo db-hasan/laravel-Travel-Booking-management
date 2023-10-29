@@ -17,6 +17,7 @@
                     <th><span class="pe-5">Description</span></th>
                     <th><span class="">Resort_Name</span></th>
                     <th><span class="">Price</span></th>
+                    <th><span class="">Member</span></th>
                     <th><span class="">From_Date</span></th>
                     <th><span class="pe-3">To_Date</span></th>
                     <th><span class="">Arrival_Time</span></th>
@@ -32,6 +33,7 @@
                     <td>{{$item->pack_des}}</td>
                     <td>{{$item->resort}}</td>
                     <td>{{$item->pack_price}}</td>
+                    <td>{{$item->member}}</td>
                     <td>{{$item->from_date}}</td>
                     <td>{{$item->to_date}}</td>
                     <td>{{$item->arrival_time}}</td>   

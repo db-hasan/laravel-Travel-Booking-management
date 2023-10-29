@@ -17,43 +17,50 @@
         @enderror
       </div>
       <div class="col-md-8">
-        <label for="inputPassword4" class="form-label">Description</label>
-        <input type="text" class="form-control" id="inputPassword4" name="description">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" id="description" name="description">
         @error('description')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-8">
-        <label for="inputAddress" class="form-label">Resort</label>
-        <input type="text" class="form-control" id="inputAddress" name="resort">
+      <div class="col-6">
+        <label for="resort" class="form-label">Resort</label>
+        <input type="text" class="form-control" id="resort" name="resort">
         @error('resort')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-4">
-        <label for="inputAddress2" class="form-label">Booking_Price</label>
-        <input type="text" class="form-control" id="inputAddress2" name="price">
+      <div class="col-3">
+        <label for="price" class="form-label">Booking_Price</label>
+        <input type="text" class="form-control" id="price" name="price">
         @error('price')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+      <div class="col-3">
+        <label for="member" class="form-label">Member</label>
+        <input type="text" class="form-control" id="inputAddress2" name="member">
+        @error('member')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
       <div class="col-4">
-        <label for="inputAddress2" class="form-label">From Date</label>
-        <input type="date" class="form-control" id="inputAddress2" name="fromdate">
+        <label for="fromdate" class="form-label">From Date</label>
+        <input type="date" class="form-control" id="fromdate" name="fromdate">
         @error('fromdate')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
       <div class="col-4">
-        <label for="inputAddress2" class="form-label">To Date</label>
-        <input type="date" class="form-control" id="inputAddress2" name="todate">
+        <label for="todate" class="form-label">To Date</label>
+        <input type="date" class="form-control" id="todate" name="todate">
         @error('todate')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
       <div class="col-4">
-        <label for="inputAddress2" class="form-label">Arrival Time</label>
-        <input type="time" class="form-control" id="inputAddress2" name="arrival">
+        <label for="arrival" class="form-label">Arrival Time</label>
+        <input type="time" class="form-control" id="arrival" name="arrival">
         @error('arrival')
             <span class="text-danger">{{ $message }}</span>
         @enderror

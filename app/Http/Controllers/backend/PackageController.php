@@ -26,6 +26,7 @@ class PackageController extends Controller
             'description' => 'required | max:50',
             'resort' => 'required | max:30',
             'price' => 'required | max:30',
+            'member' => 'required | max:30',
             'fromdate' => 'required',
             'todate' => 'required',
             'arrival' => 'required',
@@ -35,6 +36,7 @@ class PackageController extends Controller
             'description.required'=> 'Please enter your description',
             'resort.required'=> 'Please enter your resort name',
             'price.required'=> 'Please enter your price',
+            'member.required'=> 'Please enter your member',
             'fromdate.required'=> 'Please enter your Data',
             'todate.required'=> 'Please enter your Data',
             'arrival.required'=> 'Please enter your Data'
@@ -46,6 +48,7 @@ class PackageController extends Controller
         $data->pack_des= $request->description;
         $data->resort= $request->resort;
         $data->pack_price= $request->price;
+        $data->member= $request->member;
         $data->from_date= $request->fromdate;
         $data->to_date= $request->todate;
         $data->arrival_time= $request->arrival;

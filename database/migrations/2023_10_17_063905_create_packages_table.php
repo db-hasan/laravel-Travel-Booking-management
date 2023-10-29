@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('pack_des',255)->nullable();
             $table->string('resort',255)->nullable();
             $table->string('pack_price',10)->nullable();
+            $table->string('member',10)->nullable();
             $table->string('from_date',10)->nullable();
             $table->string('to_date',10)->nullable();
             $table->string('arrival_time',10)->nullable();

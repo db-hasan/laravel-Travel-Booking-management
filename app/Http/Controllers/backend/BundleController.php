@@ -29,7 +29,7 @@ class BundleController extends Controller
             'bundle_percentage' => 'required | max:50',
             'room_type' => 'required | max:50',
             'bundle_des' => 'required | max:255',
-            'bundle_img' => 'required | max:255',
+            // 'bundle_img' => 'required | max:255',
         ];
         $v_msg=[
             'bundle_name.required'=> 'Please enter Name',
@@ -59,10 +59,10 @@ class BundleController extends Controller
     public function update(Request $request, $bundle_id){
         $rules = [
             'bundle_name' => 'required | max:50',
-            'bundel_percentage' => 'required | max:50',
+            'bundle_percentage' => 'required | max:50',
             'room_type' => 'required | max:50',
             'bundle_des' => 'required | max:255',
-            'bundle_img' => 'required | max:255',
+            // 'bundle_img' => 'required | max:255',
         ];
         $v_msg=[
             'bundle_name.required'=> 'Please enter Name',
@@ -78,7 +78,7 @@ class BundleController extends Controller
         $data->room_type= $request->room_type;
         $data->bundle_des= $request->bundle_des;
         // $data->bundle_img= $request->bundle_img;
-        $data->bundle_status= $request->bundle_status;
+        $data->bundle_status= $request->status;
         $data->save();
         Session::flash('msg','Data submit successfully');
         return redirect('admin/bundle');
