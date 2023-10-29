@@ -228,6 +228,11 @@
               $('#person').val("");
           }
       });
+      
+  });
+
+  $(document).ready(function() {
+    $('#promo').attr('value', 'N/A')
   });
 
 </script>

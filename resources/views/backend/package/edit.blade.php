@@ -23,7 +23,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-8">
+      <div class="col-4 ">
         <label for="inputAddress" class="form-label">Resort</label>
         <input type="text" class="form-control" id="inputAddress" name="resort" value="{{$editData->resort}}">
         @error('resort')
@@ -34,6 +34,13 @@
         <label for="inputAddress2" class="form-label">Booking_Price</label>
         <input type="text" class="form-control" id="inputAddress2" name="price" value="{{$editData->pack_price}}">
         @error('price')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      <div class="col-4">
+        <label for="member" class="form-label">Member</label>
+        <input type="text" class="form-control" id="member" name="member" value="{{$editData->member}}">
+        @error('member')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
