@@ -66,6 +66,14 @@
                     </a>
                 </li>
                 <li class="">
+                    <a href="{{url('/admin/expense')}}">
+                        <span class="icon">
+                            <i class="fa-solid fa-baby-carriage fa-lg"></i>
+                        </span>
+                        <span class="title">Expense</span>
+                    </a>
+                </li>
+                <li class="">
                     <a href="#">
                         <span class="icon">
                             <i class="fa-solid fa-chart-column fa-lg"></i>

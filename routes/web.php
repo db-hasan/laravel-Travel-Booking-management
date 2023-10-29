@@ -5,6 +5,7 @@ use App\Http\Controllers\backend\BookingController;
 use App\Http\Controllers\backend\PackageController;
 use App\Http\Controllers\backend\PromoController;
 use App\Http\Controllers\backend\BundleController;
+use App\Http\Controllers\backend\ExpenseController;
 
 
 
@@ -45,17 +46,17 @@ Route::post('bundle/update/{bundle_id}',[BundleController::class,'update']);
 Route::get('bundle/show/{bundle_id}',[BundleController::class,'show']);
 Route::get('bundle/destroy/{bundle_id}',[BundleController::class,'destroy']);
 
-Route::get('',[BookingController::class,'index']);
-Route::get('',[BookingController::class,'create']);
-Route::post('',[BookingController::class,'store']);
-Route::get('',[BookingController::class,'edit']);
-Route::post('',[BookingController::class,'update']);
-Route::get('',[BookingController::class,'show']);
-Route::get('',[BookingController::class,'delete']);
-
+Route::get('admin/expense',[ExpenseController::class,'index']);
+Route::get('admin/expense/create',[ExpenseController::class,'create']);
+Route::post('admin/expense/store',[ExpenseController::class,'store']);
+Route::get('expense/edit/{expense_id}',[ExpenseController::class,'edit']);
+Route::post('expense/update/{expense_id}',[ExpenseController::class,'update']);
+Route::get('expense/show/{expense_id}',[ExpenseController::class,'show']);
+Route::get('expense/destroy/{expense_id}',[ExpenseController::class,'destroy']);
 
 
 // --------------------------------------------------------------
+
 
 // Frontend Route
 Route::get('/',[HomeController::class,'index']);
