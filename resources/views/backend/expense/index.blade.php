@@ -14,9 +14,7 @@
                 <tr>
                     <th><span class="">ID</span></th>
                     <th><span class="pe-5">Package</span></th>
-                    <th><span class="pe-5">Expense Type</span></th>
-                    <th><span class="pe-5">Price</span></th>
-                    <th><span class="">Status</span></th>
+                    <th><span class="pe-5">Total Expense Price</span></th>
                     <th><strong class="ps-5">Action</strong></th>
                 </tr>
             </thead>
@@ -25,9 +23,7 @@
                 <tr>
                     <td>{{$itemExpense->expense_id}}</td>
                     <td>{{$itemExpense->pack_location}}</td>
-                    <td>{{$itemExpense->costtype_name}}</td>
                     <td>{{$itemExpense->expense_price}}</td>   
-                    <td>{{$itemExpense->status_name}}</td>   
                     <td class="icons">
                         <a href="{{url('expense/show/'.$itemExpense->expense_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
                         <a href="{{url('expense/edit/'.$itemExpense->expense_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
