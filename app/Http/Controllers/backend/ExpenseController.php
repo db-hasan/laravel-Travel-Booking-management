@@ -18,10 +18,21 @@ class ExpenseController extends Controller
         return view('backend/expense/index', compact('indexExpense'));
     }
 
-    // public function package(){
-    //     $indexData= Package::all();    
-    //     return view('frontend/package/package', compact('indexData'));
-    // }
+
+    public function show($expense_id=null){
+        $showData = Expense::join('packages', 'expenses.expense_location', '=', 'pack_id')
+                            ->join('expense_details', 'expense_details.order_id', '=', 'expense_id')
+                            ->join('costtypes', 'expense_details.details_type', '=', 'costtype_id')
+                            ->find($expense_id); 
+        return view('backend/expense/show', compact('showData'));
+    }
+
+    public function destroy($expense_id=null){
+        $destroyData = Expense::find($expense_id);
+        $destroyData->delete();
+        Session::flash('msg','Data delete successfully');
+        return redirect('/admin/expense');
+    }
     
     public function create(){ 
         $indexData['indexPackage']= Package::all();      

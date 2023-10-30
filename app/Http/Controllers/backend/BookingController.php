@@ -23,7 +23,7 @@ class BookingController extends Controller
     }
 
 
-     public function show($book_id=null){
+    public function show($book_id=null){
         $showData = Booking::join('packages', 'bookings.book_location', '=', 'pack_id')
                             ->join('bundles', 'bookings.book_bundle', '=', 'bundle_id')
                             ->join('promos', 'bookings.promo', '=', 'promo_code')
