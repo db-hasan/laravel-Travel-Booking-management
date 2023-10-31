@@ -23,8 +23,8 @@
                 @foreach ($indexExpense as $itemExpense)
                 <tr>
                     <td>{{$itemExpense->expense_id}}</td>
-                    <td>{{$itemExpense->pack_location}}</td>
-                    <td>{{$itemExpense->details_price}}</td>   
+                    <td>{{$itemExpense->pack_location}}</td>                   
+                     <td>{{$itemExpense->total}}</td> 
                     <td class="icons">
                         <a href="{{url('expense/show/'.$itemExpense->expense_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
                         <a href="{{url('expense/edit/'.$itemExpense->expense_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>

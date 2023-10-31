@@ -15,15 +15,17 @@ class ExpenseController extends Controller
 {
     public function index() {
         $indexExpense = Expense::join('packages', 'expenses.expense_location', '=', 'pack_id')->get(); 
+        $indexExpense->each(function ($expence){
+            $expence->total = ExpenseDetails::where('order_id', $expence->expense_id)->sum('details_price');
+        });
         return view('backend/expense/index', compact('indexExpense'));
     }
 
 
     public function show($expense_id=null){
         $showData = Expense::join('packages', 'expenses.expense_location', '=', 'pack_id')
-                            ->join('expense_details', 'expense_details.order_id', '=', 'expense_id')
-                            ->join('costtypes', 'expense_details.details_type', '=', 'costtype_id')
                             ->find($expense_id); 
+        $showData->expence_details = ExpenseDetails::join('costtypes', 'details_type','=', 'costtype_id')->where('order_id', $expense_id)->get();
         return view('backend/expense/show', compact('showData'));
     }
 

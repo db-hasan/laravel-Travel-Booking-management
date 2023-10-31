@@ -16,12 +16,14 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($showData->expence_details as $detail)
             <tr>
-                <th scope="row">{{$showData->expense_id}}</th>
+                <th scope="row">{{$detail->details_id}}</th>
                 <td>{{$showData->pack_location}}</td>
-                <td>{{$showData->costtype_name}}</td>
-                <td>{{$showData->details_price}}</td>
+                <td>{{$detail->costtype_name}}</td>
+                <td>{{$detail->details_price}}</td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
