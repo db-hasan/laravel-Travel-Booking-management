@@ -20,7 +20,7 @@ class ExpenseController extends Controller
         });
         return view('backend/expense/index', compact('indexExpense'));
     }
-
+    
 
     public function show($expense_id=null){
         $showData = Expense::join('packages', 'expenses.expense_location', '=', 'pack_id')

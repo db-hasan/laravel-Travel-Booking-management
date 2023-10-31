@@ -11,6 +11,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Package</th>
+                <th scope="col">Date</th>
                 <th scope="col">Expense Type</th>
                 <th scope="col">Expense Price</th>
             </tr>
@@ -20,6 +21,7 @@
             <tr>
                 <th scope="row">{{$detail->details_id}}</th>
                 <td>{{$showData->pack_location}}</td>
+                <td>{{$showData->created_at}}</td>
                 <td>{{$detail->costtype_name}}</td>
                 <td>{{$detail->details_price}}</td>
             </tr>

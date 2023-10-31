@@ -14,6 +14,7 @@
                 <tr>
                     <th><span class="">ID</span></th>
                     <th><span class="pe-5">Package</span></th>
+                    <th><span class="pe-5">Date</span></th>
                     <th><span class="pe-5">Total Expense Price</span></th>
                     <th><strong class="ps-5">Action</strong></th>
                 </tr>
@@ -23,7 +24,8 @@
                 @foreach ($indexExpense as $itemExpense)
                 <tr>
                     <td>{{$itemExpense->expense_id}}</td>
-                    <td>{{$itemExpense->pack_location}}</td>                   
+                    <td>{{$itemExpense->pack_location}}</td>  
+                    <td>{{$itemExpense->created_at}}</td>                 
                      <td>{{$itemExpense->total}}</td> 
                     <td class="icons">
                         <a href="{{url('expense/show/'.$itemExpense->expense_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
