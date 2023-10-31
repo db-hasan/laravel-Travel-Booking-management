@@ -21,6 +21,14 @@ class ExpenseController extends Controller
         return view('backend/expense/index', compact('indexExpense'));
     }
     
+    // public function index(){
+    //     $indexExpense= Package::all();    
+    //     return view('backend/expense/index', compact('indexExpense'));
+    // }
+    // public function create(){
+    //     $indexData['indexCosttype']= Costtype::all();   
+    //     return view('backend/expense/create', $indexData);
+    // }
 
     public function show($expense_id=null){
         $showData = Expense::join('packages', 'expenses.expense_location', '=', 'pack_id')
