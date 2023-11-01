@@ -1,6 +1,11 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\frontend\PackController;
+use App\Http\Controllers\frontend\BookController;
+use App\Http\Controllers\frontend\PaymentController;
+
+
 use App\Http\Controllers\backend\BookingController;
 use App\Http\Controllers\backend\PackageController;
 use App\Http\Controllers\backend\PromoController;
@@ -12,7 +17,6 @@ use App\Http\Controllers\backend\ExpenseController;
 // Backend Route
 
 Route::view('/admin', 'backend/dashboard/dashboard') -> name('dashboard');
-Route::view('/dame', 'backend/dame/index');
 
 Route::get('admin/package',[PackageController::class,'index']);
 Route::get('admin/package/create',[PackageController::class,'create']);
@@ -60,14 +64,17 @@ Route::get('expense/destroy/{expense_id}',[ExpenseController::class,'destroy']);
 
 // Frontend Route
 Route::get('/',[HomeController::class,'index']);
-Route::get('/package',[HomeController::class,'package']);
-Route::get('/booking',[HomeController::class,'booking']);
 
-Route::get('/payment',[HomeController::class,'payment']);
+Route::get('/package',[PackController::class,'package']);
+
+Route::get('/booking',[BookController::class,'booking']);
+
+Route::get('/payment',[PaymentController::class,'payment']);
+
+
+
 Route::get('/checkout',[HomeController::class,'checkout']);
 Route::get('/invoice',[HomeController::class,'invoice']);
-
-
 Route::get('/service',[HomeController::class,'service']);
 Route::get('/about',[HomeController::class,'about']);
 Route::get('/contact',[HomeController::class,'contact']);

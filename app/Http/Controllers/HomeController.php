@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Package;
 use App\Models\Bundle;
+use App\Models\Booking;
 use Session;
 
 class HomeController extends Controller
@@ -12,19 +13,7 @@ class HomeController extends Controller
         return view('frontend/home');
     }
 
-    public function package(){
-        $indexData= Package::all();    
-        return view('frontend/package/package', compact('indexData'));
-    }
-
-    public function booking(){   
-        $indexData= Bundle::all();  
-        return view('frontend/package/booking', compact('indexData'));
-    }
-
-    public function payment(){    
-        return view('frontend/payment/payment'); 
-    }
+    
     public function invoice(){    
         return view('frontend/invoice'); 
     }

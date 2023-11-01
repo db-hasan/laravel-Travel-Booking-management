@@ -23,7 +23,8 @@
 <!-- Banner End -->
 
 <div id="checkout">
-<form action="" method="post">
+<form method="post" action="{{url('/admin/booking/store')}}">
+@csrf
     <div class="container-fluid pt-1">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Package</h6>
@@ -45,31 +46,46 @@
                                     <h6 class="my-0">Package</h6>
                                     <small class="text-body-secondary">Deluxe Single Room</small>
                                 </div>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>select one</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
+                                <select class="form-select" aria-label="Default select example" id="bundle" name="bundle">
+                                    <option value="" selected>Select One</option>
+                                    @foreach ($indexBundle as $itemBundle)
+                                    <option value="{{$itemBundle->bundle_id}}">{{$itemBundle->bundle_name}}</option>
+                                    @endforeach
+                                </select> 
+                                    @error('location')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                             </li>
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
                                     <h6 class="my-0">List of Person</h6>
                                     <small class="text-body-secondary">Depended Package</small>
                                 </div>
-                                <input type="text" class="form-control text-end" placeholder="2">
+                                <input type="text" class="form-control text-end" id="person" name="person">
+                                {{-- <span id="errorak" class="text-danger"></span> --}}
+                                @error('person')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </li>
+                            <span id="errorak" class="text-danger"></span>
+
+                            
                             <li class="list-group-item d-flex justify-content-between">
                                 <span>Total (USD)</span>
                                 <strong>$35</strong>
                             </li>
+                            
                             <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
                                 <div class="text-success">
                                     <h6 class="my-0">Promo code</h6>
                                     <small>Brief description</small>
                                 </div>
-                                <input type="text" class="form-control text-end" placeholder="-$5">
+                                <input type="text" class="form-control text-end" id="promo" name="promo">
+                                @error('promo')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </li>
+                            
                             <li class="list-group-item d-flex justify-content-between">
                                 <h6 class="my-0">Total (USD)</h6>
                                 <strong>$30</strong>
@@ -90,7 +106,7 @@
                     <div class="bg-light">
                         <h4 class="bg-primary text-light rounded p-2 pe-5 text-end">Package Details</h4>
                         <div class="custom-scrollbar">
-                            @foreach ($indexData as $item)
+                            @foreach ($indexBundle as $item)
                             <div class="card mb-3 mx-4" >
                                 <div class="row g-0">
                                     <div class="col-md-4 rounded">
@@ -126,4 +142,72 @@
     </div>
 </form>
 </div>
+
+<script src="{{asset('backend/js/jquery-3.7.1.min.js') }} "></script>
+<script>
+  $(document).ready(function() {
+      $("#bundle").on("change", function() {
+        $('#errorak').text('');
+          if ($("#bundle").val() === "1") {
+              $('#person').val("1");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '1') {
+                    $('#errorak').text('Enter 1 person');
+                  }else{
+                    $('#errorak').text('');
+                }
+              });
+
+          } else if ($("#bundle").val() === "2") {
+              $('#person').val("2");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '2') {
+                    $('#errorak').text('Enter 2 person');
+                  }else{
+                    $('#errorak').text('');
+                }
+              });
+
+          } else if ($("#bundle").val() === "3") {
+              $('#person').val("3");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '3' && $('#person').val() !== '4') {
+                  $('#errorak').text('Enter 3 or 4 person');
+                }else{
+                  $('#errorak').text('');
+                }
+              });
+
+          }else if ($("#bundle").val() === "4") {
+            $('#person').val("3");
+            $('#person').on('keyup', function () {
+              if ($('#person').val() !== '3' && $('#person').val() !== '4') {
+                $('#errorak').text('Enter 3 or 4 person');
+              }else{
+                $('#errorak').text('');
+              }
+            });
+
+          }else if($("#bundle").val() === "5") {
+            $('#person').val("");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '') {
+                    $('#errorak').text('');
+                  }else{
+                    $('#errorak').text('Enter person');
+                }
+              });
+
+          }else {
+              $('#person').val("");
+          }
+      });
+      
+  });
+
+  $(document).ready(function() {
+    $('#promo').attr('value', 'N/A')
+  });
+
+</script>
 @endsection

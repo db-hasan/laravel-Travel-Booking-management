@@ -77,7 +77,7 @@
                 <h1 class="mb-5">Awesome Packages</h1>
             </div>
             <div class="row g-4 justify-content-center">
-                @foreach ($indexData as $item)
+                @foreach ($indexPackage as $item)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="package-item">
                         <div class="overflow-hidden">
@@ -219,40 +219,54 @@
                     </div>
                     <div class="col-md-6">
                         <h1 class="text-white mb-4">Book A Tour</h1>
-                        <form action="">
+                        <form method="post" action="{{url('admin/booking/store')}}">
+                            @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-select bg-transparent" id="select1">
-                                            <option value="1">Select One</option>
-                                            <option value="1">Canada</option>
-                                            <option value="2">France</option>
-                                            <option value="3">New York</option>
+                                        <select class="form-select bg-transparent" id="location" name="location">
+                                            <option value="" selected>Select One</option>
+                                            @foreach ($indexPackage as $itemPackage)
+                                            <option value="{{$itemPackage->pack_id}}">{{$itemPackage->pack_location}}</option>
+                                            @endforeach
                                         </select>
+                                        @error('location')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                         <label for="name">Destination</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-select bg-transparent" id="select1">
-                                            <option value="1">Select One</option>
-                                            <option value="1">Regular</option>
-                                            <option value="2">Family</option>
-                                            <option value="3">Group</option>
+                                        <select class="form-select bg-transparent" id="bundle" name="bundle">
+                                            <option value="" selected>Select One</option>
+                                            @foreach ($indexBundle as $itemBundle)
+                                            <option value="{{$itemBundle->bundle_id}}">{{$itemBundle->bundle_name}}</option>
+                                            @endforeach
                                         </select>
+                                            @error('bundle')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         <label for="select1">Package</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="person" placeholder="Your Email">
+                                        <input type="text" class="form-control bg-transparent" id="person" name="person" placeholder="Person">
                                         <label for="person">List of Person</label>
+                                        <span id="errorak" class="text-danger"></span>
+                                        @error('person')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="promocode" placeholder="Your Email">
+                                        <input type="text" class="form-control bg-transparent" id="promo" name="promo">
                                         <label for="promocode">Promo code</label>
+                                        @error('promo')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -272,5 +286,73 @@
         </div>
     </div>
 <!-- Booking Start -->
+
+<script src="{{asset('backend/js/jquery-3.7.1.min.js') }} "></script>
+<script>
+  $(document).ready(function() {
+      $("#bundle").on("change", function() {
+        $('#errorak').text('');
+          if ($("#bundle").val() === "1") {
+              $('#person').val("1");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '1') {
+                    $('#errorak').text('Enter 1 person');
+                  }else{
+                    $('#errorak').text('');
+                }
+              });
+
+          } else if ($("#bundle").val() === "2") {
+              $('#person').val("2");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '2') {
+                    $('#errorak').text('Enter 2 person');
+                  }else{
+                    $('#errorak').text('');
+                }
+              });
+
+          } else if ($("#bundle").val() === "3") {
+              $('#person').val("3");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '3' && $('#person').val() !== '4') {
+                  $('#errorak').text('Enter 3 or 4 person');
+                }else{
+                  $('#errorak').text('');
+                }
+              });
+
+          }else if ($("#bundle").val() === "4") {
+            $('#person').val("3");
+            $('#person').on('keyup', function () {
+              if ($('#person').val() !== '3' && $('#person').val() !== '4') {
+                $('#errorak').text('Enter 3 or 4 person');
+              }else{
+                $('#errorak').text('');
+              }
+            });
+
+          }else if($("#bundle").val() === "5") {
+            $('#person').val("");
+              $('#person').on('keyup', function () {
+                if ($('#person').val() !== '') {
+                    $('#errorak').text('');
+                  }else{
+                    $('#errorak').text('Enter person');
+                }
+              });
+
+          }else {
+              $('#person').val("");
+          }
+      });
+      
+  });
+
+  $(document).ready(function() {
+    $('#promo').attr('value', 'N/A')
+  });
+
+</script>
 
 @endsection
