@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="text-end">
-        <a href="{{url('/admin/expense/create')}}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i> Add Data</a>
+        <a href="{{url('/admin/expense/')}}" class="btn btn-sm btn-dark"><i class="fa-solid fa-eye"></i> View Data</a>
     </div>
     <hr>
     <table class="table">
@@ -11,19 +11,18 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Package</th>
-                <th scope="col">Date</th>
                 <th scope="col">Expense Type</th>
                 <th scope="col">Expense Price</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($showData->expence_details as $detail)
+            @foreach ($showData as $itemData)
             <tr>
-                <th scope="row">{{$detail->details_id}}</th>
-                <td>{{$showData->pack_location}}</td>
-                <td>{{$showData->created_at}}</td>
-                <td>{{$detail->costtype_name}}</td>
-                <td>{{$detail->details_price}}</td>
+                <td>#</td>
+                <td>{{$itemData->pack_location}}</td>
+                <td>{{$itemData->costtype_name}}</td>
+                <td>{{$itemData->expense_price}}</td>
+                
             </tr>
             @endforeach
         </tbody>

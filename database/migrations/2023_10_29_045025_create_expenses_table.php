@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('expenses', function (Blueprint $table) {
             $table->bigIncrements('expense_id');
-            $table->string('expense_location',20)->nullable(); 
+            $table->string('ex_package',20)->nullable(); 
+            $table->string('expense_type',50)->nullable(); 
+            $table->string('expense_price',50)->nullable(); 
             $table->timestamps();
         });
     }

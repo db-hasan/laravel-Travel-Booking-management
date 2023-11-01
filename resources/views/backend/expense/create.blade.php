@@ -12,14 +12,14 @@
       
       <div class="row">
         <div class="col-12 bg-light pt-3 pb-5">
-          <label for="expense_location" class="form-label">Package<span class="text-danger">*</span></label>
-          <select class="form-select" aria-label="Default select example" id="details_location" name="expense_location">
+          <label for="ex_package" class="form-label">Package<span class="text-danger">*</span></label>
+          <select class="form-select" aria-label="Default select example" id="ex_package" name="ex_package">
           <option value="" selected>Select One</option>
           @foreach ($indexPackage as $itemPackage)
           <option value="{{$itemPackage->pack_id}}">{{$itemPackage->pack_location}}</option>
           @endforeach
           </select> 
-          @error('expense_location')
+          @error('ex_package')
               <span class="text-danger">{{ $message }}</span>
           @enderror
         </div>
@@ -27,20 +27,20 @@
 
       <div class="row pt-4">
         <div class="col-6">
-          <select class="form-select" aria-label="Default select example" id="details_type" name="details_type[]">
+          <select class="form-select" aria-label="Default select example" id="expense_type" name="expense_type[]">
             <option value="" selected>Select One</option>
             @foreach ($indexCosttype as $itemCosttype)
             <option value="{{$itemCosttype->costtype_id}}">{{$itemCosttype->costtype_name}}</option>
             @endforeach
           </select>
-          @error('details_type')
+          @error('expense_type')
               <span class="text-danger">{{ $message }}</span>
           @enderror
         </div>
         <div class="col-4">
-          <input type="text" class="form-control" id="details_price" name="details_price[]" placeholder="Price">
+          <input type="text" class="form-control" id="expense_price" name="expense_price[]" placeholder="Price">
           <span id="errorak" class="text-danger"></span>
-          @error('details_price')
+          @error('expense_price')
               <span class="text-danger">{{ $message }}</span>
           @enderror
         </div>
@@ -51,20 +51,20 @@
       </div>
       <div class="row pt-4">
         <div class="col-6">
-          <select class="form-select" aria-label="Default select example" id="details_type" name="details_type[]">
+          <select class="form-select" aria-label="Default select example" id="expense_type" name="expense_type[]">
             <option value="" selected>Select One</option>
             @foreach ($indexCosttype as $itemCosttype)
             <option value="{{$itemCosttype->costtype_id}}">{{$itemCosttype->costtype_name}}</option>
             @endforeach
           </select>
-          @error('details_type')
+          @error('expense_type')
               <span class="text-danger">{{ $message }}</span>
           @enderror
         </div>
         <div class="col-4">
-          <input type="text" class="form-control" id="details_price" name="details_price[]" placeholder="Price">
+          <input type="text" class="form-control" id="expense_price" name="expense_price[]" placeholder="Price">
           <span id="errorak" class="text-danger"></span>
-          @error('details_price')
+          @error('expense_price')
               <span class="text-danger">{{ $message }}</span>
           @enderror
         </div>

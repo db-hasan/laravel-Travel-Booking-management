@@ -51,7 +51,7 @@ Route::get('admin/expense/create',[ExpenseController::class,'create']);
 Route::post('admin/expense/store',[ExpenseController::class,'store']);
 Route::get('expense/edit/{expense_id}',[ExpenseController::class,'edit']);
 Route::post('expense/update/{expense_id}',[ExpenseController::class,'update']);
-Route::get('expense/show/{expense_id}',[ExpenseController::class,'show']);
+Route::get('expense/show/{pack_id}',[ExpenseController::class,'show']);
 Route::get('expense/destroy/{expense_id}',[ExpenseController::class,'destroy']);
 
 

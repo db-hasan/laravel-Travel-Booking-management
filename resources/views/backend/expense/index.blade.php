@@ -14,7 +14,6 @@
                 <tr>
                     <th><span class="">ID</span></th>
                     <th><span class="pe-5">Package</span></th>
-                    <th><span class="pe-5">Date</span></th>
                     <th><span class="pe-5">Total Expense Price</span></th>
                     <th><strong class="ps-5">Action</strong></th>
                 </tr>
@@ -23,14 +22,13 @@
                 
                 @foreach ($indexExpense as $itemExpense)
                 <tr>
-                    <td>{{$itemExpense->expense_id}}</td>
-                    <td>{{$itemExpense->pack_location}}</td>  
-                    <td>{{$itemExpense->created_at}}</td>                 
+                    <td>{{$itemExpense->pack_id}}</td>
+                    <td>{{$itemExpense->pack_location}}</td>                 
                      <td>{{$itemExpense->total}}</td> 
                     <td class="icons">
-                        <a href="{{url('expense/show/'.$itemExpense->expense_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
-                        <a href="{{url('expense/edit/'.$itemExpense->expense_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="{{url('expense/destroy/'.$itemExpense->expense_id)}}" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
+                        <a href="{{url('expense/show/'.$itemExpense->pack_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
+                        <a href="{{url('expense/edit/'.$itemExpense->pack_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="{{url('expense/destroy/'.$itemExpense->pack_id)}}" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr> 
                 @endforeach   
