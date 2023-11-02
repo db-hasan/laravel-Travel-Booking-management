@@ -17,7 +17,7 @@ class PaymentController extends Controller
     //     return view('frontend/payment/payment'); 
     // }
 
-    public function payment(){ 
+    public function payment(Request $request){ 
         $indexData['indexPackage']= Package::all();      
         $indexData['indexBundle']= Bundle::all();      
         $indexData['indexPayment']= PaymentStatus::all();      

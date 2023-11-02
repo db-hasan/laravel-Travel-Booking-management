@@ -14,6 +14,16 @@ use App\Http\Controllers\backend\ExpenseController;
 
 
 
+// Frontend Route
+Route::get('/',[HomeController::class,'index']);
+
+Route::get('/package',[PackController::class,'package']);
+Route::post('package/store/step1',[PackController::class,'store']);
+
+Route::get('/booking',[BookController::class,'booking']);
+
+Route::get('/payment',[PaymentController::class,'payment']);
+
 // Backend Route
 
 Route::view('/admin', 'backend/dashboard/dashboard') -> name('dashboard');
@@ -60,18 +70,6 @@ Route::get('expense/destroy/{expense_id}',[ExpenseController::class,'destroy']);
 
 
 // --------------------------------------------------------------
-
-
-// Frontend Route
-Route::get('/',[HomeController::class,'index']);
-
-Route::get('/package',[PackController::class,'package']);
-
-Route::get('/booking',[BookController::class,'booking']);
-
-Route::get('/payment',[PaymentController::class,'payment']);
-
-
 
 Route::get('/checkout',[HomeController::class,'checkout']);
 Route::get('/invoice',[HomeController::class,'invoice']);
