@@ -44,7 +44,9 @@ class PackController extends Controller
         $step1['indexBundle']= Bundle::all();
 
         Session::flash('msg','Data submit successfully');
-        return view("frontend.payment.payment",$step1);
+        return view("frontend.payment.payment", $step1);
 
     }
+
+    
 }

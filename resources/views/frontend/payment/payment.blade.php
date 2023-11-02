@@ -24,7 +24,7 @@
 <!-- Banner End -->
 <div id="booking">
 
-<form method="post" action="{{url('package/store/step1')}}">
+<form method="post" action="{{url('/payment/store')}}">
 @csrf
     <div class="container-fluid pt-3">
         <div class="text-center">
@@ -36,73 +36,56 @@
                     <div class="">
                         <h4 class="bg-primary text-light p-2 pe-5 text-end">User Details</h4>
                         <div class="row g-3 px-3 py-3">
-
-                                <div class="col-md-6">
-                                    <label for="location" class="form-label">Location<span class="text-danger">*</span></label>
-                                    <select class="form-select" aria-label="Default select example" id="location" name="location">
-                                    @foreach ($indexPackage as $itemPackage)
-                                    <option value="{{$itemPackage->pack_id}}" {{$location == $itemPackage->location_id ? "selected": null}}>{{$itemPackage->pack_location}}</option>
-                                    @endforeach
-                                    </select> 
-                                    @error('location')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="bundle" class="form-label">Package<span class="text-danger">*</span></label>
-                                    <select class="form-select" aria-label="Default select example" id="bundle" name="bundle">
-                                        @foreach ($indexBundle as $itemBundle)
-                                        <option value="{{$itemBundle->bundle_id}} {{$bundle == $itemBundle->bundle_id ? "selected": null}}">{{$itemBundle->bundle_name}}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('bundle')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                {{-- <div class="col-md-4">
-                                    <label for="bundle" class="form-label">Package<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="bundle" name="bundle" value="{{$bundle->bundle_name}}">
-                                    @error('bundle')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div> --}}
-
-                                <div class="col-md-6">
-                                    <label for="person" class="form-label">Person<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="person" name="person" value="{{$person}}">
-                                    <span id="errorak" class="text-danger"></span>
-                                    @error('person')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="promo" class="form-label">Promo</label>
-                                    <input type="text" class="form-control" id="promo" name="promo" value="{{$promo}}">
-                                    @error('promo')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                {{-- <div class="col-md-6">
+                            
+                            <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="person" name="person" placeholder="Person">
+                                        <select class="form-select bg-transparent" id="location" name="location">
+                                            <option value="" selected>Select One</option>
+                                            @foreach ($indexPackage as $itemPackage)
+                                            <option value="{{$itemPackage->pack_id}}" {{$location == $itemPackage->pack_id ? "selected": null}}>{{$itemPackage->pack_location}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('location')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                        <label for="name">Destination</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select bg-transparent" id="bundle" name="bundle">
+                                            <option value="" selected>Select One</option>
+                                            @foreach ($indexBundle as $itemBundle)
+                                            <option value="{{$itemBundle->bundle_id}}" {{$bundle == $itemBundle->bundle_id ? "selected": null}}>{{$itemBundle->bundle_name}}</option>
+                                            @endforeach
+                                        </select>
+                                            @error('bundle')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        <label for="select1">Package</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control bg-transparent" id="person" name="person" placeholder="Person" value="{{$person}}">
                                         <label for="person">List of Person</label>
                                         <span id="errorak" class="text-danger"></span>
                                         @error('person')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                </div> --}}
-                                {{-- <div class="col-md-6">
+                                </div>
+                                
+                                <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="promo" name="promo">
+                                        <input type="text" class="form-control bg-transparent" id="promo" name="promo" value="{{$promo}}">
                                         <label for="promocode">Promo code</label>
                                         @error('promo')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                </div> --}}
+                                </div>
                       
 
 
@@ -113,10 +96,12 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+
                                 <div class="col-md-6">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="text" class="form-control" id="email" name="email">
                                 </div>
+
                                 <div class="col-md-6">
                                     <label for="phone" class="form-label">Phone</label>
                                     <input type="text" class="form-control" id="phone" name="phone">
@@ -124,6 +109,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+
                                 <div class="col-md-6">
                                     <label for="birth" class="form-label">Date of Birth</label>
                                     <input type="date" class="form-control" id="Birth" name="birth">
@@ -131,6 +117,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+
                                 <div class="col-md-6">
                                     <label for="" class="form-label">Gender</label>
                                     <div class="d-flex">
@@ -147,10 +134,12 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+
                                 <div class="col-md-6">
                                     <label for="Occupation" class="form-label">Occupation/Profession</label>
                                     <input type="text" class="form-control" id="Occupation" name="occupation">
                                 </div>
+
                                 <div class="col-md-6">
                                     <label for="nationality" class="form-label">Nationality</label>
                                     <input type="text" class="form-control" id="nationality" name="nationality">
@@ -158,6 +147,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+
                                 <div class="col-md-6">
                                     <label for="nid" class="form-label">NID</label>
                                     <input type="text" class="form-control" id="nid" name="nid">
@@ -165,6 +155,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+
                                 <div class="col-md-6">
                                     <label for="address" class="form-label">Address</label>
                                     <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St">
@@ -172,6 +163,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+
                                 <div class="col-md-4">
                                     <label for="city" class="form-label">City</label>
                                     <input type="text" class="form-control" id="city" name="city" placeholder="Bogura">
@@ -179,6 +171,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+
                                 <div class="col-md-2">
                                     <label for="zip" class="form-label">Zip</label>
                                     <input type="text" class="form-control" id="zip" name="zip" placeholder="5810">

@@ -35,6 +35,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+      
       <div class="col-md-2">
         <label for="person" class="form-label">Person<span class="text-danger">*</span></label>
         <input type="text" class="form-control" id="person" name="person">
@@ -51,6 +52,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-md-4">
         <label for="name" class="form-label">Name<span class="text-danger">*</span></label>
         <input type="text" class="form-control" id="name" name="name">
@@ -58,6 +60,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-md-4">
         <label for="email" class="form-label">Email</label>
         <input type="text" class="form-control" id="email" name="email">
@@ -65,6 +68,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-md-4">
         <label for="phone" class="form-label">Phone<span class="text-danger">*</span></label>
         <input type="text" class="form-control" id="phone" name="phone">
@@ -97,6 +101,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-md-4">
         <label for="occupation" class="form-label">Occupation</label>
         <input type="text" class="form-control" id="occupation" name="occupation">
@@ -104,6 +109,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-md-3">
         <label for="nationality" class="form-label">Nationality<span class="text-danger">*</span></label>
         <input type="text" class="form-control" id="nationality" name="nationality">
@@ -111,6 +117,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-md-3">
         <label for="nid" class="form-label">NID<span class="text-danger">*</span></label>
         <input type="text" class="form-control" id="inputAddress2" name="nid">
@@ -118,6 +125,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-md-6">
         <label for="address" class="form-label">Address<span class="text-danger">*</span></label>
         <input type="text" class="form-control" id="address" name="address">
@@ -125,6 +133,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-md-4">
         <label for="city" class="form-label">City<span class="text-danger">*</span></label>
         <input type="text" class="form-control" id="city" name="city">
@@ -132,6 +141,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-md-2">
         <label for="zip" class="form-label">Zip<span class="text-danger">*</span></label>
         <input type="text" class="form-control" id="zip" name="zip">
@@ -139,6 +149,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-md-3">
         <label for="payment " class="form-label">Payment<span class="text-danger">*</span></label>
         <select class="form-select" aria-label="Default select example" id="payment" name="payment">

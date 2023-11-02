@@ -18,11 +18,13 @@ use App\Http\Controllers\backend\ExpenseController;
 Route::get('/',[HomeController::class,'index']);
 
 Route::get('/package',[PackController::class,'package']);
-Route::post('package/store/step1',[PackController::class,'store']);
+Route::post('package/store',[PackController::class,'store']);
+
 
 Route::get('/booking',[BookController::class,'booking']);
 
 Route::get('/payment',[PaymentController::class,'payment']);
+Route::post('payment/store',[PaymentController::class,'store']);
 
 // Backend Route
 

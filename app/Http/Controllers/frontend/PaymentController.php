@@ -4,25 +4,26 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Booking;
 use App\Models\Package;
 use App\Models\Bundle;
-use App\Models\Booking;
-use App\Models\PaymentStatus;
-use App\Models\BookingStatus;
 use Session;
 
 class PaymentController extends Controller
 {
-    public function payment(Request $request){ 
-        $indexData['indexPackage']= Package::all();      
-        $indexData['indexBundle']= Bundle::all();      
-        $indexData['indexPayment']= PaymentStatus::all();      
-        $indexData['indexBookingStatus']= BookingStatus::all();      
-        return view('frontend/payment/payment', $indexData);
-    }
+    // public function payment(){ 
+    //     $indexData['indexPackage']= Package::all();      
+    //     $indexData['indexBundle']= Bundle::all();         
+    //     return view('frontend/payment/payment', $indexData);
+    // }
+    
 
     public function store(Request $request){
         $rules = [
+            'location' => 'required | max:50',
+            'bundle' => 'required | max:50',
+            'person' => 'required | max:50',
+            'promo' => 'required | max:50',
             'name' => 'required | max:50',
             'phone' => 'required | max:30',
             'gender' => 'required | max:30',
@@ -35,6 +36,10 @@ class PaymentController extends Controller
             // 'payment' => 'required | max:30',
         ];
         $v_msg=[
+            'location.required'=> 'Please select your Location',
+            'bundle.required'=> 'Please select your Package',
+            'person.required'=> 'Please add Person',
+            'promo.required'=> 'Please add promo',
             'name.required'=> 'Please enter your name',
             'gender.required'=> 'Please select your Gender',
             'phone.required'=> 'Please enter your phone number',
@@ -48,6 +53,10 @@ class PaymentController extends Controller
         ];
         $this -> validate($request, $rules, $v_msg);
         $data= new Booking();
+        $data->book_location= $request->location;
+        $data->book_bundle= $request->bundle;
+        $data->person= $request->person;
+        $data->promo= $request->promo;
         $data->name= $request->name;
         $data->email= $request->email;
         $data->phone= $request->phone;

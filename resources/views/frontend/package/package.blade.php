@@ -221,7 +221,7 @@
                         <h1 class="text-white mb-4">Book A Tour</h1>
 
                         
-                        <form method="post" action="{{url('package/store/step1')}}">
+                        <form method="post" action="{{url('package/store')}}">
                             @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
