@@ -273,9 +273,6 @@
                                 </div>
 
 
-
-
-
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px"></textarea>

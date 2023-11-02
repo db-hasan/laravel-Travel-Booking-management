@@ -38,7 +38,7 @@ class PackController extends Controller
         $data->book_bundle= $request->bundle;
         $data->person= $request->person;
         $data->promo= $request->promo;
-        $data->save();
+        // $data->save();
         
         $step1['indexPackage']= Package::all();      
         $step1['indexBundle']= Bundle::all();
