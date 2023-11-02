@@ -219,6 +219,8 @@
                     </div>
                     <div class="col-md-6">
                         <h1 class="text-white mb-4">Book A Tour</h1>
+
+                        
                         <form method="post" action="{{url('package/store/step1')}}">
                             @csrf
                             <div class="row g-3">
@@ -269,6 +271,11 @@
                                         @enderror
                                     </div>
                                 </div>
+
+
+
+
+
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px"></textarea>

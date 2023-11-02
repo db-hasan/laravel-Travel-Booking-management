@@ -24,7 +24,7 @@
 <!-- Banner End -->
 <div id="booking">
 
-<form method="post" action="{{url('/admin/booking/store')}}">
+<form method="post" action="{{url('package/store/step1')}}">
 @csrf
     <div class="container-fluid pt-3">
         <div class="text-center">
@@ -36,37 +36,55 @@
                     <div class="">
                         <h4 class="bg-primary text-light p-2 pe-5 text-end">User Details</h4>
                         <div class="row g-3 px-3 py-3">
-                            
-                            <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-select bg-transparent" id="location" name="location">
-                                            <option value="" selected>Select One</option>
-                                            @foreach ($indexPackage as $itemPackage)
-                                            <option value="{{$itemPackage->pack_id}}">{{$itemPackage->pack_location}}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('location')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                        <label for="name">Destination</label>
-                                    </div>
+
+                                <div class="col-md-6">
+                                    <label for="location" class="form-label">Location<span class="text-danger">*</span></label>
+                                    <select class="form-select" aria-label="Default select example" id="location" name="location">
+                                    @foreach ($indexPackage as $itemPackage)
+                                    <option value="{{$itemPackage->pack_id}}" {{$location == $itemPackage->location_id ? "selected": null}}>{{$itemPackage->pack_location}}</option>
+                                    @endforeach
+                                    </select> 
+                                    @error('location')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="bundle" class="form-label">Package<span class="text-danger">*</span></label>
+                                    <select class="form-select" aria-label="Default select example" id="bundle" name="bundle">
+                                        @foreach ($indexBundle as $itemBundle)
+                                        <option value="{{$itemBundle->bundle_id}} {{$bundle == $itemBundle->bundle_id ? "selected": null}}">{{$itemBundle->bundle_name}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('bundle')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                {{-- <div class="col-md-4">
+                                    <label for="bundle" class="form-label">Package<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="bundle" name="bundle" value="{{$bundle->bundle_name}}">
+                                    @error('bundle')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div> --}}
+
+                                <div class="col-md-6">
+                                    <label for="person" class="form-label">Person<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="person" name="person" value="{{$person}}">
+                                    <span id="errorak" class="text-danger"></span>
+                                    @error('person')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                      
-                                        <select class="form-select bg-transparent" id="bundle" name="bundle">
-                                            <option value="" selected>Select One</option>
-                                            @foreach ($indexBundle as $itemBundle)
-                                            <option value="{{$itemBundle->bundle_id}}" {{$bundle == $itemBundle->bundle_id ? "selected": null}}>{{$itemBundle->bundle_name}}</option>
-                                            @endforeach
-                                        </select>
-                                            @error('bundle')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        <label for="select1">Package</label>
-                                    </div>
+                                    <label for="promo" class="form-label">Promo</label>
+                                    <input type="text" class="form-control" id="promo" name="promo" value="{{$promo}}">
+                                    @error('promo')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <div class="form-floating">
                                         <input type="text" class="form-control bg-transparent" id="person" name="person" placeholder="Person">
                                         <label for="person">List of Person</label>
@@ -75,8 +93,8 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                </div>
-                                <div class="col-md-6">
+                                </div> --}}
+                                {{-- <div class="col-md-6">
                                     <div class="form-floating">
                                         <input type="text" class="form-control bg-transparent" id="promo" name="promo">
                                         <label for="promocode">Promo code</label>
@@ -84,7 +102,7 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                </div>
+                                </div> --}}
                       
 
 
