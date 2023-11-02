@@ -13,10 +13,6 @@ use Session;
 
 class PaymentController extends Controller
 {
-    // public function payment(){    
-    //     return view('frontend/payment/payment'); 
-    // }
-
     public function payment(Request $request){ 
         $indexData['indexPackage']= Package::all();      
         $indexData['indexBundle']= Bundle::all();      

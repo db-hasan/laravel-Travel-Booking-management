@@ -11,11 +11,6 @@ use Session;
 
 class BookController extends Controller
 {
-    // public function booking(){   
-    //     $indexData= Bundle::all();  
-    //     return view('frontend/booking/booking', compact('indexData'));
-    // }
-
     public function booking(){
         $indexData['indexPackage']= Package::all();
         $indexData['indexBundle']= Bundle::all();          
