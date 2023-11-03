@@ -22,10 +22,10 @@ Route::post('package/store/step-1',[PackController::class,'store1']);
 Route::post('package/store/step-2',[PackController::class,'store2']);
 
 
-Route::get('/booking',[BookController::class,'booking']);
+Route::get('/booking/{pack_id}',[BookController::class,'booking']);
 Route::post('booking/store',[BookController::class,'store']);
 
-Route::get('/payment',[PaymentController::class,'payment']);
+// Route::get('/payment',[PaymentController::class,'payment']);
 Route::post('payment/store',[PaymentController::class,'store']);
 
 // Backend Route

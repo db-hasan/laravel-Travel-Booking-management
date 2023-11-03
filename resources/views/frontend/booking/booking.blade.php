@@ -37,10 +37,10 @@
                             
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
-                                    <h6 class="my-0">Canada</h6>
-                                    <small class="text-body-secondary">Resort Name</small>
+                                    <h6 class="my-0">{{$indexPackage->pack_location}}</h6>
+                                    <small class="text-body-secondary">{{$indexPackage->resort}}</small>
                                 </div>
-                                <span class="text-body-secondary"><Strong>$20</Strong></span>
+                                <span class="text-body-secondary"><Strong>{{$indexPackage->pack_price}}</Strong></span>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between lh-sm">
@@ -49,12 +49,10 @@
                                     <small class="text-body-secondary">Deluxe Single Room</small>
                                 </div>
                                 <select class="form-select" aria-label="Default select example" id="location" name="location">
-                                    <option value="" selected>Select One</option>
-                                    @foreach ($indexPackage as $itemPackage)
-                                    <option value="{{$itemPackage->pack_id}}">{{$itemPackage->pack_location}}</option>
-                                    @endforeach
+                                    <option value="{{$indexPackage->pack_id}}">{{$indexPackage->pack_location}}</option>
                                 </select>   
                             </li>
+
                             @error('location')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror

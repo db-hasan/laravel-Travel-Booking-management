@@ -37,8 +37,6 @@ class PackController extends Controller
 
     }
 
-
-
     public function store2(Request $request){
 
         $step2=$request->all();

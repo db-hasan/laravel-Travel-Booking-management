@@ -37,7 +37,7 @@
                         <h4 class="bg-primary text-light p-2 pe-5 text-end">User Details</h4>
                         <div class="row g-3 px-3 py-3">
                             
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select bg-transparent" id="location" name="location">
                                             <option value="" selected>Select One</option>

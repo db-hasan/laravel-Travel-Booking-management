@@ -194,7 +194,7 @@
                                     </div>
                                 </div>
                                 <form method="post" action="{{url('package/store/step-1')}}">
-                                <a href="{{url('package/'.$item->pack_id)}}" class="btn btn-sm btn-primary" type="submit" style="border-radius: 50px !important;">Choose Package</a>
+                                <a href="{{url('booking/'.$item->pack_id)}}" class="btn btn-sm btn-primary" type="submit" style="border-radius: 50px !important;">Choose Package</a>
                                 </form>
                             </div>
                         </div>
