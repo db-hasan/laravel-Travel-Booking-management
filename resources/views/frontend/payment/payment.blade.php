@@ -51,6 +51,7 @@
                                         <label for="name">Destination</label>
                                     </div>
                                 </div>
+
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select bg-transparent" id="bundle" name="bundle">
@@ -91,7 +92,7 @@
 
                                 <div class="col-md-6">
                                     <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name" name="name">
+                                    <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -99,12 +100,12 @@
 
                                 <div class="col-md-6">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="text" class="form-control" id="email" name="email">
+                                    <input type="text" class="form-control" id="email" name="email" value="{{old('email')}}">
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="phone" class="form-label">Phone</label>
-                                    <input type="text" class="form-control" id="phone" name="phone">
+                                    <input type="text" class="form-control" id="phone" name="phone" value="{{old('phone')}}">
                                     @error('phone')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -112,7 +113,7 @@
 
                                 <div class="col-md-6">
                                     <label for="birth" class="form-label">Date of Birth</label>
-                                    <input type="date" class="form-control" id="Birth" name="birth">
+                                    <input type="date" class="form-control" id="Birth" name="birth" value="{{old('birth')}}">
                                     @error('birth')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -137,12 +138,12 @@
 
                                 <div class="col-md-6">
                                     <label for="Occupation" class="form-label">Occupation/Profession</label>
-                                    <input type="text" class="form-control" id="Occupation" name="occupation">
+                                    <input type="text" class="form-control" id="Occupation" name="occupation" value="{{old('occupation')}}">
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="nationality" class="form-label">Nationality</label>
-                                    <input type="text" class="form-control" id="nationality" name="nationality">
+                                    <input type="text" class="form-control" id="nationality" name="nationality" value="{{old('nationality')}}">
                                     @error('nationality')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -150,7 +151,7 @@
 
                                 <div class="col-md-6">
                                     <label for="nid" class="form-label">NID</label>
-                                    <input type="text" class="form-control" id="nid" name="nid">
+                                    <input type="text" class="form-control" id="nid" name="nid" value="{{old('nid')}}">
                                     @error('nid')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -158,7 +159,7 @@
 
                                 <div class="col-md-6">
                                     <label for="address" class="form-label">Address</label>
-                                    <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St">
+                                    <input type="text" class="form-control" id="address" name="address" value="{{old('address')}}" placeholder="1234 Main St">
                                     @error('address')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -166,7 +167,7 @@
 
                                 <div class="col-md-4">
                                     <label for="city" class="form-label">City</label>
-                                    <input type="text" class="form-control" id="city" name="city" placeholder="Bogura">
+                                    <input type="text" class="form-control" id="city" name="city" value="{{old('city')}}" placeholder="Bogura" >
                                     @error('city')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -174,7 +175,7 @@
 
                                 <div class="col-md-2">
                                     <label for="zip" class="form-label">Zip</label>
-                                    <input type="text" class="form-control" id="zip" name="zip" placeholder="5810">
+                                    <input type="text" class="form-control" id="zip" name="zip" value="{{old('zip')}}" placeholder="5810">
                                     @error('zip')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

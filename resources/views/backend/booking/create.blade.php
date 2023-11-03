@@ -55,7 +55,7 @@
 
       <div class="col-md-4">
         <label for="name" class="form-label">Name<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="name" name="name">
+        <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
         @error('name')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -63,7 +63,7 @@
 
       <div class="col-md-4">
         <label for="email" class="form-label">Email</label>
-        <input type="text" class="form-control" id="email" name="email">
+        <input type="text" class="form-control" id="email" name="email" value="{{old('email')}}">
         @error('email')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -71,7 +71,7 @@
 
       <div class="col-md-4">
         <label for="phone" class="form-label">Phone<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="phone" name="phone">
+        <input type="text" class="form-control" id="phone" name="phone" value="{{old('phone')}}">
         @error('phone')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -96,7 +96,7 @@
       
       <div class="col-md-4">
         <label for="birth" class="form-label">Date of Birth<span class="text-danger">*</span></label>
-        <input type="date" class="form-control" id="birth" name="birth">
+        <input type="date" class="form-control" id="birth" name="birth" value="{{old('birth')}}">
         @error('birth')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -104,7 +104,7 @@
 
       <div class="col-md-4">
         <label for="occupation" class="form-label">Occupation</label>
-        <input type="text" class="form-control" id="occupation" name="occupation">
+        <input type="text" class="form-control" id="occupation" name="occupation" value="{{old('occupation')}}">
         @error('occupation')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -112,7 +112,7 @@
 
       <div class="col-md-3">
         <label for="nationality" class="form-label">Nationality<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="nationality" name="nationality">
+        <input type="text" class="form-control" id="nationality" name="nationality" value="{{old('nationality')}}">
         @error('nationality')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -120,7 +120,7 @@
 
       <div class="col-md-3">
         <label for="nid" class="form-label">NID<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="inputAddress2" name="nid">
+        <input type="text" class="form-control" id="inputAddress2" name="nid" value="{{old('nid')}}">
         @error('nid')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -128,7 +128,7 @@
 
       <div class="col-md-6">
         <label for="address" class="form-label">Address<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="address" name="address">
+        <input type="text" class="form-control" id="address" name="address" value="{{old('address')}}">
         @error('address')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -136,7 +136,7 @@
 
       <div class="col-md-4">
         <label for="city" class="form-label">City<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="city" name="city">
+        <input type="text" class="form-control" id="city" name="city" value="{{old('city')}}">
         @error('city')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -144,7 +144,7 @@
 
       <div class="col-md-2">
         <label for="zip" class="form-label">Zip<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="zip" name="zip">
+        <input type="text" class="form-control" id="zip" name="zip" value="{{old('zip')}}">
         @error('zip')
             <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -162,6 +162,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-md-3">
         <label for="book_status " class="form-label">Status</label>
         <select class="form-select" aria-label="Default select example" id="book_status" name="book_status">
@@ -174,6 +175,7 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
       <div class="col-12 text-end">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>

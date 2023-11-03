@@ -5,7 +5,6 @@ use App\Http\Controllers\frontend\PackController;
 use App\Http\Controllers\frontend\BookController;
 use App\Http\Controllers\frontend\PaymentController;
 
-
 use App\Http\Controllers\backend\BookingController;
 use App\Http\Controllers\backend\PackageController;
 use App\Http\Controllers\backend\PromoController;

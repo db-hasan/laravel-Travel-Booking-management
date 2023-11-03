@@ -11,11 +11,11 @@ use Session;
 
 class PaymentController extends Controller
 {
-    // public function payment(){ 
-    //     $indexData['indexPackage']= Package::all();      
-    //     $indexData['indexBundle']= Bundle::all();         
-    //     return view('frontend/payment/payment', $indexData);
-    // }
+    public function payment(){ 
+        $indexData['indexPackage']= Package::all();      
+        $indexData['indexBundle']= Bundle::all();         
+        return view('frontend/payment/payment', $indexData);
+    }
     
 
     public function store(Request $request){
