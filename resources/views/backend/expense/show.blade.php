@@ -18,7 +18,7 @@
         <tbody>
             @foreach ($showData as $itemData)
             <tr>
-                <td>#</td>
+                <td>{{$loop->index+1}}</td>
                 <td>{{$itemData->pack_location}}</td>
                 <td>{{$itemData->costtype_name}}</td>
                 <td>{{$itemData->expense_price}}</td>
