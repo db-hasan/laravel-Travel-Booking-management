@@ -81,7 +81,7 @@
                                     <small class="text-body-secondary">Depended Package</small>
                                 </div>
                                 <input type="text" class="form-control text-end" id="person" name="person">
-                                {{-- <span id="errorak" class="text-danger"></span> --}}
+                                <span id="errorak" class="text-danger"></span>
                                 @error('person')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -109,6 +109,7 @@
                                 <strong>$30</strong>
                             </li>
                         </ul>
+                    
                         <div class="d-flex justify-content-end">
                             <div class="p-2 ">
                                 <button type="button" class="btn btn-danger">
