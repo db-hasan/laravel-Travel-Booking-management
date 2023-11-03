@@ -127,7 +127,7 @@ class BookingController extends Controller
             'promo' => 'required | max:50',
             'name' => 'required | max:50',
             'phone' => 'required | max:30',
-            'gender' => 'required | max:30',
+            // 'gender' => 'required | max:30',
             'nationality' => 'required | max:30',
             'birth' => 'required | max:30',
             'nid' => 'required | max:30',
