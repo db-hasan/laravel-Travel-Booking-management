@@ -23,7 +23,7 @@
 <!-- Banner End -->
 
 <div id="checkout">
-<form method="post" action="{{url('/admin/booking/store')}}">
+<form method="post" action="{{url('/booking/store')}}">
 @csrf
     <div class="container-fluid pt-1">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -34,6 +34,7 @@
             <div class="row">
                 <div class="col-lg-4 ps-3">
                         <ul class="list-group mb-3">
+                            
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
                                     <h6 class="my-0">Canada</h6>
@@ -41,6 +42,23 @@
                                 </div>
                                 <span class="text-body-secondary"><Strong>$20</Strong></span>
                             </li>
+
+                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                <div>
+                                    <h6 class="my-0">Location</h6>
+                                    <small class="text-body-secondary">Deluxe Single Room</small>
+                                </div>
+                                <select class="form-select" aria-label="Default select example" id="location" name="location">
+                                    <option value="" selected>Select One</option>
+                                    @foreach ($indexPackage as $itemPackage)
+                                    <option value="{{$itemPackage->pack_id}}">{{$itemPackage->pack_location}}</option>
+                                    @endforeach
+                                </select> 
+                                    @error('location')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </li>
+
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
                                     <h6 class="my-0">Package</h6>
@@ -52,10 +70,11 @@
                                     <option value="{{$itemBundle->bundle_id}}">{{$itemBundle->bundle_name}}</option>
                                     @endforeach
                                 </select> 
-                                    @error('location')
+                                    @error('bundle')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                             </li>
+
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
                                     <h6 class="my-0">List of Person</h6>
@@ -67,7 +86,6 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </li>
-                            <span id="errorak" class="text-danger"></span>
 
                             
                             <li class="list-group-item d-flex justify-content-between">
