@@ -31,7 +31,7 @@ class BookController extends Controller
             'location.required'=> 'Please select your Location',
             'bundle.required'=> 'Please select your Package',
             'person.required'=> 'Please add Person',
-            'promo.required'=> 'Please add promo',
+            'promo.required'=> 'Please add promo or N/A',
         ];
         $this -> validate($request, $rules, $v_msg);
         $data= new Booking();
@@ -44,7 +44,6 @@ class BookController extends Controller
         $step['indexPackage']= Package::all();      
         $step['indexBundle']= Bundle::all();
         return view("frontend.payment.payment", $step);
-
     }
 
 }

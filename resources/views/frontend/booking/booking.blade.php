@@ -53,11 +53,11 @@
                                     @foreach ($indexPackage as $itemPackage)
                                     <option value="{{$itemPackage->pack_id}}">{{$itemPackage->pack_location}}</option>
                                     @endforeach
-                                </select> 
-                                    @error('location')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                </select>   
                             </li>
+                            @error('location')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
 
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
@@ -70,10 +70,10 @@
                                     <option value="{{$itemBundle->bundle_id}}">{{$itemBundle->bundle_name}}</option>
                                     @endforeach
                                 </select> 
-                                    @error('bundle')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
                             </li>
+                            @error('bundle')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
 
                             <li class="list-group-item d-flex justify-content-between lh-sm">
                                 <div>
@@ -81,11 +81,11 @@
                                     <small class="text-body-secondary">Depended Package</small>
                                 </div>
                                 <input type="text" class="form-control text-end" id="person" name="person">
-                                <span id="errorak" class="text-danger"></span>
-                                @error('person')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
                             </li>
+                            <span id="errorak" class="text-danger"></span>
+                            @error('person')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
 
                             
                             <li class="list-group-item d-flex justify-content-between">
@@ -99,10 +99,10 @@
                                     <small>Brief description</small>
                                 </div>
                                 <input type="text" class="form-control text-end" id="promo" name="promo">
-                                @error('promo')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
                             </li>
+                            @error('promo')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             
                             <li class="list-group-item d-flex justify-content-between">
                                 <h6 class="my-0">Total (USD)</h6>
