@@ -17,27 +17,7 @@ class PackController extends Controller
         return view('frontend/package/package', $indexData);
     }
 
-    public function store1(Request $request){
-
-        $step1=$request->all();
-
-        $rules = [
-            'location' => 'required | max:50',
-        ];
-        $v_msg=[
-            'location.required'=> 'Please select your Location',
-        ];
-        $this -> validate($request, $rules, $v_msg);
-        $data= new Booking();
-        $data->book_location= $request->location;
-        // $data->save();
-        
-        $step1['indexPackage']= Package::all();      
-        return view("frontend.booking.booking", $step1);
-
-    }
-
-    public function store2(Request $request){
+    public function store(Request $request){
 
         $step2=$request->all();
 

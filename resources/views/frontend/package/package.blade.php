@@ -193,9 +193,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <form method="post" action="{{url('package/store/step-1')}}">
                                 <a href="{{url('booking/'.$item->pack_id)}}" class="btn btn-sm btn-primary" type="submit" style="border-radius: 50px !important;">Choose Package</a>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -222,8 +220,7 @@
                     <div class="col-md-6">
                         <h1 class="text-white mb-4">Book A Tour</h1>
 
-                        
-                        <form method="post" action="{{url('package/store/step-2')}}">
+                        <form method="post" action="{{url('package/store')}}">
                             @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
