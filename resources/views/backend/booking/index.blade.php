@@ -29,12 +29,12 @@
             <tbody>
                 @foreach ($indexBooking as $itemBooking)
                 <?php
-                    $bp=$itemBooking->bundel_percentage;
+                    $bp=$itemBooking->bundle_percentage;
                     $pp=$itemBooking->promo_percentage;
 
                     $amount=($itemBooking->pack_price*$itemBooking->person);
-                    $bundelPercentage=$amount-($amount*$bp/100);
-                    $promoPercentage=$bundelPercentage-($amount*$pp/100);
+                    $bundel=$amount-($amount*$bp/100);
+                    $promo=$bundel-($amount*$pp/100);
                 ?>
                 <tr>
                     <td>{{$itemBooking->book_id}}</td>
@@ -43,7 +43,7 @@
                     <td>{{$itemBooking->person}}</td>
                     <td>{{$itemBooking->bundle_percentage}}%</td>
                     <td>{{$itemBooking->promo_code}}</td>
-                    <td>{{$promoPercentage}}</td>
+                    <td>{{$promo}}</td>
                     <td>{{$itemBooking->name}}</td>
                     <td>{{$itemBooking->phone}}</td>   
                     <td>{{$itemBooking->ps_name}}</td>   

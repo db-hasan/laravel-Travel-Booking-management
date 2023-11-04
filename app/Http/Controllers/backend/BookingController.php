@@ -13,13 +13,6 @@ use Session;
 
 class BookingController extends Controller
 {
-    // public function payment(){ 
-    //     $indexData['indexPackage']= Package::all();      
-    //     $indexData['indexBundle']= Bundle::all();      
-    //     $indexData['indexPayment']= PaymentStatus::all();      
-    //     $indexData['indexBookingStatus']= BookingStatus::all();      
-    //     return view('frontend/payment/payment', $indexData);
-    // }
 
     public function index() {
         $indexBooking = Booking::join('packages', 'bookings.book_location', '=', 'pack_id')

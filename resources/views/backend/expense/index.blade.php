@@ -20,15 +20,24 @@
             </thead>
             <tbody>
                 
-                @foreach ($indexExpense as $itemExpense)
+                @foreach ($indexPackage as $itemPackage)
                 <tr>
-                    <td>{{$itemExpense->pack_id}}</td>
-                    <td>{{$itemExpense->pack_location}}</td>                 
-                     <td>{{$itemExpense->total}}</td> 
+                    <td>{{$itemPackage->pack_id}}</td>
+                    <td>{{$itemPackage->pack_location}}</td>
+                    <td>{{$itemPackage->expense_price}}</td>
+                    
+                    {{-- @foreach ($indexExpense as $itemExpense)
+                    <?php
+                        $total=($itemExpense->expense_price);
+                    ?>
+                    <td>{{$total}}</td> 
+                    
+                    @endforeach --}}
+                     
                     <td class="icons">
-                        <a href="{{url('expense/show/'.$itemExpense->pack_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
-                        <a href="{{url('expense/edit/'.$itemExpense->pack_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="{{url('expense/destroy/'.$itemExpense->pack_id)}}" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
+                        <a href="{{url('expense/show/'.$itemPackage->pack_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
+                        <a href="{{url('expense/edit/'.$itemPackage->pack_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="{{url('expense/destroy/'.$itemPackage->pack_id)}}" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr> 
                 @endforeach   

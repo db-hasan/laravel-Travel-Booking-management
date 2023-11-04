@@ -14,9 +14,18 @@ use Session;
 class ExpenseController extends Controller
 {
     
-    public function index(){
-        $indexExpense= Package::all();    
-        return view('backend/expense/index', compact('indexExpense'));
+    public function index($pack_id=null){
+        // $indexData['indexExpense']= Expense::where('ex_package', $pack_id)->get();
+        $indexData['indexPackage']= Package::all();      
+        return view('backend/expense/index', $indexData);
+    }
+
+    public function show($pack_id=null){
+        $Data['showData'] = Expense::join('packages', 'expenses.ex_package','=','pack_id')
+                                    ->join('costtypes', 'expenses.expense_type','=','costtype_id')
+                                    ->where('ex_package',$pack_id)->get();
+
+      return view('backend/expense/show', $Data);
     }
 
 
@@ -53,12 +62,12 @@ class ExpenseController extends Controller
         return redirect('admin/expense');
     }
 
-    public function show($pack_id=null){
-        $Data['showData'] = Expense::join('packages', 'expenses.ex_package','=','pack_id')
-                                    ->join('costtypes', 'expenses.expense_type','=','costtype_id')
-                                    ->where('ex_package',$pack_id)->get();
+    // public function show($pack_id=null){
+    //     $Data['showData'] = Expense::join('packages', 'expenses.ex_package','=','pack_id')
+    //                                 ->join('costtypes', 'expenses.expense_type','=','costtype_id')
+    //                                 ->where('ex_package',$pack_id)->get();
 
-      return view('backend/expense/show', $Data);
-    }
+    //   return view('backend/expense/show', $Data);
+    // }
     
 }
