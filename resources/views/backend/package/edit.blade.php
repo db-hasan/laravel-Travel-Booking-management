@@ -7,7 +7,7 @@
     </div>
     <hr>
     
-    <form method="post" action="{{url('package/update/'. $editData->pack_id)}}" class="row g-3 p-3">
+    <form method="post" action="{{url('package/update/'. $editData->pack_id)}}" enctype="multipart/form-data" class="row g-3 p-3">
       @csrf
       <div class="col-md-4">
         <label for="location" class="form-label">Location</label>
@@ -76,8 +76,18 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-12 text-end">
+      <div class="row">
+        <div class="col-md-4">
+        <label for="pack_img" class="form-label">Image:</label>
+        <input type="file" class="form-control" id="pack_img" name="pack_img" value="{{old('pack_img')}}">
+        @error('pack_img')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
+      <div class="col mt-5 text-end">
         <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
       </div>
     </form>
 </div>

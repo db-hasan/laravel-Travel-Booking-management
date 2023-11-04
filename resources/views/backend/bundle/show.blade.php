@@ -30,14 +30,22 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col-md-4">
                             <label>Description:</label>
                             <h6>{{$showData->bundle_des}}</h6>
                         </div>
+
                         <div class="col-md-3">
                             <label>Status:</label>
                             <h6>{{$showData->status_name}}</h6>
                         </div>
+
+                        <div class="col-md-5">
+                            <h6>
+                                <img src="/images/{{$showData->bundle_img}}" alt="Image notefound" style="height: 100px;">
+                            </h6>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="card-footer">

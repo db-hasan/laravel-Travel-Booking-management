@@ -7,7 +7,7 @@
     </div>
     <hr>
     
-    <form method="post" action="{{url('/admin/bundle/store')}}" class="row g-3 p-3">
+    <form method="post" action="{{url('/admin/bundle/store')}}" enctype="multipart/form-data" class="row g-3 p-3">
       @csrf
 
       <div class="col-md-4 ">
@@ -33,13 +33,21 @@
         @enderror
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-12">
         <label for="bundle_des" class="form-label">Description</label>
         <input type="text" class="form-control" id="bundle_des" name="bundle_des" value="{{old('bundle_des')}}">
         @error('bundle_des')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
+      <div class="col-md-4">
+        <input type="file" class="form-control" id="bundle_img" name="bundle_img" value="{{old('bundle_des')}}">
+        @error('bundle_img')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
       <div class="col-12 text-end">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>

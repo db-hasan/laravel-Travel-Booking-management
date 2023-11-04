@@ -23,17 +23,26 @@
                     <label>Resort:</label>
                     <h6>{{$showData->resort}}</h6>
                     <hr>
-                    <label>Price:</label>
-                    <h6>{{$showData->pack_price}}</h6>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <label>Price:</label>
+                            <h6>{{$showData->from_date}}</h6>
+                        </div>
+                        <div class="col-md-3">
+                            <label>From Data:</label>
+                            <h6>{{$showData->pack_price}}</h6>
+                        </div>
+                        <div class="col-md-3">
+                            <label>To Data:</label>
+                            <h6>{{$showData->to_date}}</h6>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Arrival Time:</label>
+                            <h6>{{$showData->arrival_time}}</h6>
+                        </div>
+                    </div>
                     <hr>
-                    <label>From Data:</label>
-                    <h6>{{$showData->from_date}}</h6>
-                    <hr>
-                    <label>To Data:</label>
-                    <h6>{{$showData->to_date}}</h6>
-                    <hr>
-                    <label>Arrival Time:</label>
-                    <h6>{{$showData->arrival_time}}</h6>
+                    <img src="/images/{{$showData->pack_img}}" alt="Image " style="height: 100px;">
                 </div>
                 <div class="card-footer">
                     <div class="text-end">

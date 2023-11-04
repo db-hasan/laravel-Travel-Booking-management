@@ -24,12 +24,13 @@ class BundleController extends Controller
         return view('backend/bundle/create');
     }
     public function store(Request $request){
+        
         $rules = [
             'bundle_name' => 'required | max:50',
             'bundle_percentage' => 'required | max:50',
             'room_type' => 'required | max:50',
             'bundle_des' => 'required | max:255',
-            // 'bundle_img' => 'required | max:255',
+            'bundle_img' => 'required | max:255',
         ];
         $v_msg=[
             'bundle_name.required'=> 'Please enter Name',
@@ -39,12 +40,15 @@ class BundleController extends Controller
             'bundle_img.required'=> 'Please enter your image',
         ];
         $this -> validate($request, $rules, $v_msg);
+        $imageName = time().'.'. $request->bundle_img->extension();
+        $request->bundle_img->move(public_path('images'),$imageName);
+
         $data= new Bundle();
         $data->bundle_name= $request->bundle_name;
         $data->bundle_percentage= $request->bundle_percentage;
         $data->room_type= $request->room_type;
         $data->bundle_des= $request->bundle_des;
-        // $data->bundle_img= $request->bundle_img;
+        $data->bundle_img= $imageName;
         $data->save();
         Session::flash('msg','Data submit successfully');
         return redirect('admin/bundle');
@@ -62,7 +66,7 @@ class BundleController extends Controller
             'bundle_percentage' => 'required | max:50',
             'room_type' => 'required | max:50',
             'bundle_des' => 'required | max:255',
-            // 'bundle_img' => 'required | max:255',
+            'bundle_img' => 'required | max:255',
         ];
         $v_msg=[
             'bundle_name.required'=> 'Please enter Name',
@@ -72,12 +76,15 @@ class BundleController extends Controller
             'bundle_img.required'=> 'Please enter your image',
         ];
         $this -> validate($request, $rules, $v_msg);
+        $imageName = time().'.'. $request->bundle_img->extension();
+        $request->bundle_img->move(public_path('images'),$imageName);
+        
         $data= Bundle::find($bundle_id);
         $data->bundle_name= $request->bundle_name;
         $data->bundle_percentage= $request->bundle_percentage;
         $data->room_type= $request->room_type;
         $data->bundle_des= $request->bundle_des;
-        // $data->bundle_img= $request->bundle_img;
+        $data->bundle_img= $imageName;
         $data->bundle_status= $request->status;
         $data->save();
         Session::flash('msg','Data submit successfully');

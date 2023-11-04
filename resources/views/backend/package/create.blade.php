@@ -7,7 +7,7 @@
     </div>
     <hr>
     
-    <form method="post" action="{{url('/admin/package/store')}}" class="row g-3 p-3">
+    <form method="post" action="{{url('/admin/package/store')}}" enctype="multipart/form-data" class="row g-3 p-3">
       @csrf
       <div class="col-md-4">
         <label for="location" class="form-label">Location</label>
@@ -44,27 +44,36 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-4">
+      <div class="col-3">
         <label for="fromdate" class="form-label">From Date</label>
         <input type="date" class="form-control" id="fromdate" name="fromdate" value="{{old('fromdate')}}">
         @error('fromdate')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-4">
+      <div class="col-3">
         <label for="todate" class="form-label">To Date</label>
         <input type="date" class="form-control" id="todate" name="todate" value="{{old('todate')}}">
         @error('todate')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      <div class="col-4">
+      <div class="col-2">
         <label for="arrival" class="form-label">Arrival Time</label>
         <input type="time" class="form-control" id="arrival" name="arrival" value="{{old('arrival')}}"> 
         @error('arrival')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+
+      <div class="col-md-4">
+        <label for="pack_img" class="form-label">Image:</label>
+        <input type="file" class="form-control" id="pack_img" name="pack_img" value="{{old('pack_img')}}">
+        @error('pack_img')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
       <div class="col-12 text-end">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>

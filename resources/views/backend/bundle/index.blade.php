@@ -17,6 +17,7 @@
                     <th>Percentage</th>
                     <th>Room_type</th>
                     <th>Description</th>
+                    <th>Image</th>
                     <th>Status</th>
                     <th class="ps-5">Action</th>
                 </tr>
@@ -24,12 +25,15 @@
             <tbody>
                 @foreach ($indexbundle as $itembundle)
                 <tr>
-                   <td>{{$itembundle->bundle_id}}</td> 
-                   <td>{{$itembundle->bundle_name}}</td> 
-                   <td>{{$itembundle->bundle_percentage}}</td> 
-                   <td>{{$itembundle->room_type}}</td> 
-                   <td>{{$itembundle->bundle_des}}</td> 
-                   <td>{{$itembundle->status_name}}</td> 
+                    <td>{{$itembundle->bundle_id}}</td> 
+                    <td>{{$itembundle->bundle_name}}</td> 
+                    <td>{{$itembundle->bundle_percentage}}</td> 
+                    <td>{{$itembundle->room_type}}</td> 
+                    <td>{{$itembundle->bundle_des}}</td> 
+                    <td>
+                        <img src="/images/{{$itembundle->bundle_img}}" alt="" style="height: 40px; width: 40px;" class="rounded">
+                    </td> 
+                    <td>{{$itembundle->status_name}}</td> 
                     <td class="icons">
                         <a href="{{url('bundle/show/'.$itembundle->bundle_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
                         <a href="{{url('bundle/edit/'.$itembundle->bundle_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>

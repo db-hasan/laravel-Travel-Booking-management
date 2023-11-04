@@ -121,7 +121,7 @@
                             <div class="card mb-3 mx-4" >
                                 <div class="row g-0">
                                     <div class="col-md-4 rounded">
-                                        <img src="{{asset('frontend/img/single.jpg') }}" class="img-fluid" alt="...">
+                                        <img src="/images/{{$item->bundle_img}}" class="img-fluid" alt="...">
                                     </div>
                                     <div class="col-md-8">
                                     <div class="card-body">

@@ -31,6 +31,7 @@ class PackageController extends Controller
             'fromdate' => 'required',
             'todate' => 'required',
             'arrival' => 'required',
+            'pack_img' => 'required',
         ];
         $v_msg=[
             'location.required'=> 'Please enter your location',
@@ -41,8 +42,12 @@ class PackageController extends Controller
             'fromdate.required'=> 'Please enter your Data',
             'todate.required'=> 'Please enter your Data',
             'arrival.required'=> 'Please enter your Data'
+            // 'pack_img.required'=> 'Please enter your Data'
         ];
         $this -> validate($request, $rules, $v_msg);
+
+        $imageName = time().'.'. $request->pack_img->extension();
+        $request->pack_img->move(public_path('images'),$imageName);
 
         $data= new Package();
         $data->pack_location= $request->location;
@@ -53,7 +58,7 @@ class PackageController extends Controller
         $data->from_date= $request->fromdate;
         $data->to_date= $request->todate;
         $data->arrival_time= $request->arrival;
-        // $data->pack_img= $request->img;
+        $data->pack_img= $imageName;
         $data->save();
         Session::flash('msg','Data submit successfully');
         return redirect('admin/package');
@@ -77,6 +82,7 @@ class PackageController extends Controller
             'fromdate' => 'required',
             'todate' => 'required',
             'arrival' => 'required',
+            'pack_img' => 'required',
         ];
         $v_msg=[
             'location.required'=> 'Please enter your location',
@@ -86,9 +92,12 @@ class PackageController extends Controller
             'member.required'=> 'Please enter your member',
             'fromdate.required'=> 'Please enter your Data',
             'todate.required'=> 'Please enter your Data',
-            'arrival.required'=> 'Please enter your Data'
+            'pack_img.required'=> 'Please enter your Data'
         ];
         $this -> validate($request, $rules, $v_msg);
+
+        $imageName = time().'.'. $request->pack_img->extension();
+        $request->pack_img->move(public_path('images'),$imageName);
 
         $data= Package::find($pack_id);
         $data->pack_location= $request->location;
@@ -99,7 +108,7 @@ class PackageController extends Controller
         $data->from_date= $request->fromdate;
         $data->to_date= $request->todate;
         $data->arrival_time= $request->arrival;
-        // $data->pack_img= $request->img;
+        $data->pack_img= $imageName;
         $data->pack_status= $request->status;
         $data->save();
         Session::flash('msg','Data Update successfully');

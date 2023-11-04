@@ -21,6 +21,7 @@
                     <th><span class="">From_Date</span></th>
                     <th><span class="pe-3">To_Date</span></th>
                     <th><span class="">Arrival_Time</span></th>
+                    <th><span class="">Image</span></th>
                     <th><span class="">Status</span></th>
                     <th><strong class="ps-5">Action</strong></th>
                 </tr>
@@ -40,6 +41,9 @@
                     <td>{{$item->from_date}}</td>
                     <td>{{$item->to_date}}</td>
                     <td>{{$item->arrival_time}}</td>   
+                    <td>
+                        <img src="/images/{{$item->pack_img}}" alt="Image notefound" style="height: 40px;">
+                    </td>   
                     <td>{{$item->status_name}}</td>   
                     <td class="icons">
                         <a href="{{url('package/show/'.$item->pack_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>

@@ -7,7 +7,7 @@
     </div>
     <hr>
     
-    <form method="post" action="{{url('bundle/update/'. $indexData->bundle_id)}}" class="row g-3 p-3">
+    <form method="post" action="{{url('bundle/update/'. $indexData->bundle_id)}}" enctype="multipart/form-data" class="row g-3 p-3">
       @csrf
 
       <div class="col-md-4 ">
@@ -33,15 +33,23 @@
         @enderror
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-6">
         <label for="bundle_des" class="form-label">Description</label>
         <input type="text" class="form-control" id="bundle_des" name="bundle_des" value="{{$indexData->bundle_des}}">
         @error('bundle_des')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
-      
+
       <div class="col-md-4">
+        <label for="bundle_img" class="form-label">Image</label>
+        <input type="file" class="form-control" id="bundle_img" name="bundle_img" value="{{$indexData->bundle_img}}">
+        @error('bundle_img')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      
+      <div class="col-md-2">
         <label for="inputPassword4" class="form-label">Status</label>
         <select class="form-select" aria-label="Default select example" name="status">
           @foreach ($indexStatus as $itemStatus)
