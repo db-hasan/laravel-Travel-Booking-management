@@ -19,7 +19,7 @@ class PackController extends Controller
 
     public function store(Request $request){
 
-        $step2=$request->all();
+        $step=$request->all();
 
         $rules = [
             'location' => 'required | max:50',
@@ -41,9 +41,9 @@ class PackController extends Controller
         $data->promo= $request->promo;
         // $data->save();
         
-        $step2['indexPackage']= Package::all();      
-        $step2['indexBundle']= Bundle::all();
-        return view("frontend.payment.payment", $step2);
+        $step['indexPackage']= Package::all();      
+        $step['indexBundle']= Bundle::all();
+        return view("frontend.payment.payment", $step);
 
     }
 

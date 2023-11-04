@@ -40,7 +40,6 @@
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select bg-transparent" id="location" name="location">
-                                            <option value="" selected>Select One</option>
                                             @foreach ($indexPackage as $itemPackage)
                                             <option value="{{$itemPackage->pack_id}}" {{$location == $itemPackage->pack_id ? "selected": null}}>{{$itemPackage->pack_location}}</option>
                                             @endforeach
@@ -55,7 +54,6 @@
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select bg-transparent" id="bundle" name="bundle">
-                                            <option value="" selected>Select One</option>
                                             @foreach ($indexBundle as $itemBundle)
                                             <option value="{{$itemBundle->bundle_id}}" {{$bundle == $itemBundle->bundle_id ? "selected": null}}>{{$itemBundle->bundle_name}}</option>
                                             @endforeach
@@ -80,7 +78,7 @@
                                 
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="promo" name="promo" value="{{$promo}}">
+                                        <input type="text" class="form-control bg-transparent" id="promo" name="promo" value="{{$promo}}" required>
                                         <label for="promocode">Promo code</label>
                                         @error('promo')
                                             <span class="text-danger">{{ $message }}</span>
@@ -92,7 +90,7 @@
 
                                 <div class="col-md-6">
                                     <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+                                    <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}" required>
                                     @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -100,12 +98,12 @@
 
                                 <div class="col-md-6">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="text" class="form-control" id="email" name="email" value="{{old('email')}}">
+                                    <input type="text" class="form-control" id="email" name="email" value="{{old('email')}}" required>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="phone" class="form-label">Phone</label>
-                                    <input type="text" class="form-control" id="phone" name="phone" value="{{old('phone')}}">
+                                    <input type="text" class="form-control" id="phone" name="phone" value="{{old('phone')}}" required>
                                     @error('phone')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -113,7 +111,7 @@
 
                                 <div class="col-md-6">
                                     <label for="birth" class="form-label">Date of Birth</label>
-                                    <input type="date" class="form-control" id="Birth" name="birth" value="{{old('birth')}}">
+                                    <input type="date" class="form-control" id="Birth" name="birth" value="{{old('birth')}}" required>
                                     @error('birth')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -138,12 +136,12 @@
 
                                 <div class="col-md-6">
                                     <label for="Occupation" class="form-label">Occupation/Profession</label>
-                                    <input type="text" class="form-control" id="Occupation" name="occupation" value="{{old('occupation')}}">
+                                    <input type="text" class="form-control" id="Occupation" name="occupation" value="{{old('occupation')}}" required>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="nationality" class="form-label">Nationality</label>
-                                    <input type="text" class="form-control" id="nationality" name="nationality" value="{{old('nationality')}}">
+                                    <input type="text" class="form-control" id="nationality" name="nationality" value="{{old('nationality')}}" required>
                                     @error('nationality')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -151,7 +149,7 @@
 
                                 <div class="col-md-6">
                                     <label for="nid" class="form-label">NID</label>
-                                    <input type="text" class="form-control" id="nid" name="nid" value="{{old('nid')}}">
+                                    <input type="text" class="form-control" id="nid" name="nid" value="{{old('nid')}}" required>
                                     @error('nid')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -159,7 +157,7 @@
 
                                 <div class="col-md-6">
                                     <label for="address" class="form-label">Address</label>
-                                    <input type="text" class="form-control" id="address" name="address" value="{{old('address')}}" placeholder="1234 Main St">
+                                    <input type="text" class="form-control" id="address" name="address" value="{{old('address')}}" placeholder="1234 Main St" required>
                                     @error('address')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -167,7 +165,7 @@
 
                                 <div class="col-md-4">
                                     <label for="city" class="form-label">City</label>
-                                    <input type="text" class="form-control" id="city" name="city" value="{{old('city')}}" placeholder="Bogura" >
+                                    <input type="text" class="form-control" id="city" name="city" value="{{old('city')}}" placeholder="Bogura" required >
                                     @error('city')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -175,7 +173,7 @@
 
                                 <div class="col-md-2">
                                     <label for="zip" class="form-label">Zip</label>
-                                    <input type="text" class="form-control" id="zip" name="zip" value="{{old('zip')}}" placeholder="5810">
+                                    <input type="text" class="form-control" id="zip" name="zip" value="{{old('zip')}}" placeholder="5810" required>
                                     @error('zip')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
