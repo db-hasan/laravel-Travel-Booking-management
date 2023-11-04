@@ -27,6 +27,9 @@
             </thead>
             <tbody>
                 @foreach ($indexData as $item)
+                <?php
+                    $members
+                ?>
                 <tr>
                     <td>{{$item->pack_id}}</td>
                     <td>{{$item->pack_location}}</td>

@@ -36,57 +36,23 @@
                     <div class="">
                         <h4 class="bg-primary text-light p-2 pe-5 text-end">User Details</h4>
                         <div class="row g-3 px-3 py-3">
-                            
-                                <div class="col-md-3">
-                                    <div class="form-floating">
-                                        <select class="form-select bg-transparent" id="location" name="location" hidden>
-                                            @foreach ($indexPackage as $itemPackage)
-                                            <option value="{{$itemPackage->pack_id}}" {{$location == $itemPackage->pack_id ? "selected": null}}>{{$itemPackage->pack_location}}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('location')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                        {{-- <label for="name">Destination</label> --}}
-                                    </div>
-                                </div>
 
-                                <div class="col-md-3">
-                                    <div class="form-floating">
-                                        <select class="form-select bg-transparent" id="bundle" name="bundle" hidden>
-                                            @foreach ($indexBundle as $itemBundle)
-                                            <option value="{{$itemBundle->bundle_id}}" {{$bundle == $itemBundle->bundle_id ? "selected": null}}>{{$itemBundle->bundle_name}}</option>
-                                            @endforeach
-                                        </select>
-                                            @error('bundle')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        {{-- <label for="select1">Package</label> --}}
-                                    </div>
-                                </div>
+                                <select class="form-select bg-transparent" id="location" name="location" hidden>
+                                    @foreach ($indexPackage as $itemPackage)
+                                    <option value="{{$itemPackage->pack_id}}" {{$location == $itemPackage->pack_id ? "selected": null}}>{{$itemPackage->pack_location}}</option>
+                                    @endforeach
+                                </select>
 
-                                <div class="col-md-3">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="person" name="person" placeholder="Person" value="{{$person}}" hidden>
-                                        {{-- <label for="person">List of Person</label> --}}
-                                        <span id="errorak" class="text-danger"></span>
-                                        @error('person')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-3">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="promo" name="promo" value="{{$promo}}" hidden>
-                                        {{-- <label for="promocode">Promo code</label> --}}
-                                        @error('promo')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
+                                <select class="form-select bg-transparent" id="bundle" name="bundle" hidden>
+                                    @foreach ($indexBundle as $itemBundle)
+                                    <option value="{{$itemBundle->bundle_id}}" {{$bundle == $itemBundle->bundle_id ? "selected": null}}>{{$itemBundle->bundle_name}}</option>
+                                    @endforeach
+                                </select>
+
+                                <input type="text" class="form-control bg-transparent" id="person" name="person" placeholder="Person" value="{{$person}}" hidden>
+
+                                <input type="text" class="form-control bg-transparent" id="promo" name="promo" value="{{$promo}}" hidden>
                       
-
 
                                 <div class="col-md-6">
                                     <label for="name" class="form-label">Name</label>

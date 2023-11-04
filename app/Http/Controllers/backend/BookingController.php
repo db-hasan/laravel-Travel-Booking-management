@@ -13,7 +13,6 @@ use Session;
 
 class BookingController extends Controller
 {
-
     public function index() {
         $indexBooking = Booking::join('packages', 'bookings.book_location', '=', 'pack_id')
                                 ->join('bundles', 'bookings.book_bundle', '=', 'bundle_id')

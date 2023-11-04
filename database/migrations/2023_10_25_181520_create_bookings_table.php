@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('address',255)->nullable();
             $table->string('city',50)->nullable();
             $table->string('zip',50)->nullable();
-            $table->string('payment',50)->default(4);
+            $table->integer('payment')->default(1);
             $table->integer('book_status')->default(1);
             $table->timestamps();
         });

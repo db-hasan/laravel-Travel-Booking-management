@@ -43,15 +43,9 @@
                                 <span class="text-body-secondary"><Strong>{{$indexPackage->pack_price}}</Strong></span>
                             </li>
 
-                            <li class="list-group-item d-flex justify-content-between lh-sm">
-                                <div>
-                                    <h6 class="my-0">Location</h6>
-                                    <small class="text-body-secondary">Deluxe Single Room</small>
-                                </div>
-                                <select class="form-select" aria-label="Default select example" id="location" name="location">
-                                    <option value="{{$indexPackage->pack_id}}">{{$indexPackage->pack_location}}</option>
-                                </select>   
-                            </li>
+                            <select class="form-select" aria-label="Default select example" id="location" name="location" hidden>
+                                <option value="{{$indexPackage->pack_id}}">{{$indexPackage->pack_location}}</option>
+                            </select> 
 
                             @error('location')
                                 <span class="text-danger">{{ $message }}</span>
