@@ -16,7 +16,6 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>Username</th>
                     <th>Roll</th>
                     <th>Status</th>
                     <th>Image</th>
@@ -30,7 +29,6 @@
                     <td>{{$itemUser->user_name}}</td> 
                     <td>{{$itemUser->user_email}}</td> 
                     <td>{{$itemUser->user_phone}}</td> 
-                    <td>{{$itemUser->username}}</td>
                     <td>{{$itemUser->role_name}}</td>
                     <td>{{$itemUser->status_name}}</td>
                     <td>

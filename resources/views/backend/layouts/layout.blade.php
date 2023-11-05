@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{asset('backend/css/style.css') }} ">
     <link rel="stylesheet" href="{{asset('bootstrap/bootstrap.min.css') }} ">
+    <link rel="stylesheet" href="{{asset('backend/css/jquery.dataTables.css') }} ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+
     <title>Dashboard</title>
 </head>
 
@@ -122,7 +123,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="#">
+                    <a href="{{url('/admin/user')}}">
                         <span class="icon">
                             <i class="fa-solid fa-users fa-lg"></i>
                         </span>
@@ -302,6 +303,8 @@
     </div>
 
     <script src="{{asset('bootstrap/bootstrap.bundle.min.js') }} "></script>
+    <script src="{{asset('backend/js/jquery-3.7.1.min.js') }} "></script>
+    <script src="{{asset('backend/js/dataTables.js') }} "></script>
     <script src="{{asset('backend/js/custom.js') }} "></script>
     
     

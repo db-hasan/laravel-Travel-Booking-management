@@ -19,25 +19,17 @@
       </div>
 
       <div class="col-md-4 ">
-        <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="email" name="email" value="{{old('user_email')}}">
-        @error('email')
+        <label for="user_email" class="form-label">Email<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="user_email" name="user_email" value="{{old('user_email')}}">
+        @error('user_email')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
 
       <div class="col-md-4 ">
-        <label for="phone" class="form-label">Phone<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="phone" name="phone" value="{{old('user_phone')}}">
-        @error('phone')
-            <span class="text-danger">{{ $message }}</span>
-        @enderror
-      </div>
-
-      <div class="col-md-4 ">
-        <label for="username" class="form-label">Username<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="username" name="username" value="{{old('username')}}">
-        @error('username')
+        <label for="user_phone" class="form-label">Phone<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="user_phone" name="user_phone" value="{{old('user_phone')}}">
+        @error('user_phone')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
@@ -57,13 +49,12 @@
         @foreach ($indexRole as $item)
         <option value="{{$item->role_id}}">{{$item->role_name}}</option>
         @endforeach
-        
-        
         </select> 
         @error('role')
             <span class="text-danger">{{ $message }}</span>
         @enderror
       </div>
+      <div class="col-md-4"></div>
 
       <div class="col-md-4">
         <input type="file" class="form-control" id="user_img" name="user_img" value="{{old('user_img')}}">
@@ -72,7 +63,7 @@
         @enderror
       </div>
 
-      <div class="col-12 text-end">
+      <div class="col text-end">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>

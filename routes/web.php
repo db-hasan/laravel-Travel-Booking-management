@@ -44,12 +44,15 @@ Route::get('/about',[HomeController::class,'about']);
 
 // Backend Route
 
-Route::view('/admin', 'backend/dashboard/dashboard') -> name('dashboard');
+// Route::view('/admin', 'backend/dashboard/dashboard') -> name('admin');
 
+Route::get('admin',[UserController::class,'admin']);
+Route::post('admin/login',[UserController::class,'login']);
 Route::get('admin/user',[UserController::class,'index']);
 Route::get('admin/user/create',[UserController::class,'create']);
 Route::post('admin/user/store',[UserController::class,'store']);
 
+Route::view('/dashboard', 'backend/dashboard/dashboard') -> name('dashboard');
 
 Route::get('admin/package',[PackageController::class,'index']);
 Route::get('admin/package/create',[PackageController::class,'create']);

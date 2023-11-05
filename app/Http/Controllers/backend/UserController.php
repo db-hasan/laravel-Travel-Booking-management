@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\backend;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\Status;
 use Session;
+use Hash;
 
 class UserController extends Controller
 {
@@ -18,7 +18,7 @@ class UserController extends Controller
         return view('backend/user/index', compact('indexUser'));
     }
 
-     public function create(){
+    public function create(){
         $indexData['indexRole']= Role::all();
         return view('backend/user/create', $indexData);
     }
@@ -27,18 +27,16 @@ class UserController extends Controller
         
         $rules = [
             'name' => 'required | max:50',
-            'email' => 'required ',
-            'phone' => 'required | max:50',
-            'username' => 'required | max:255',
+            'user_email' => 'required|email|unique:users',
+            'user_phone' => 'required|unique:users',
             'password' => 'required | min:8 | max:12',
             'role' => 'required',
             'user_img' => 'required | max:255',
         ];
         $v_msg=[
             'name.required'=> 'Please enter name',
-            'email.required'=> 'Please enter email',
-            'phone.required'=> 'Please enter your room phone',
-            'username.required'=> 'Please enter your username',
+            'user_email.required'=> 'Please enter email',
+            'user_phone.required'=> 'Please enter your room phone',
             'password.required'=> 'Please enter your password',
             'roll.required'=> 'Please select your roll',
             'user_img.required'=> 'Please enter your image',
@@ -49,14 +47,35 @@ class UserController extends Controller
 
         $data= new user();
         $data->user_name= $request->name;
-        $data->user_email= $request->email;
-        $data->user_phone= $request->phone;
-        $data->username= $request->username;
-        $data->password= $request->password;
+        $data->user_email= $request->user_email;
+        $data->user_phone= $request->user_phone;
+        $data->password= Hash::make($request->password);
         $data->user_role= $request->role;
         $data->user_img= $imageName;
         $data->save();
         Session::flash('msg','Data submit successfully');
         return redirect('admin/user');
+    }
+
+    public function admin(){
+        return view('backend/user/login');
+    }
+
+    public function login(Request $request){
+        
+        $rules = [
+            'user_email' => 'required|email|unique:users',
+            'password' => 'required | min:8 | max:12',
+        ];
+        // $v_msg=[
+        //     'user_email.required'=> 'Please enter email',
+        //     'password.required'=> 'Please enter valid password',
+        // ];
+        $user= User::where('user_email', '=', $request->user_email->first());
+        if($user){
+
+        }else{
+            return back()->with('fail', 'This email is not registered');
+        }
     }
 }
