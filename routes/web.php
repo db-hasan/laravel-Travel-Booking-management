@@ -6,10 +6,11 @@ use App\Http\Controllers\frontend\BookController;
 use App\Http\Controllers\frontend\PaymentController;
 use App\Http\Controllers\frontend\ContactController;
 
-use App\Http\Controllers\backend\BookingController;
+use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\PackageController;
 use App\Http\Controllers\backend\PromoController;
 use App\Http\Controllers\backend\BundleController;
+use App\Http\Controllers\backend\BookingController;
 use App\Http\Controllers\backend\ExpenseController;
 
 
@@ -44,6 +45,11 @@ Route::get('/about',[HomeController::class,'about']);
 // Backend Route
 
 Route::view('/admin', 'backend/dashboard/dashboard') -> name('dashboard');
+
+Route::get('admin/user',[UserController::class,'index']);
+Route::get('admin/user/create',[UserController::class,'create']);
+Route::post('admin/user/store',[UserController::class,'store']);
+
 
 Route::get('admin/package',[PackageController::class,'index']);
 Route::get('admin/package/create',[PackageController::class,'create']);

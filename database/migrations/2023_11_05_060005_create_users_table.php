@@ -16,11 +16,10 @@ return new class extends Migration
             $table->string('user_name',50)->nullable();
             $table->string('user_email',50)->nullable();
             $table->string('user_phone',50)->nullable();
-            $table->string('gender',50)->nullable();
             $table->string('username',50)->nullable();
             $table->string('password',50)->nullable();
-            $table->string('user_img',50)->nullable();
-            $table->integer('user_roll')->default(1);
+            $table->integer('user_role')->default(4);
+            $table->string('user_img',255)->nullable();
             $table->integer('user_status')->default(1);
             $table->timestamps();
         });
