@@ -24,60 +24,83 @@
           @enderror
         </div>
       </div>
+      <div class="container">
+          <div class="expense-rows">
+              <div class="row expense-row mb-3">
+                  <div class="col-6">
+                      <select class="form-select" aria-label="Default select example" name="expense_type[]">
+                          <option value="" selected>Select One</option>
+                          @foreach ($indexCosttype as $itemCosttype)
+                          <option value="{{$itemCosttype->costtype_id}}">{{$itemCosttype->costtype_name}}</option>
+                          @endforeach
+                      </select>
+                      @error('expense_type')
+                      <span class="text-danger">{{ $message }}</span>
+                      @enderror
+                  </div>
 
-      <div class="row pt-4">
-        <div class="col-6">
-          <select class="form-select" aria-label="Default select example" id="expense_type" name="expense_type[]">
-            <option value="" selected>Select One</option>
-            @foreach ($indexCosttype as $itemCosttype)
-            <option value="{{$itemCosttype->costtype_id}}">{{$itemCosttype->costtype_name}}</option>
-            @endforeach
-          </select>
-          @error('expense_type')
-              <span class="text-danger">{{ $message }}</span>
-          @enderror
-        </div>
-        <div class="col-4">
-          <input type="text" class="form-control" id="expense_price" name="expense_price[]" placeholder="Price">
-          <span id="errorak" class="text-danger"></span>
-          @error('expense_price')
-              <span class="text-danger">{{ $message }}</span>
-          @enderror
-        </div>
-        <div class="col-2 icons">
-          <a href="" type="button"  class="btn"><i class="fa-solid fa-circle-plus fa-xl" style="color: #1fe04f;"></i></a>
-          <a href="" type="button"  class="btn"><i class="fa-solid fa-trash fa-xl" style="color: #da1647;"></i></a>
-        </div>
+                  <div class="col-4">
+                      <input type="text" class="form-control" name="expense_price[]" placeholder="Price">
+                      @error('expense_price')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
+                  </div>
+                  <div class="col-2 icons">
+                      <a href="javascript:void(0);" class="btn add-row"><i class="fa-solid fa-circle-plus fa-xl" style="color: #1fe04f;"></i></a>
+                      <a href="javascript:void(0);" class="btn remove-row"><i class="fa-solid fa-trash fa-xl" style="color: #da1647;"></i></a>
+                  </div>
+              </div>
+          </div>
       </div>
-      <div class="row pt-4">
-        <div class="col-6">
-          <select class="form-select" aria-label="Default select example" id="expense_type" name="expense_type[]">
-            <option value="" selected>Select One</option>
-            @foreach ($indexCosttype as $itemCosttype)
-            <option value="{{$itemCosttype->costtype_id}}">{{$itemCosttype->costtype_name}}</option>
-            @endforeach
-          </select>
-          @error('expense_type')
-              <span class="text-danger">{{ $message }}</span>
-          @enderror
-        </div>
-        <div class="col-4">
-          <input type="text" class="form-control" id="expense_price" name="expense_price[]" placeholder="Price">
-          <span id="errorak" class="text-danger"></span>
-          @error('expense_price')
-              <span class="text-danger">{{ $message }}</span>
-          @enderror
-        </div>
-        <div class="col-2 icons">
-          <a href="" type="button"  class="btn"><i class="fa-solid fa-circle-plus fa-xl" style="color: #1fe04f;"></i></a>
-          <a href="" type="button"  class="btn"><i class="fa-solid fa-trash fa-xl" style="color: #da1647;"></i></a>
-        </div>
-      </div>
-      
       <div class="col-12 text-end">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
 </div>
+
+{{-- <div class="container">
+    <div class="expense-rows">
+        <div class="row expense-row mb-3">
+            <div class="col-6">
+                <select class="form-select" aria-label="Default select example" name="expense_type[]">
+                    <option value="" selected>Select One</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <input type="text" class="form-control" name="expense_price[]" placeholder="Price">
+            </div>
+            <div class="col-2 icons">
+                <a href="javascript:void(0);" class="btn add-row"><i class="fa-solid fa-circle-plus fa-xl" style="color: #1fe04f;"></i></a>
+                <a href="javascript:void(0);" class="btn remove-row"><i class="fa-solid fa-trash fa-xl" style="color: #da1647;"></i></a>
+            </div>
+        </div>
+    </div>
+</div> --}}
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function () {
+    // Event delegation for add-row and remove-row buttons
+    $(".container").on("click", ".add-row", function () {
+        var newRow = $(".expense-row").first().clone();
+        newRow.find("input").val(""); // Clear the input values
+        $(this).closest(".expense-row").after(newRow);
+    });
+
+    $(".container").on("click", ".remove-row", function () {
+        if ($(".expense-row").length > 1) {
+            $(this).closest(".expense-row").remove();
+        }
+    });
+});
+</script>
+
+
+
 
 @endsection

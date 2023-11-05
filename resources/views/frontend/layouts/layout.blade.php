@@ -70,7 +70,7 @@
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="{{ url('/') }}" class="navbar-brand p-0">
-                <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>Tourist</h1>
+                <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>Helpsx</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -84,7 +84,7 @@
                     <a href="{{ url('/about') }}" class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
                     <a href="{{ url('/contact') }}" class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
                 </div>
-                <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+                <a href="{{ url('/package') }}" class="btn btn-primary rounded-pill py-2 px-4 ">Booking</a>
             </div>
         </nav>
     </div>
@@ -127,22 +127,22 @@
                     <h4 class="text-white mb-3">Gallery</h4>
                     <div class="row g-2 pt-2">
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{asset('frontend/img/package-1.jpg') }}" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{asset('frontend/img/destination-3.jpg') }}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{asset('frontend/img/package-1.jpg') }}" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{asset('frontend/img/destination-2.jpg') }}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{asset('frontend/img/package-1.jpg') }}" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{asset('frontend/img/destination-3.jpg') }}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{asset('frontend/img/package-1.jpg') }}" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{asset('frontend/img/destination-4.jpg') }}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{asset('frontend/img/package-1.jpg') }}" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{asset('frontend/img/destination-4.jpg') }}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="{{asset('frontend/img/package-1.jpg') }}" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{asset('frontend/img/destination-4.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>
