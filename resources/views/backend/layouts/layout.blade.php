@@ -114,7 +114,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="#">
+                    <a href="{{url('/contact/index')}}">
                         <span class="icon">
                             <i class="fa-solid fa-address-card fa-lg"></i>
                         </span>

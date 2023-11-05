@@ -69,31 +69,49 @@
                         tabindex="0"></iframe>
                 </div>
                 <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <form>
+                    @if(Session::has('msg'))
+                        <div class="alert alert-success">
+                            {{ Session::get('msg') }}
+                        </div>
+                    @endif
+                    <form action="{{url('contact/store')}}" method="post">
+                    @csrf
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <input type="text" class="form-control" id="con_name" name="con_name" placeholder="Your Name">
+                                    <label for="con_name">Your Name</label>
                                 </div>
+                                @error('con_name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input type="email" class="form-control" id="con_email" name="con_email" placeholder="Your Email">
+                                    <label for="con_email">Your Email</label>
                                 </div>
+                                @error('con_email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
+                                    <input type="text" class="form-control" id="con_subject" name="con_subject" placeholder="Subject">
+                                    <label for="con_subject">Subject</label>
                                 </div>
+                                @error('con_subject')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
+                                    <textarea class="form-control" id="con_message" name="con_message" placeholder="Leave a message here" style="height: 100px"></textarea>
+                                    <label for="con_message">Message</label>
                                 </div>
+                                @error('con_message')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>

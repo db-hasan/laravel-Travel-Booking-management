@@ -46,6 +46,4 @@ class PackController extends Controller
         return view("frontend.payment.payment", $step);
 
     }
-
-    
 }

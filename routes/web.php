@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\frontend\PackController;
 use App\Http\Controllers\frontend\BookController;
 use App\Http\Controllers\frontend\PaymentController;
+use App\Http\Controllers\frontend\ContactController;
 
 use App\Http\Controllers\backend\BookingController;
 use App\Http\Controllers\backend\PackageController;
@@ -25,6 +26,17 @@ Route::post('booking/store',[BookController::class,'store']);
 
 // Route::get('/payment',[PaymentController::class,'payment']);
 Route::post('payment/store',[PaymentController::class,'store']);
+
+Route::get('/contact',[ContactController::class,'contact']);
+Route::post('/contact/store',[ContactController::class,'store']);
+
+Route::get('/contact/index',[ContactController::class,'index']);
+
+Route::get('/checkout',[HomeController::class,'checkout']);
+Route::get('/invoice',[HomeController::class,'invoice']);
+Route::get('/service',[HomeController::class,'service']);
+Route::get('/about',[HomeController::class,'about']);
+
 
 // Backend Route
 
@@ -73,11 +85,7 @@ Route::get('expense/destroy/{expense_id}',[ExpenseController::class,'destroy']);
 
 // --------------------------------------------------------------
 
-Route::get('/checkout',[HomeController::class,'checkout']);
-Route::get('/invoice',[HomeController::class,'invoice']);
-Route::get('/service',[HomeController::class,'service']);
-Route::get('/about',[HomeController::class,'about']);
-Route::get('/contact',[HomeController::class,'contact']);
+
 
 
 
