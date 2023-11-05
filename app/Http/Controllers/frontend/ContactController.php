@@ -43,6 +43,13 @@ class ContactController extends Controller
         return view('backend/contact/index', compact('indexContact'));
     }
 
+    public function destroy($con_id=null){
+        $destroyData = Contact::find($con_id);
+        $destroyData->delete();
+        Session::flash('msg','Data delete successfully');
+        return redirect('/contact/index');
+    }
+
 
     
 }

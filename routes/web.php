@@ -31,6 +31,9 @@ Route::get('/contact',[ContactController::class,'contact']);
 Route::post('/contact/store',[ContactController::class,'store']);
 
 Route::get('/contact/index',[ContactController::class,'index']);
+Route::get('/contact/destroy/{con_id}',[ContactController::class,'destroy']);
+
+
 
 Route::get('/checkout',[HomeController::class,'checkout']);
 Route::get('/invoice',[HomeController::class,'invoice']);
