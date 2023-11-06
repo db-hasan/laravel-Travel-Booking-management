@@ -11,6 +11,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <title>Dashboard</title>
+
+    <style>
+        #search-input {
+            display: none;
+            width: 0;
+            transition: width 0.3s;
+        }
+
+
+    </style>
 </head>
 
 <body>
@@ -159,13 +169,14 @@
 
             <div class="text-end">
                 <div class="user">
-                    <button class="btn user_btn" type="button">
+                    <button class="btn user_btn" type="button" id="search-button">
                         <div class="user_icon">
                             <i class="fa-solid fa-magnifying-glass fa-xl"></i>
                         </div>
                     </button>
                 </div>
             </div>
+            <input type="text" class="form-control" placeholder="Search" id="search-input">
 
             <div class="text-end">
                 <div class="user">
@@ -306,6 +317,24 @@
     <script src="{{asset('backend/js/jquery-3.7.1.min.js') }} "></script>
     <script src="{{asset('backend/js/dataTables.js') }} "></script>
     <script src="{{asset('backend/js/custom.js') }} "></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#search-button").click(function () {
+                $("#search-input").toggle(); // Toggle the visibility of the search input
+                $("#search-input").toggleClass('active'); // Toggle the 'active' class
+                if ($("#search-input").hasClass('active')) {
+                    $("#search-input").focus(); // Automatically set focus to the input field when it's active
+                    $("#search-input").css('width', '200px'); // Set the desired width when active
+                } else {
+                    $("#search-input").css('width', '0'); // Set the width to 0 when not active
+                }
+            });
+        });
+    </script>
+
+
+
     
     
 </body>

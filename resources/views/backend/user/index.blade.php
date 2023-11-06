@@ -35,9 +35,8 @@
                         <img src="/images/{{$itemUser->user_img}}" alt="" style="height: 40px; width: 40px;" class="rounded">
                     </td> 
                     <td class="icons">
-                        <a href="{{url('bundle/show/'.$itemUser->user_id)}}" type="button"  class="btn view"><i class="fa-solid fa-eye"></i></a>
-                        <a href="{{url('bundle/edit/'.$itemUser->user_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
-                        <a href="{{url('bundle/destroy/'.$itemUser->user_id)}}" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
+                        <a href="{{url('user/edit/'.$itemUser->user_id)}}" type="button"  class="btn edit"><i class="fa-solid fa-pen"></i></a>
+                        <a href="{{url('user/destroy/'.$itemUser->user_id)}}" type="button"  class="btn delete" onclick="return confirm('Are you sure dalete')"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr> 
                 @endforeach   
