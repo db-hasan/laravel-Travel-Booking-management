@@ -12,18 +12,30 @@
     <div class="m-5 p-5 w-50">
         <form action="admin/login" method="post">
         @csrf
-            @if(Session::has('msg'))
+            @if(Session::has('success'))
                 <div class="alert alert-success">
-                    {{ Session::get('msg') }}
+                    {{ Session::get('success') }}
+                </div>
+            @endif
+            @if(Session::has('fail'))
+                <div class="alert alert-danger">
+                    {{ Session::get('fail') }}
                 </div>
             @endif
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="user_email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="user_email" name="user_email" value="{{old('user_email')}}">
+                @error('user_email')
+                <span class="text-danger"> {{ $message }}</span>
+                @enderror
             </div>
+            
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+                @error('password')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

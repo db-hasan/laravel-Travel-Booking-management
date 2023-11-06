@@ -64,16 +64,23 @@ class UserController extends Controller
     public function login(Request $request){
         
         $rules = [
-            'user_email' => 'required|email|unique:users',
+            'user_email' => 'required|email',
             'password' => 'required | min:8 | max:12',
         ];
-        // $v_msg=[
-        //     'user_email.required'=> 'Please enter email',
-        //     'password.required'=> 'Please enter valid password',
-        // ];
-        $user= User::where('user_email', '=', $request->user_email->first());
+        $v_msg=[
+            'user_email.required'=> 'Please enter your email',
+            'password.required'=> 'Please enter your password',
+        ];
+        $this -> validate($request, $rules, $v_msg);
+        
+        $user= User::where('user_email', '=', $request->user_email)->first();
         if($user){
-
+            if(Hash::check($request->password, $user->password)){
+                $request->session()->put('loginId'. $user->user_id);
+                return redirect('dashboard');
+            }else{
+                return back()->with('fail', 'Password not matches');
+            }
         }else{
             return back()->with('fail', 'This email is not registered');
         }
