@@ -45,7 +45,7 @@ class UserController extends Controller
         $imageName = time().'.'. $request->user_img->extension();
         $request->user_img->move(public_path('images'),$imageName);
 
-        $data= new user();
+        $data= new User();
         $data->user_name= $request->name;
         $data->user_email= $request->user_email;
         $data->user_phone= $request->user_phone;

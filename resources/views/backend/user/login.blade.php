@@ -10,13 +10,14 @@
 </head>
 <body>
     <div class="m-5 p-5 w-50">
-        <form action="admin/login" method="post">
+        <form action="login" method="post">
         @csrf
             @if(Session::has('success'))
                 <div class="alert alert-success">
                     {{ Session::get('success') }}
                 </div>
             @endif
+
             @if(Session::has('fail'))
                 <div class="alert alert-danger">
                     {{ Session::get('fail') }}

@@ -47,7 +47,8 @@ Route::get('/about',[HomeController::class,'about']);
 // Route::view('/admin', 'backend/dashboard/dashboard') -> name('admin');
 
 Route::get('admin',[UserController::class,'admin']);
-Route::post('admin/login',[UserController::class,'login']);
+Route::post('login',[UserController::class,'login']);
+
 Route::get('admin/user',[UserController::class,'index']);
 Route::get('admin/user/create',[UserController::class,'create']);
 Route::post('admin/user/store',[UserController::class,'store']);
