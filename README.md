@@ -7,9 +7,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+I designs dynamic user interfaces (UI) done following Rayn's computer. Design personal Admin Panel to controll UI.
+Important Features: login authentication, Category-Subcategory and Filtering and Search by Ajax. Cart by jQuery use local Storage, insert multi images purchase, sales multiproduct, Report and Invoice.
+Use technologies: HTML, CSS, Bootstrap, JavaScript, jQuery, Ajax, backend PHP(OPP) Laravel blade engine. Server-side MySQL.
+ Live: https://ecommerce.helpsx.com/
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
