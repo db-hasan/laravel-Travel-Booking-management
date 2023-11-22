@@ -7,37 +7,19 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Project
-
+## About user interfaces (UI)
 I designs dynamic user interfaces (UI) done following Rayn's computer. Design personal Admin Panel to controll UI.
+
+
+## Important Features:
 Important Features: login authentication, Category-Subcategory and Filtering and Search by Ajax. Cart by jQuery use local Storage, insert multi images purchase, sales multiproduct, Report and Invoice.
+
+
+## Use technologies:
 Use technologies: HTML, CSS, Bootstrap, JavaScript, jQuery, Ajax, backend PHP(OPP) Laravel blade engine. Server-side MySQL.
- Live: https://ecommerce.helpsx.com/
 
 
-## Learning Laravel
-
-
-## Laravel Sponsors
-
-
-
-### Premium Partners
-
-
-
-## Contributing
-
-
-
-## Code of Conduct
-
-
-
-## Security Vulnerabilities
-
-
-
-## License
+## Live link:
+https://ecommerce.helpsx.com/
 
 
